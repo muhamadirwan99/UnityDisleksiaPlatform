@@ -19,7 +19,46 @@ class _MenuPageState extends State<MenuPage> {
         title: Text("test"),
       ),
       body: Center(
-        child: Text("home"),
+        child: Column(
+          children: [
+            Text(
+              "Headline 1",
+              style: myTextTheme.headline1,
+            ),
+            Text(
+              "Headline 2",
+              style: myTextTheme.headline2,
+            ),
+            Text(
+              "Headline 3",
+              style: myTextTheme.headline3,
+            ),
+            Text(
+              "Headline 4",
+              style: myTextTheme.headline4,
+            ),
+            Text(
+              "Headline 5",
+              style: myTextTheme.headline5,
+            ),
+            Text(
+              "Bodytext 1",
+              style: myTextTheme.bodyText1,
+            ),
+            Text(
+              "Bodytext 2",
+              style: myTextTheme.bodyText2,
+            ),
+            Text(
+              "Subtitle",
+              style: myTextTheme.subtitle1,
+            ),
+            Text(
+              "Caption",
+              style: myTextTheme.caption,
+            ),
+          ],
+        ),
       ),
       bottomNavigationBar: Container(
         decoration: const BoxDecoration(
