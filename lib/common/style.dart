@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-final TextTheme myTextTheme =  TextTheme(
+final TextTheme myTextTheme = TextTheme(
   headline1: GoogleFonts.inter(
     fontSize: 36,
     fontWeight: FontWeight.w600,
     letterSpacing: -1.1,
-
   ),
   headline2: GoogleFonts.inter(
     fontSize: 36,
@@ -24,50 +23,23 @@ final TextTheme myTextTheme =  TextTheme(
     letterSpacing: -1,
   ),
   headline5: GoogleFonts.inter(
-    fontSize: 20,
-    fontWeight: FontWeight.w600,
-    letterSpacing: -0.8
-  ),
+      fontSize: 20, fontWeight: FontWeight.w600, letterSpacing: -0.8),
   headline6: GoogleFonts.inter(
-    fontSize: 20,
-    fontWeight: FontWeight.w400,
-    letterSpacing: -0.8
-  ),
+      fontSize: 20, fontWeight: FontWeight.w400, letterSpacing: -0.8),
   subtitle1: GoogleFonts.inter(
-    fontSize: 16,
-    fontWeight: FontWeight.w500,
-    letterSpacing: -0.5
-  ),
+      fontSize: 16, fontWeight: FontWeight.w500, letterSpacing: -0.5),
   subtitle2: GoogleFonts.inter(
-    fontSize: 14,
-    fontWeight: FontWeight.w500,
-    letterSpacing: -0.3
-  ),
+      fontSize: 12, fontWeight: FontWeight.w500, letterSpacing: 0),
   bodyText1: GoogleFonts.inter(
-    fontSize: 16,
-    fontWeight: FontWeight.w300,
-    letterSpacing: -0.5
-  ),
+      fontSize: 16, fontWeight: FontWeight.w300, letterSpacing: -0.5),
   bodyText2: GoogleFonts.inter(
-    fontSize: 14,
-    fontWeight: FontWeight.w300,
-    letterSpacing: -0.3
-  ),
+      fontSize: 14, fontWeight: FontWeight.w300, letterSpacing: -0.3),
   button: GoogleFonts.inter(
-    fontSize: 14,
-    fontWeight: FontWeight.w500,
-    letterSpacing: 1.25
-  ),
+      fontSize: 14, fontWeight: FontWeight.w500, letterSpacing: 1.25),
   caption: GoogleFonts.inter(
-    fontSize: 12,
-    fontWeight: FontWeight.w400,
-    letterSpacing: 0.4
-  ),
+      fontSize: 12, fontWeight: FontWeight.w400, letterSpacing: 0.4),
   overline: GoogleFonts.inter(
-    fontSize: 10,
-    fontWeight: FontWeight.w400,
-    letterSpacing: 1.5
-  ),
+      fontSize: 10, fontWeight: FontWeight.w400, letterSpacing: 1.5),
 );
 
 // Red Pallete

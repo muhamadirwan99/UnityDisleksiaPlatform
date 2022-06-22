@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:unity_disleksia_platform/common/style.dart';
+import 'package:unity_disleksia_platform/pages/menu_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,14 +15,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Unity Disleksia Platform',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: blue500,
+        colorScheme: ColorScheme.fromSwatch().copyWith(secondary: neutral100),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: blue500,
+        ),
         textTheme: myTextTheme,
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text("test"),
-        ),
-        body: Column(children: [Text("sdsd")],)),
+      initialRoute: MenuPage.routeName,
+      routes: {
+        MenuPage.routeName: (context) => const MenuPage(),
+      },
     );
   }
 }
