@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:unity_disleksia_platform/common/style.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:unity_disleksia_platform/pages/home_page.dart';
+import 'package:unity_disleksia_platform/pages/tips_page.dart';
+import 'package:unity_disleksia_platform/pages/video_page.dart';
+import 'package:unity_disleksia_platform/pages/webinar_page.dart';
 
 class MenuPage extends StatefulWidget {
   static const routeName = '/menuPage';
@@ -12,53 +16,19 @@ class MenuPage extends StatefulWidget {
 
 class _MenuPageState extends State<MenuPage> {
   int currentIndex = 0;
+  final screens = [
+    HomePage(),
+    VideoPage(),
+    WebinarPage(),
+    TipsPage(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("test"),
-      ),
-      body: Center(
-        child: Column(
-          children: [
-            Text(
-              "Headline 1",
-              style: myTextTheme.headline1,
-            ),
-            Text(
-              "Headline 2",
-              style: myTextTheme.headline2,
-            ),
-            Text(
-              "Headline 3",
-              style: myTextTheme.headline3,
-            ),
-            Text(
-              "Headline 4",
-              style: myTextTheme.headline4,
-            ),
-            Text(
-              "Headline 5",
-              style: myTextTheme.headline5,
-            ),
-            Text(
-              "Bodytext 1",
-              style: myTextTheme.bodyText1,
-            ),
-            Text(
-              "Bodytext 2",
-              style: myTextTheme.bodyText2,
-            ),
-            Text(
-              "Subtitle",
-              style: myTextTheme.subtitle1,
-            ),
-            Text(
-              "Caption",
-              style: myTextTheme.caption,
-            ),
-          ],
-        ),
+      body: IndexedStack(
+        index: currentIndex,
+        children: screens,
       ),
       bottomNavigationBar: Container(
         decoration: const BoxDecoration(
@@ -77,8 +47,8 @@ class _MenuPageState extends State<MenuPage> {
             type: BottomNavigationBarType.fixed,
             currentIndex: currentIndex,
             onTap: (index) => setState(() => currentIndex = index),
-            selectedLabelStyle: myTextTheme.subtitle2,
-            unselectedLabelStyle: myTextTheme.subtitle2,
+            selectedLabelStyle: myTextTheme.headline6,
+            unselectedLabelStyle: myTextTheme.headline6,
             selectedItemColor: blue500,
             items: [
               BottomNavigationBarItem(
