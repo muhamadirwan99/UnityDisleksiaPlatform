@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:unity_disleksia_platform/data/api/api_service.dart';
-import 'package:unity_disleksia_platform/data/model/video_model.dart';
+import 'package:unity_disleksia_platform/data/model/webinar_model.dart';
 import 'package:unity_disleksia_platform/utils/result_state.dart';
 
-class VideoProvider extends ChangeNotifier {
+class WebinarProvider extends ChangeNotifier {
   final ApiService apiService;
 
-  VideoProvider({required this.apiService}) {
+  WebinarProvider({required this.apiService}) {
     _fetchAllVideo();
   }
 
-  late VideosResult _videosResult;
+  late WebinarsResult _webinarsResult;
   late ResultState _state;
   String _message = '';
 
   String get message => _message;
 
-  VideosResult get result => _videosResult;
+  WebinarsResult get result => _webinarsResult;
 
   ResultState get state => _state;
 
@@ -24,15 +24,15 @@ class VideoProvider extends ChangeNotifier {
     try {
       _state = ResultState.Loading;
       notifyListeners();
-      final video = await apiService.listVideos();
-      if (video.data.isEmpty) {
+      final webinar = await apiService.listWebinars();
+      if (webinar.data.isEmpty) {
         _state = ResultState.NoData;
         notifyListeners();
         return _message = 'Empty Data';
       } else {
         _state = ResultState.HasData;
         notifyListeners();
-        return _videosResult = video;
+        return _webinarsResult = webinar;
       }
     } catch (e) {
       _state = ResultState.Error;

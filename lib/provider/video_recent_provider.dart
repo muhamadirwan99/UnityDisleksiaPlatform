@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:unity_disleksia_platform/data/api/api_service.dart';
 import 'package:unity_disleksia_platform/data/model/video_model.dart';
-
-enum ResultState { Loading, NoData, HasData, Error }
+import 'package:unity_disleksia_platform/utils/result_state.dart';
 
 class VideoRecentProvider extends ChangeNotifier {
   final ApiService apiService;
