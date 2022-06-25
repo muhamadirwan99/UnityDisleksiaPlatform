@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:unity_disleksia_platform/provider/video_recent_provider.dart';
 import 'package:unity_disleksia_platform/utils/result_state.dart';
-import 'package:unity_disleksia_platform/widgets/card_video.dart';
+import 'package:unity_disleksia_platform/widgets/card_grid_video.dart';
 
-class VideoRecentListPage extends StatelessWidget {
+class VideoRecentGridPage extends StatelessWidget {
   Widget _buildVideo() {
     return Consumer<VideoRecentProvider>(
       builder: (context, state, _) {
@@ -26,7 +26,7 @@ class VideoRecentListPage extends StatelessWidget {
                   padding: const EdgeInsets.only(right: 16),
                   child: ClipRRect(
                       borderRadius: BorderRadius.circular(8),
-                      child: CardVideo(video: video)),
+                      child: CardGridVideo(video: video)),
                 );
               },
             ),

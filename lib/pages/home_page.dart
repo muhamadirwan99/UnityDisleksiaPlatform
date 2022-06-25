@@ -6,12 +6,12 @@ import 'package:unity_disleksia_platform/common/style.dart';
 import 'package:unity_disleksia_platform/data/api/api_service.dart';
 import 'package:unity_disleksia_platform/data/model/banner_model.dart';
 import 'package:unity_disleksia_platform/data/model/video_model.dart';
-import 'package:unity_disleksia_platform/pages/video_recent_list_page.dart';
+import 'package:unity_disleksia_platform/pages/video_recent_grid_page.dart';
 import 'package:unity_disleksia_platform/pages/webinar_list_page.dart';
 import 'package:unity_disleksia_platform/provider/video_provider.dart';
 import 'package:unity_disleksia_platform/provider/video_recent_provider.dart';
 import 'package:unity_disleksia_platform/provider/webinar_provider.dart';
-import 'package:unity_disleksia_platform/widgets/card_video.dart';
+import 'package:unity_disleksia_platform/widgets/card_grid_video.dart';
 import 'package:unity_disleksia_platform/widgets/myappbar.dart';
 import 'package:unity_disleksia_platform/widgets/myflexible_appbar.dart';
 
@@ -23,8 +23,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  late Future<VideosResult> _video;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -80,7 +78,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 ChangeNotifierProvider<VideoRecentProvider>(
                   create: (_) => VideoRecentProvider(apiService: ApiService()),
-                  child: VideoRecentListPage(),
+                  child: VideoRecentGridPage(),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 32, right: 24, left: 24),

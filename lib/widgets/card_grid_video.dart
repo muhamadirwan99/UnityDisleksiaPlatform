@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:unity_disleksia_platform/common/style.dart';
 import 'package:unity_disleksia_platform/data/model/video_model.dart';
 
-class CardVideo extends StatelessWidget {
+class CardGridVideo extends StatelessWidget {
   final Video video;
 
-  const CardVideo({required this.video});
+  const CardGridVideo({required this.video});
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +56,13 @@ class CardVideo extends StatelessWidget {
               ),
               Text(
                 video.desc,
-                style: myTextTheme.subtitle1,
+                style: GoogleFonts.inter(
+                  textStyle: const TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
+                      letterSpacing: 0,
+                      color: neutral700),
+                ),
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
               ),
@@ -65,23 +72,5 @@ class CardVideo extends StatelessWidget {
         elevation: 3,
       ),
     );
-    // return Material(
-    //   color: blue500,
-    //   child: ListTile(
-    //       contentPadding:
-    //           const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-    //       leading: Hero(
-    //         tag: _baseUrl + video.thumbnail,
-    //         child: Image.network(
-    //           _baseUrl + video.thumbnail,
-    //           width: 100,
-    //         ),
-    //       ),
-    //       title: Text(
-    //         video.name,
-    //       ),
-    //       subtitle: Text(video.desc),
-    //       onTap: () {}),
-    // );
   }
 }

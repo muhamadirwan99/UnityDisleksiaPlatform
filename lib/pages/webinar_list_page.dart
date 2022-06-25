@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:unity_disleksia_platform/provider/webinar_provider.dart';
 import 'package:unity_disleksia_platform/utils/result_state.dart';
-import 'package:unity_disleksia_platform/widgets/card_video.dart';
 import 'package:unity_disleksia_platform/widgets/card_webinar.dart';
 
 class WebinarListPage extends StatelessWidget {
