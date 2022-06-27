@@ -25,6 +25,8 @@ class CardListVideo extends StatelessWidget {
                   tag: _baseUrl + video.thumbnail,
                   child: Image.network(
                     _baseUrl + video.thumbnail,
+                    height: 110,
+                    width: 160,
                   ),
                 ),
               ),

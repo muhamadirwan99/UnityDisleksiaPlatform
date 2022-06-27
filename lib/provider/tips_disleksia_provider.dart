@@ -1,38 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:unity_disleksia_platform/data/api/api_service.dart';
-import 'package:unity_disleksia_platform/data/model/webinar_model.dart';
+import 'package:unity_disleksia_platform/data/model/tips_model.dart';
 import 'package:unity_disleksia_platform/utils/result_state.dart';
 
-class WebinarProvider extends ChangeNotifier {
+class TipsDisleksiaProvider extends ChangeNotifier {
   final ApiService apiService;
 
-  WebinarProvider({required this.apiService}) {
-    _fetchAllWebinar();
+  TipsDisleksiaProvider({required this.apiService}) {
+    _fetchAllTips();
   }
 
-  late WebinarsResult _webinarsResult;
+  late TipsResult _tipsResult;
   late ResultState _state;
   String _message = '';
 
   String get message => _message;
 
-  WebinarsResult get result => _webinarsResult;
+  TipsResult get result => _tipsResult;
 
   ResultState get state => _state;
 
-  Future<dynamic> _fetchAllWebinar() async {
+  Future<dynamic> _fetchAllTips() async {
     try {
       _state = ResultState.Loading;
       notifyListeners();
-      final webinar = await apiService.listWebinars();
-      if (webinar.data.isEmpty) {
+      final tips = await apiService.listTipsDisleksia();
+      if (tips.data.isEmpty) {
         _state = ResultState.NoData;
         notifyListeners();
         return _message = 'Empty Data';
       } else {
         _state = ResultState.HasData;
         notifyListeners();
-        return _webinarsResult = webinar;
+        return _tipsResult = tips;
       }
     } catch (e) {
       _state = ResultState.Error;

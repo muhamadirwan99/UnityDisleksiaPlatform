@@ -4,7 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:unity_disleksia_platform/common/style.dart';
 import 'package:unity_disleksia_platform/data/api/api_service.dart';
-import 'package:unity_disleksia_platform/pages/video_grid_page.dart';
 import 'package:unity_disleksia_platform/pages/video_list_page.dart';
 import 'package:unity_disleksia_platform/provider/video_provider.dart';
 
@@ -86,24 +85,21 @@ class _VideoPageState extends State<VideoPage> {
                           SizedBox(
                             width: 16,
                           ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Expanded(
-                              flex: 0,
-                              child: Container(
-                                width: 48,
-                                height: 48,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(4),
-                                  color: blue600,
-                                ),
-                                child: Center(
-                                  child: SvgPicture.asset(
-                                    "assets/icons/grid.svg",
-                                    color: neutral100,
-                                    height: 32,
-                                    width: 32,
-                                  ),
+                          Expanded(
+                            flex: 0,
+                            child: Container(
+                              width: 48,
+                              height: 48,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(4),
+                                color: blue600,
+                              ),
+                              child: Center(
+                                child: SvgPicture.asset(
+                                  "assets/icons/grid.svg",
+                                  color: neutral100,
+                                  height: 32,
+                                  width: 32,
                                 ),
                               ),
                             ),
@@ -117,13 +113,9 @@ class _VideoPageState extends State<VideoPage> {
                         create: (_) => VideoProvider(apiService: ApiService()),
                         child: VideoListPage(),
                       ),
-                      // Expanded(
-                      //   flex: 1,
-                      //   child: ChangeNotifierProvider<VideoProvider>(
-                      //     create: (_) =>
-                      //         VideoProvider(apiService: ApiService()),
-                      //     child: VideoGridPage(),
-                      //   ),
+                      //  ChangeNotifierProvider<VideoProvider>(
+                      //   create: (_) => VideoProvider(apiService: ApiService()),
+                      //   child: VideoListPage(),
                       // ),
                     ],
                   ),

@@ -4,7 +4,7 @@ import 'package:unity_disleksia_platform/provider/video_recent_provider.dart';
 import 'package:unity_disleksia_platform/utils/result_state.dart';
 import 'package:unity_disleksia_platform/widgets/card_grid_video.dart';
 
-class VideoRecentGridPage extends StatelessWidget {
+class VideoRecentPage extends StatelessWidget {
   Widget _buildVideo() {
     return Consumer<VideoRecentProvider>(
       builder: (context, state, _) {
