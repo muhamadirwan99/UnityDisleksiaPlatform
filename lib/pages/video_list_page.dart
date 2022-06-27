@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:unity_disleksia_platform/pages/detail_video_page.dart';
 import 'package:unity_disleksia_platform/provider/video_provider.dart';
 import 'package:unity_disleksia_platform/provider/video_recent_provider.dart';
 import 'package:unity_disleksia_platform/utils/result_state.dart';
@@ -20,9 +21,16 @@ class VideoListPage extends StatelessWidget {
             itemCount: state.result.data.length,
             itemBuilder: (context, index) {
               var video = state.result.data[index];
-              return ClipRRect(
+              return GestureDetector(
+                child: ClipRRect(
                   borderRadius: BorderRadius.circular(8),
-                  child: CardListVideo(video: video));
+                  child: CardListVideo(video: video),
+                ),
+                onTap: () {
+                  Navigator.pushNamed(context, DetailVideoPage.routeName,
+                      arguments: video);
+                },
+              );
             },
           );
         } else if (state.state == ResultState.NoData) {

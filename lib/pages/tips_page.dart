@@ -6,7 +6,6 @@ import 'package:unity_disleksia_platform/data/api/api_service.dart';
 import 'package:unity_disleksia_platform/provider/tips_disleksia_provider.dart';
 import 'package:unity_disleksia_platform/provider/tips_pembelajaran_provider.dart';
 import 'package:unity_disleksia_platform/provider/tips_peningkatan_provider.dart';
-import 'package:unity_disleksia_platform/provider/video_provider.dart';
 import 'package:unity_disleksia_platform/utils/result_state.dart';
 import 'package:unity_disleksia_platform/widgets/list_tips.dart';
 

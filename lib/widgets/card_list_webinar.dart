@@ -39,13 +39,10 @@ class _CardListWebinarState extends State<CardListWebinar> {
               flex: 0,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(24),
-                child: Hero(
-                  tag: _baseUrl + widget.webinar.thumbnail,
-                  child: Image.network(
-                    _baseUrl + widget.webinar.thumbnail,
-                    width: 110,
-                    height: 110,
-                  ),
+                child: Image.network(
+                  _baseUrl + widget.webinar.thumbnail,
+                  width: 110,
+                  height: 110,
                 ),
               ),
             ),

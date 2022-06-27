@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:unity_disleksia_platform/common/navigation.dart';
 import 'package:unity_disleksia_platform/common/style.dart';
+import 'package:unity_disleksia_platform/data/model/video_model.dart';
+import 'package:unity_disleksia_platform/pages/detail_video_page.dart';
 import 'package:unity_disleksia_platform/pages/menu_page.dart';
 
 void main() {
@@ -23,8 +26,12 @@ class MyApp extends StatelessWidget {
         textTheme: myTextTheme,
       ),
       initialRoute: MenuPage.routeName,
+      navigatorKey: navigatorKey,
       routes: {
         MenuPage.routeName: (context) => const MenuPage(),
+        DetailVideoPage.routeName: (context) => DetailVideoPage(
+              video: ModalRoute.of(context)?.settings.arguments as Video,
+            ),
       },
     );
   }

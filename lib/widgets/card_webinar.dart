@@ -41,11 +41,8 @@ class _CardWebinarState extends State<CardWebinar> {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(8),
-                child: Hero(
-                  tag: _baseUrl + widget.webinar.thumbnail,
-                  child: Image.network(
-                    _baseUrl + widget.webinar.thumbnail,
-                  ),
+                child: Image.network(
+                  _baseUrl + widget.webinar.thumbnail,
                 ),
               ),
               const SizedBox(height: 8),

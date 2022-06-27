@@ -21,13 +21,10 @@ class CardListVideo extends StatelessWidget {
               flex: 0,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(8),
-                child: Hero(
-                  tag: _baseUrl + video.thumbnail,
-                  child: Image.network(
-                    _baseUrl + video.thumbnail,
-                    height: 110,
-                    width: 160,
-                  ),
+                child: Image.network(
+                  _baseUrl + video.thumbnail,
+                  height: 110,
+                  width: 160,
                 ),
               ),
             ),

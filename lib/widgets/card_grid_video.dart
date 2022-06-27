@@ -23,11 +23,8 @@ class CardGridVideo extends StatelessWidget {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(8),
-                child: Hero(
-                  tag: _baseUrl + video.thumbnail,
-                  child: Image.network(
-                    _baseUrl + video.thumbnail,
-                  ),
+                child: Image.network(
+                  _baseUrl + video.thumbnail,
                 ),
               ),
               const SizedBox(height: 8),
