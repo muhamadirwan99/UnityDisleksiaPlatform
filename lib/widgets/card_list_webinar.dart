@@ -63,15 +63,15 @@ class _CardListWebinarState extends State<CardListWebinar> {
                           overflow: TextOverflow.ellipsis,
                         ),
                       ),
-                      Expanded(
-                        flex: 0,
-                        child: SvgPicture.asset(
-                          "assets/icons/bookmark-outline.svg",
-                          color: neutral900,
-                          height: 24,
-                          width: 24,
-                        ),
-                      ),
+                      // Expanded(
+                      //   flex: 0,
+                      //   child: SvgPicture.asset(
+                      //     "assets/icons/bookmark-outline.svg",
+                      //     color: neutral900,
+                      //     height: 24,
+                      //     width: 24,
+                      //   ),
+                      // ),
                     ],
                   ),
                   SizedBox(height: 8),

@@ -6,24 +6,23 @@ import 'package:unity_disleksia_platform/pages/tips_page.dart';
 import 'package:unity_disleksia_platform/pages/video_page.dart';
 import 'package:unity_disleksia_platform/pages/webinar_page.dart';
 
-class MenuPage extends StatefulWidget {
-  static const routeName = '/menuPage';
+class VideoMenuPage extends StatefulWidget {
+  static const routeName = '/videoMenuPage';
 
-  const MenuPage();
+  const VideoMenuPage();
 
   @override
-  State<MenuPage> createState() => _MenuPageState();
+  State<VideoMenuPage> createState() => _VideoMenuPageState();
 }
 
-class _MenuPageState extends State<MenuPage> {
-  int currentIndex = 0;
+class _VideoMenuPageState extends State<VideoMenuPage> {
+  int currentIndex = 1;
   final screens = [
     HomePage(),
     VideoPage(),
     WebinarPage(),
     TipsPage(),
   ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

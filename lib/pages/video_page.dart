@@ -4,10 +4,14 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:unity_disleksia_platform/common/style.dart';
 import 'package:unity_disleksia_platform/data/api/api_service.dart';
+import 'package:unity_disleksia_platform/pages/home_page.dart';
+import 'package:unity_disleksia_platform/pages/menu_page.dart';
 import 'package:unity_disleksia_platform/pages/video_list_page.dart';
 import 'package:unity_disleksia_platform/provider/video_provider.dart';
 
 class VideoPage extends StatefulWidget {
+  static const routeName = '/videoPage';
+
   const VideoPage({Key? key}) : super(key: key);
 
   @override
@@ -32,7 +36,9 @@ class _VideoPageState extends State<VideoPage> {
             color: neutral900,
             size: 32,
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, MenuPage.routeName);
+          },
         ),
       ),
       body: CustomScrollView(

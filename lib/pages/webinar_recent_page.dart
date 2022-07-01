@@ -15,7 +15,7 @@ class WebinarRecentPage extends StatelessWidget {
             height: 255.0,
             width: 182.0,
             child: ListView.builder(
-              padding: const EdgeInsets.only(left: 32, right: 16),
+              padding: const EdgeInsets.only(left: 20, right: 16),
               physics: const ClampingScrollPhysics(),
               shrinkWrap: true,
               scrollDirection: Axis.horizontal,

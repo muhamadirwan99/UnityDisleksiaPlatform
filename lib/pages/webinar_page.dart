@@ -4,10 +4,13 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:unity_disleksia_platform/common/style.dart';
 import 'package:unity_disleksia_platform/data/api/api_service.dart';
+import 'package:unity_disleksia_platform/pages/menu_page.dart';
 import 'package:unity_disleksia_platform/pages/webinar_list_page.dart';
 import 'package:unity_disleksia_platform/provider/webinar_provider.dart';
 
 class WebinarPage extends StatefulWidget {
+  static const routeName = '/webinarPage';
+
   const WebinarPage({Key? key}) : super(key: key);
 
   @override
@@ -32,7 +35,9 @@ class _WebinarPageState extends State<WebinarPage> {
             color: neutral900,
             size: 32,
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, MenuPage.routeName);
+          },
         ),
       ),
       body: CustomScrollView(

@@ -5,7 +5,11 @@ import 'package:provider/provider.dart';
 import 'package:unity_disleksia_platform/common/style.dart';
 import 'package:unity_disleksia_platform/data/api/api_service.dart';
 import 'package:unity_disleksia_platform/data/model/banner_model.dart';
+import 'package:unity_disleksia_platform/pages/menu_page.dart';
+import 'package:unity_disleksia_platform/pages/video_menu_page.dart';
+import 'package:unity_disleksia_platform/pages/video_page.dart';
 import 'package:unity_disleksia_platform/pages/video_recent_page.dart';
+import 'package:unity_disleksia_platform/pages/webinar_menu_page.dart';
 import 'package:unity_disleksia_platform/pages/webinar_recent_page.dart';
 import 'package:unity_disleksia_platform/provider/video_recent_provider.dart';
 import 'package:unity_disleksia_platform/provider/webinar_provider.dart';
@@ -58,7 +62,9 @@ class _HomePageState extends State<HomePage> {
                         style: myTextTheme.headline3,
                       ),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context, VideoMenuPage.routeName);
+                        },
                         child: Text(
                           "Lainnya",
                           style: GoogleFonts.inter(
@@ -87,7 +93,10 @@ class _HomePageState extends State<HomePage> {
                         style: myTextTheme.headline3,
                       ),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(
+                              context, WebinarMenuPage.routeName);
+                        },
                         child: Text(
                           "Lainnya",
                           style: GoogleFonts.inter(

@@ -6,6 +6,10 @@ import 'package:unity_disleksia_platform/data/model/webinar_model.dart';
 import 'package:unity_disleksia_platform/pages/detail_video_page.dart';
 import 'package:unity_disleksia_platform/pages/detail_webinar_page.dart';
 import 'package:unity_disleksia_platform/pages/menu_page.dart';
+import 'package:unity_disleksia_platform/pages/video_menu_page.dart';
+import 'package:unity_disleksia_platform/pages/video_page.dart';
+import 'package:unity_disleksia_platform/pages/webinar_menu_page.dart';
+import 'package:unity_disleksia_platform/pages/webinar_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,9 +35,13 @@ class MyApp extends StatelessWidget {
       navigatorKey: navigatorKey,
       routes: {
         MenuPage.routeName: (context) => const MenuPage(),
+        VideoPage.routeName: (context) => const VideoPage(),
+        VideoMenuPage.routeName: (context) => const VideoMenuPage(),
         DetailVideoPage.routeName: (context) => DetailVideoPage(
               video: ModalRoute.of(context)?.settings.arguments as Video,
             ),
+        WebinarPage.routeName: (context) => const WebinarPage(),
+        WebinarMenuPage.routeName: (context) => const WebinarMenuPage(),
         DetailWebinarPage.routeName: (context) => DetailWebinarPage(
               webinar: ModalRoute.of(context)?.settings.arguments as Webinar,
             ),
