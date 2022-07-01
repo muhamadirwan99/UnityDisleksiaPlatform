@@ -39,35 +39,23 @@ class _CardWebinarState extends State<CardWebinar> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(8),
-                child: Image.network(
-                  _baseUrl + widget.webinar.thumbnail,
+              Container(
+                width: 166,
+                height: 166,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                  image: DecorationImage(
+                    fit: BoxFit.fill,
+                    image: NetworkImage(_baseUrl + widget.webinar.thumbnail),
+                  ),
                 ),
               ),
               const SizedBox(height: 8),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                    flex: 2,
-                    child: Text(
-                      widget.webinar.name,
-                      style: myTextTheme.headline5,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ),
-                  Expanded(
-                    flex: 0,
-                    child: SvgPicture.asset(
-                      "assets/icons/bookmark-outline.svg",
-                      color: neutral900,
-                      height: 24,
-                      width: 24,
-                    ),
-                  ),
-                ],
+              Text(
+                widget.webinar.name,
+                style: myTextTheme.headline5,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
               ),
               const SizedBox(height: 8),
               Container(

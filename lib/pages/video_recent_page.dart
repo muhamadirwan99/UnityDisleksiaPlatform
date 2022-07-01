@@ -12,10 +12,10 @@ class VideoRecentPage extends StatelessWidget {
           return Center(child: CircularProgressIndicator());
         } else if (state.state == ResultState.HasData) {
           return SizedBox(
-            height: 210.0,
+            height: 214.0,
             width: 182.0,
             child: ListView.builder(
-              padding: const EdgeInsets.only(left: 32, right: 16),
+              padding: const EdgeInsets.only(left: 20, right: 16),
               physics: const ClampingScrollPhysics(),
               shrinkWrap: true,
               scrollDirection: Axis.horizontal,
@@ -23,7 +23,7 @@ class VideoRecentPage extends StatelessWidget {
               itemBuilder: (context, index) {
                 var video = state.result.data[index];
                 return Padding(
-                  padding: const EdgeInsets.only(right: 16),
+                  padding: const EdgeInsets.only(right: 8),
                   child: ClipRRect(
                       borderRadius: BorderRadius.circular(8),
                       child: CardGridVideo(video: video)),

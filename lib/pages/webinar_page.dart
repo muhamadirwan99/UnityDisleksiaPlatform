@@ -82,28 +82,28 @@ class _WebinarPageState extends State<WebinarPage> {
                               ),
                             ),
                           ),
-                          SizedBox(
-                            width: 16,
-                          ),
-                          Expanded(
-                            flex: 0,
-                            child: Container(
-                              width: 48,
-                              height: 48,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(4),
-                                color: blue600,
-                              ),
-                              child: Center(
-                                child: SvgPicture.asset(
-                                  "assets/icons/grid.svg",
-                                  color: neutral100,
-                                  height: 32,
-                                  width: 32,
-                                ),
-                              ),
-                            ),
-                          ),
+                          // SizedBox(
+                          //   width: 16,
+                          // ),
+                          // Expanded(
+                          //   flex: 0,
+                          //   child: Container(
+                          //     width: 48,
+                          //     height: 48,
+                          //     decoration: BoxDecoration(
+                          //       borderRadius: BorderRadius.circular(4),
+                          //       color: blue600,
+                          //     ),
+                          //     child: Center(
+                          //       child: SvgPicture.asset(
+                          //         "assets/icons/grid.svg",
+                          //         color: neutral100,
+                          //         height: 32,
+                          //         width: 32,
+                          //       ),
+                          //     ),
+                          //   ),
+                          // ),
                         ],
                       ),
                       SizedBox(

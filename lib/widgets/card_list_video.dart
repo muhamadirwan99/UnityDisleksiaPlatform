@@ -17,14 +17,13 @@ class CardListVideo extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Row(
           children: [
-            Expanded(
-              flex: 0,
+            Container(
+              height: 110,
+              width: 160,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(8),
                 child: Image.network(
                   _baseUrl + video.thumbnail,
-                  height: 110,
-                  width: 160,
                 ),
               ),
             ),

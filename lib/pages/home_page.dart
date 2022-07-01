@@ -49,7 +49,7 @@ class _HomePageState extends State<HomePage> {
               <Widget>[
                 Banner(),
                 Padding(
-                  padding: const EdgeInsets.only(top: 32, right: 24, left: 24),
+                  padding: const EdgeInsets.only(top: 24, right: 24, left: 24),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -78,7 +78,7 @@ class _HomePageState extends State<HomePage> {
                   child: VideoRecentPage(),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 32, right: 24, left: 24),
+                  padding: const EdgeInsets.only(top: 24, right: 24, left: 24),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -105,6 +105,9 @@ class _HomePageState extends State<HomePage> {
                 ChangeNotifierProvider<WebinarProvider>(
                   create: (_) => WebinarProvider(apiService: ApiService()),
                   child: WebinarRecentPage(),
+                ),
+                SizedBox(
+                  height: 24,
                 ),
               ],
             ),

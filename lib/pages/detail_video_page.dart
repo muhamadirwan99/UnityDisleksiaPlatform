@@ -5,7 +5,7 @@ import 'package:unity_disleksia_platform/widgets/card_modul.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class DetailVideoPage extends StatefulWidget {
-  static const routeName = '/detailPage';
+  static const routeName = '/detailVideoPage';
 
   final Video video;
 
@@ -86,9 +86,12 @@ class _DetailVideoPageState extends State<DetailVideoPage> {
                 SizedBox(
                   height: 32,
                 ),
-                Text(
-                  widget.video.name,
-                  style: myTextTheme.headline2,
+                Container(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    widget.video.name,
+                    style: myTextTheme.headline2,
+                  ),
                 ),
                 SizedBox(
                   height: 16,
