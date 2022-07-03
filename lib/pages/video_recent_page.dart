@@ -13,7 +13,7 @@ class VideoRecentPage extends StatelessWidget {
           return Center(child: CircularProgressIndicator());
         } else if (state.state == ResultState.HasData) {
           return SizedBox(
-            height: 230.0,
+            height: 220.0,
             width: 200,
             child: ListView.builder(
               padding: const EdgeInsets.only(left: 20, right: 16),

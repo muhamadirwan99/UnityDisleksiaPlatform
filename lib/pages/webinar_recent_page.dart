@@ -13,7 +13,7 @@ class WebinarRecentPage extends StatelessWidget {
           return Center(child: CircularProgressIndicator());
         } else if (state.state == ResultState.HasData) {
           return SizedBox(
-            height: 270.0,
+            height: 260.0,
             width: 182.0,
             child: ListView.builder(
               padding: const EdgeInsets.only(left: 20, right: 16),
