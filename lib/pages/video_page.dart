@@ -9,6 +9,10 @@ import 'package:unity_disleksia_platform/pages/menu_page.dart';
 import 'package:unity_disleksia_platform/pages/video_list_page.dart';
 import 'package:unity_disleksia_platform/provider/video_provider.dart';
 
+import '../utils/result_state.dart';
+import '../widgets/card_list_video.dart';
+import 'detail_video_page.dart';
+
 class VideoPage extends StatefulWidget {
   static const routeName = '/videoPage';
 
@@ -49,25 +53,26 @@ class _VideoPageState extends State<VideoPage> {
                 Padding(
                   padding: const EdgeInsets.only(
                       top: 16, right: 24, left: 24, bottom: 14),
-                  child: Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Expanded(
-                            flex: 2,
-                            child: ElevatedButton.icon(
-                              onPressed: () {
-                                print("You pressed Icon Elevated Button");
-                              },
-                              icon: SvgPicture.asset(
-                                "assets/icons/search.svg",
-                                color: neutral500,
-                                height: 24,
-                                width: 24,
-                              ),
-                              label: Text(
-                                "Pencarian",
+                  child: ChangeNotifierProvider<VideoProvider>(
+                    create: (_) => VideoProvider(apiService: ApiService()),
+                    child: Consumer<VideoProvider>(
+                      builder: (context, state, _) {
+                        if (state.state == ResultState.Loading) {
+                          return Center(child: CircularProgressIndicator());
+                        } else if (state.state == ResultState.HasData) {
+                          List<dynamic> listData = state.result.data;
+
+                          return Column(
+                            children: [
+                              TextField(
+                                onChanged: ((value) {
+                                  final suggestions =
+                                      state.result.data.where((video) {
+                                    final videoTitle = video.name.toLowerCase();
+                                    final input = value.toLowerCase();
+                                    return videoTitle.contains(input);
+                                  }).toList();
+                                }),
                                 style: GoogleFonts.inter(
                                   textStyle: TextStyle(
                                       fontSize: 14,
@@ -75,55 +80,59 @@ class _VideoPageState extends State<VideoPage> {
                                       letterSpacing: -0.6,
                                       color: neutral500),
                                 ),
-                              ),
-                              style: ElevatedButton.styleFrom(
-                                primary: Colors.white,
-                                minimumSize: const Size.fromHeight(50),
-                                shape: new RoundedRectangleBorder(
-                                  borderRadius: new BorderRadius.circular(12.0),
+                                decoration: InputDecoration(
+                                  hintText: "Pencarian",
+                                  hintStyle: GoogleFonts.inter(
+                                    textStyle: TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w400,
+                                        letterSpacing: -0.6,
+                                        color: neutral500),
+                                  ),
+                                  prefixIcon: Icon(Icons.search),
+                                  prefixIconColor: neutral500,
+                                  filled: true,
+                                  fillColor: neutral100,
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
                                 ),
-                                alignment: Alignment.centerLeft,
-                                padding: const EdgeInsets.only(
-                                    left: 16, right: 16, top: 12, bottom: 12),
                               ),
-                            ),
-                          ),
-                          // SizedBox(
-                          //   width: 16,
-                          // ),
-                          // Expanded(
-                          //   flex: 0,
-                          //   child: Container(
-                          //     width: 48,
-                          //     height: 48,
-                          //     decoration: BoxDecoration(
-                          //       borderRadius: BorderRadius.circular(4),
-                          //       color: blue600,
-                          //     ),
-                          //     child: Center(
-                          //       child: SvgPicture.asset(
-                          //         "assets/icons/grid.svg",
-                          //         color: neutral100,
-                          //         height: 32,
-                          //         width: 32,
-                          //       ),
-                          //     ),
-                          //   ),
-                          // ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 32,
-                      ),
-                      ChangeNotifierProvider<VideoProvider>(
-                        create: (_) => VideoProvider(apiService: ApiService()),
-                        child: VideoListPage(),
-                      ),
-                      //  ChangeNotifierProvider<VideoProvider>(
-                      //   create: (_) => VideoProvider(apiService: ApiService()),
-                      //   child: VideoListPage(),
-                      // ),
-                    ],
+                              SizedBox(
+                                height: 24,
+                              ),
+                              ListView.builder(
+                                physics: const ClampingScrollPhysics(),
+                                shrinkWrap: true,
+                                scrollDirection: Axis.vertical,
+                                itemCount: listData.length,
+                                itemBuilder: (context, index) {
+                                  var video = listData[index];
+
+                                  return GestureDetector(
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(8),
+                                      child: CardListVideo(video: video),
+                                    ),
+                                    onTap: () {
+                                      Navigator.pushNamed(
+                                          context, DetailVideoPage.routeName,
+                                          arguments: video);
+                                    },
+                                  );
+                                },
+                              ),
+                            ],
+                          );
+                        } else if (state.state == ResultState.NoData) {
+                          return Center(child: Text(state.message));
+                        } else if (state.state == ResultState.Error) {
+                          return Center(child: Text(state.message));
+                        } else {
+                          return Center(child: Text(''));
+                        }
+                      },
+                    ),
                   ),
                 ),
               ],

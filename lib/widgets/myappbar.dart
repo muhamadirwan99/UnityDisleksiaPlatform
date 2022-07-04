@@ -17,44 +17,21 @@ class MyAppBar extends StatelessWidget {
               "Hallo, Sahabat 👋",
               style: myTextTheme.headline1,
             ),
-            Row(
-              children: [
-                Container(
-                  width: 32,
-                  height: 32,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(4),
-                    color: blue600,
-                  ),
-                  child: Center(
-                    child: SvgPicture.asset(
-                      "assets/icons/notification.svg",
-                      color: neutral100,
-                      height: 16,
-                      width: 16,
-                    ),
-                  ),
-                ),
-                const SizedBox(
+            Container(
+              width: 32,
+              height: 32,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(4),
+                color: blue600,
+              ),
+              child: Center(
+                child: SvgPicture.asset(
+                  "assets/icons/bookmark.svg",
+                  color: neutral100,
+                  height: 16,
                   width: 16,
                 ),
-                Container(
-                  width: 32,
-                  height: 32,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(4),
-                    color: blue600,
-                  ),
-                  child: Center(
-                    child: SvgPicture.asset(
-                      "assets/icons/bookmark.svg",
-                      color: neutral100,
-                      height: 16,
-                      width: 16,
-                    ),
-                  ),
-                ),
-              ],
+              ),
             )
           ],
         ),

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:unity_disleksia_platform/common/style.dart';
 import 'package:unity_disleksia_platform/data/api/api_service.dart';
 import 'package:unity_disleksia_platform/data/model/banner_model.dart';
+import 'package:unity_disleksia_platform/pages/latihan_page.dart';
 import 'package:unity_disleksia_platform/pages/menu_page.dart';
 import 'package:unity_disleksia_platform/pages/video_menu_page.dart';
 import 'package:unity_disleksia_platform/pages/video_page.dart';
@@ -116,7 +118,19 @@ class _HomePageState extends State<HomePage> {
                   child: WebinarRecentPage(),
                 ),
                 SizedBox(
-                  height: 24,
+                  height: 32,
+                ),
+                IconButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, LatihanPage.routeName);
+                  },
+                  icon: Image.asset(
+                    "assets/buttons/button-latihan.png",
+                  ),
+                  iconSize: 68,
+                ),
+                SizedBox(
+                  height: 32,
                 ),
               ],
             ),

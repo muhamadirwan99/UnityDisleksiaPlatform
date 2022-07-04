@@ -6,6 +6,8 @@ import 'package:unity_disleksia_platform/data/model/video_model.dart';
 import 'package:unity_disleksia_platform/data/model/webinar_model.dart';
 import 'package:unity_disleksia_platform/pages/detail_video_page.dart';
 import 'package:unity_disleksia_platform/pages/detail_webinar_page.dart';
+import 'package:unity_disleksia_platform/pages/instruksi_page.dart';
+import 'package:unity_disleksia_platform/pages/latihan_page.dart';
 import 'package:unity_disleksia_platform/pages/menu_page.dart';
 import 'package:unity_disleksia_platform/pages/video_menu_page.dart';
 import 'package:unity_disleksia_platform/pages/video_page.dart';
@@ -49,6 +51,8 @@ class MyApp extends StatelessWidget {
         DetailWebinarPage.routeName: (context) => DetailWebinarPage(
               webinar: ModalRoute.of(context)?.settings.arguments as Webinar,
             ),
+        LatihanPage.routeName: (context) => const LatihanPage(),
+        InstruksiPage.routeName: (context) => const InstruksiPage(),
       },
     );
   }

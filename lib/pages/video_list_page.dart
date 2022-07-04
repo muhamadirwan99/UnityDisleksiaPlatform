@@ -7,20 +7,40 @@ import 'package:unity_disleksia_platform/utils/result_state.dart';
 import 'package:unity_disleksia_platform/widgets/card_grid_video.dart';
 import 'package:unity_disleksia_platform/widgets/card_list_video.dart';
 
-class VideoListPage extends StatelessWidget {
+class VideoListPage extends StatefulWidget {
+  final String value;
+
+  VideoListPage({required this.value});
+
+  @override
+  State<VideoListPage> createState() => _VideoListPageState();
+}
+
+class _VideoListPageState extends State<VideoListPage> {
   Widget _buildVideo() {
     return Consumer<VideoProvider>(
       builder: (context, state, _) {
         if (state.state == ResultState.Loading) {
           return Center(child: CircularProgressIndicator());
         } else if (state.state == ResultState.HasData) {
+          List<dynamic> listData = state.result.data;
+
+          void updateList(value) {
+            setState(() {
+              listData = state.result.data
+                  .where((element) =>
+                      element.name!.toLowerCase().contains(value.toLowerCase()))
+                  .toList();
+            });
+          }
+
           return ListView.builder(
             physics: const ClampingScrollPhysics(),
             shrinkWrap: true,
             scrollDirection: Axis.vertical,
-            itemCount: state.result.data.length,
+            itemCount: listData.length,
             itemBuilder: (context, index) {
-              var video = state.result.data[index];
+              var video = listData[index];
               return GestureDetector(
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8),
