@@ -75,73 +75,55 @@ class _CardModulState extends State<CardModul> {
     return Card(
       child: Padding(
         padding: EdgeInsets.all(8),
-        child: Row(
+        child: Column(
           children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(8),
-              child: Image.network(
-                _baseUrl + widget.video.thumbnail,
-                height: 110,
-                width: 160,
-              ),
+            Text(
+              "Modul " + widget.video.name,
+              style: myTextTheme.headline4,
             ),
             SizedBox(
-              width: 8,
+              height: 8,
             ),
-            Expanded(
-              flex: 2,
-              child: Column(
-                children: [
-                  Text(
-                    "Modul " + widget.video.name,
-                    style: myTextTheme.headline5,
-                  ),
-                  SizedBox(
-                    height: 8,
-                  ),
-                  ElevatedButton(
-                    onPressed: () {
-                      download(_baseUrl + widget.video.modul);
-                    },
-                    child: Center(
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text(
-                            "Unduh",
-                            style: GoogleFonts.inter(
-                              textStyle: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w600,
-                                  letterSpacing: 0,
-                                  color: neutral100),
-                            ),
-                          ),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          SvgPicture.asset(
-                            "assets/icons/send.svg",
-                            color: neutral100,
-                            height: 24,
-                            width: 24,
-                          ),
-                        ],
+            ElevatedButton(
+              onPressed: () {
+                download(_baseUrl + widget.video.modul);
+              },
+              child: Center(
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      "Unduh",
+                      style: GoogleFonts.inter(
+                        textStyle: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w600,
+                            letterSpacing: 0,
+                            color: neutral100),
                       ),
                     ),
-                    style: ElevatedButton.styleFrom(
-                      primary: blue500,
-                      minimumSize: const Size.fromHeight(50),
-                      shape: new RoundedRectangleBorder(
-                        borderRadius: new BorderRadius.circular(8),
-                      ),
-                      alignment: Alignment.centerLeft,
-                      padding: const EdgeInsets.only(top: 8, bottom: 8),
+                    SizedBox(
+                      width: 5,
                     ),
-                  ),
-                ],
+                    SvgPicture.asset(
+                      "assets/icons/send.svg",
+                      color: neutral100,
+                      height: 24,
+                      width: 24,
+                    ),
+                  ],
+                ),
               ),
-            )
+              style: ElevatedButton.styleFrom(
+                primary: blue500,
+                minimumSize: const Size.fromHeight(50),
+                shape: new RoundedRectangleBorder(
+                  borderRadius: new BorderRadius.circular(8),
+                ),
+                alignment: Alignment.centerLeft,
+                padding: const EdgeInsets.only(top: 8, bottom: 8),
+              ),
+            ),
           ],
         ),
       ),

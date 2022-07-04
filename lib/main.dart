@@ -5,6 +5,7 @@ import 'package:unity_disleksia_platform/common/style.dart';
 import 'package:unity_disleksia_platform/data/model/video_model.dart';
 import 'package:unity_disleksia_platform/data/model/webinar_model.dart';
 import 'package:unity_disleksia_platform/pages/angka_page.dart';
+import 'package:unity_disleksia_platform/pages/bookmark_page.dart';
 import 'package:unity_disleksia_platform/pages/detail_video_page.dart';
 import 'package:unity_disleksia_platform/pages/detail_webinar_page.dart';
 import 'package:unity_disleksia_platform/pages/huruf_page.dart';
@@ -57,6 +58,7 @@ class MyApp extends StatelessWidget {
         InstruksiPage.routeName: (context) => const InstruksiPage(),
         AngkaPage.routeName: (context) => const AngkaPage(),
         HurufPage.routeName: (context) => const HurufPage(),
+        BookmarkPage.routeName: (context) => const BookmarkPage(),
       },
     );
   }

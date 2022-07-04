@@ -74,7 +74,7 @@ class AngkaPage extends StatelessWidget {
                       height: 24,
                     ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         CustomButton(value: '1'),
                         CustomButton(value: '2'),
@@ -87,7 +87,7 @@ class AngkaPage extends StatelessWidget {
                       height: 24,
                     ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         CustomButton(value: '6'),
                         CustomButton(value: '7'),

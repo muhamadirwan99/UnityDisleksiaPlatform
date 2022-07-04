@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:unity_disleksia_platform/common/style.dart';
 import 'package:unity_disleksia_platform/data/model/video_model.dart';
 import 'package:unity_disleksia_platform/widgets/card_modul.dart';
@@ -64,10 +65,11 @@ class _DetailVideoPageState extends State<DetailVideoPage> {
           elevation: 0,
           backgroundColor: neutral100,
           leading: IconButton(
-            icon: const Icon(
-              Icons.arrow_back,
+            icon: SvgPicture.asset(
+              "assets/icons/arrow-left.svg",
               color: neutral900,
-              size: 32,
+              height: 32,
+              width: 32,
             ),
             onPressed: () {
               Navigator.pop(context);
@@ -101,7 +103,7 @@ class _DetailVideoPageState extends State<DetailVideoPage> {
                   style: myTextTheme.bodyText1,
                 ),
                 SizedBox(
-                  height: 16,
+                  height: 32,
                 ),
                 CardModul(video: widget.video),
               ],

@@ -10,10 +10,19 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 52,
-      width: 52,
+      height: 58,
+      width: 58,
       child: ElevatedButton(
-        child: Text(value, style: myTextTheme.headline1),
+        child: Text(
+          value,
+          style: GoogleFonts.inter(
+            textStyle: const TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w700,
+                letterSpacing: 0,
+                color: neutral100),
+          ),
+        ),
         style: ElevatedButton.styleFrom(
           primary: blue500,
           shape: new RoundedRectangleBorder(

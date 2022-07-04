@@ -35,10 +35,11 @@ class _VideoPageState extends State<VideoPage> {
         elevation: 0,
         backgroundColor: neutral100,
         leading: IconButton(
-          icon: const Icon(
-            Icons.arrow_back,
+          icon: SvgPicture.asset(
+            "assets/icons/arrow-left.svg",
             color: neutral900,
-            size: 32,
+            height: 32,
+            width: 32,
           ),
           onPressed: () {
             Navigator.pushNamed(context, MenuPage.routeName);

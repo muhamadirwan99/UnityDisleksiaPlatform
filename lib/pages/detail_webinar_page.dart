@@ -5,6 +5,7 @@ import 'package:intl/intl.dart';
 import 'package:unity_disleksia_platform/common/style.dart';
 import 'package:unity_disleksia_platform/data/model/webinar_model.dart';
 import 'package:intl/date_symbol_data_local.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class DetailWebinarPage extends StatefulWidget {
   static const routeName = '/detailWebinarPage';
@@ -32,6 +33,7 @@ class _DetailWebinarPageState extends State<DetailWebinarPage> {
   @override
   Widget build(BuildContext context) {
     const String _baseUrl = 'http://34.128.78.90:5000/';
+    final Uri _url = Uri.parse(widget.webinar.link);
 
     return Scaffold(
       appBar: AppBar(
@@ -43,10 +45,11 @@ class _DetailWebinarPageState extends State<DetailWebinarPage> {
         elevation: 0,
         backgroundColor: neutral100,
         leading: IconButton(
-          icon: const Icon(
-            Icons.arrow_back,
+          icon: SvgPicture.asset(
+            "assets/icons/arrow-left.svg",
             color: neutral900,
-            size: 32,
+            height: 32,
+            width: 32,
           ),
           onPressed: () {
             Navigator.pop(context);
@@ -101,7 +104,9 @@ class _DetailWebinarPageState extends State<DetailWebinarPage> {
                   height: 16,
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    _launchUrl(_url);
+                  },
                   child: Center(
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
@@ -142,5 +147,9 @@ class _DetailWebinarPageState extends State<DetailWebinarPage> {
             )),
       ),
     );
+  }
+
+  void _launchUrl(_url) async {
+    if (!await launchUrl(_url)) throw 'Could not launch $_url';
   }
 }
