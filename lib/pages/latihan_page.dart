@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:unity_disleksia_platform/common/style.dart';
+import 'package:unity_disleksia_platform/pages/angka_page.dart';
+import 'package:unity_disleksia_platform/pages/huruf_page.dart';
 import 'package:unity_disleksia_platform/pages/instruksi_page.dart';
 
 class LatihanPage extends StatelessWidget {
@@ -98,7 +100,9 @@ class LatihanPage extends StatelessWidget {
                           borderRadius: new BorderRadius.circular(16.0),
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, AngkaPage.routeName);
+                      },
                     ),
                     SizedBox(
                       height: 32,
@@ -136,7 +140,9 @@ class LatihanPage extends StatelessWidget {
                           borderRadius: new BorderRadius.circular(16.0),
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, HurufPage.routeName);
+                      },
                     ),
                     SizedBox(
                       height: 32,

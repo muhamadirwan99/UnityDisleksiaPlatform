@@ -4,8 +4,10 @@ import 'package:unity_disleksia_platform/common/navigation.dart';
 import 'package:unity_disleksia_platform/common/style.dart';
 import 'package:unity_disleksia_platform/data/model/video_model.dart';
 import 'package:unity_disleksia_platform/data/model/webinar_model.dart';
+import 'package:unity_disleksia_platform/pages/angka_page.dart';
 import 'package:unity_disleksia_platform/pages/detail_video_page.dart';
 import 'package:unity_disleksia_platform/pages/detail_webinar_page.dart';
+import 'package:unity_disleksia_platform/pages/huruf_page.dart';
 import 'package:unity_disleksia_platform/pages/instruksi_page.dart';
 import 'package:unity_disleksia_platform/pages/latihan_page.dart';
 import 'package:unity_disleksia_platform/pages/menu_page.dart';
@@ -53,6 +55,8 @@ class MyApp extends StatelessWidget {
             ),
         LatihanPage.routeName: (context) => const LatihanPage(),
         InstruksiPage.routeName: (context) => const InstruksiPage(),
+        AngkaPage.routeName: (context) => const AngkaPage(),
+        HurufPage.routeName: (context) => const HurufPage(),
       },
     );
   }
