@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:unity_disleksia_platform/common/style.dart';
-import 'package:unity_disleksia_platform/widgets/custom_button.dart';
+import 'package:unity_disleksia_platform/widgets/huruf_button.dart';
 
 class HurufPage extends StatelessWidget {
   static const routeName = '/hurufPage';
@@ -58,8 +58,8 @@ class HurufPage extends StatelessWidget {
               decoration: new BoxDecoration(
                 color: neutral100,
                 borderRadius: new BorderRadius.only(
-                  topLeft: const Radius.circular(40.0),
-                  topRight: const Radius.circular(40.0),
+                  topLeft: const Radius.circular(32),
+                  topRight: const Radius.circular(32),
                 ),
               ),
               child: Padding(
@@ -76,11 +76,11 @@ class HurufPage extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        CustomButton(value: 'A'),
-                        CustomButton(value: 'B'),
-                        CustomButton(value: 'C'),
-                        CustomButton(value: 'D'),
-                        CustomButton(value: 'E'),
+                        HurufButton(value: 'A'),
+                        HurufButton(value: 'B'),
+                        HurufButton(value: 'C'),
+                        HurufButton(value: 'D'),
+                        HurufButton(value: 'E'),
                       ],
                     ),
                     SizedBox(
@@ -89,11 +89,11 @@ class HurufPage extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        CustomButton(value: 'F'),
-                        CustomButton(value: 'G'),
-                        CustomButton(value: 'H'),
-                        CustomButton(value: 'I'),
-                        CustomButton(value: 'J'),
+                        HurufButton(value: 'F'),
+                        HurufButton(value: 'G'),
+                        HurufButton(value: 'H'),
+                        HurufButton(value: 'I'),
+                        HurufButton(value: 'J'),
                       ],
                     ),
                     SizedBox(
@@ -102,11 +102,11 @@ class HurufPage extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        CustomButton(value: 'K'),
-                        CustomButton(value: 'L'),
-                        CustomButton(value: 'M'),
-                        CustomButton(value: 'N'),
-                        CustomButton(value: 'O'),
+                        HurufButton(value: 'K'),
+                        HurufButton(value: 'L'),
+                        HurufButton(value: 'M'),
+                        HurufButton(value: 'N'),
+                        HurufButton(value: 'O'),
                       ],
                     ),
                     SizedBox(
@@ -115,11 +115,11 @@ class HurufPage extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        CustomButton(value: 'P'),
-                        CustomButton(value: 'Q'),
-                        CustomButton(value: 'R'),
-                        CustomButton(value: 'S'),
-                        CustomButton(value: 'T'),
+                        HurufButton(value: 'P'),
+                        HurufButton(value: 'Q'),
+                        HurufButton(value: 'R'),
+                        HurufButton(value: 'S'),
+                        HurufButton(value: 'T'),
                       ],
                     ),
                     SizedBox(
@@ -128,11 +128,11 @@ class HurufPage extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        CustomButton(value: 'U'),
-                        CustomButton(value: 'V'),
-                        CustomButton(value: 'W'),
-                        CustomButton(value: 'X'),
-                        CustomButton(value: 'Y'),
+                        HurufButton(value: 'U'),
+                        HurufButton(value: 'V'),
+                        HurufButton(value: 'W'),
+                        HurufButton(value: 'X'),
+                        HurufButton(value: 'Y'),
                       ],
                     ),
                     SizedBox(
@@ -140,7 +140,7 @@ class HurufPage extends StatelessWidget {
                     ),
                     Container(
                         alignment: Alignment.centerLeft,
-                        child: CustomButton(value: 'Z')),
+                        child: HurufButton(value: 'Z')),
                   ],
                 ),
               ),

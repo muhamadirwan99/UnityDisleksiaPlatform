@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:unity_disleksia_platform/common/style.dart';
+import 'package:unity_disleksia_platform/pages/latihan_huruf_page.dart';
 
-class CustomButton extends StatelessWidget {
+class HurufButton extends StatelessWidget {
   final String value;
 
-  const CustomButton({required this.value});
+  const HurufButton({required this.value});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +30,10 @@ class CustomButton extends StatelessWidget {
             borderRadius: new BorderRadius.circular(8),
           ),
         ),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, LatihanHurufPage.routeName,
+              arguments: value);
+        },
       ),
     );
   }

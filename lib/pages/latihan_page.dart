@@ -59,8 +59,8 @@ class LatihanPage extends StatelessWidget {
               decoration: new BoxDecoration(
                 color: neutral100,
                 borderRadius: new BorderRadius.only(
-                  topLeft: const Radius.circular(40.0),
-                  topRight: const Radius.circular(40.0),
+                  topLeft: const Radius.circular(32),
+                  topRight: const Radius.circular(32),
                 ),
               ),
               child: Padding(

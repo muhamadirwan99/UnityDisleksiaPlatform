@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:unity_disleksia_platform/common/style.dart';
-import 'package:unity_disleksia_platform/widgets/custom_button.dart';
+import 'package:unity_disleksia_platform/widgets/angka_button.dart';
+import 'package:unity_disleksia_platform/widgets/huruf_button.dart';
 
 class AngkaPage extends StatelessWidget {
   static const routeName = '/angkaPage';
@@ -58,8 +59,8 @@ class AngkaPage extends StatelessWidget {
               decoration: new BoxDecoration(
                 color: neutral100,
                 borderRadius: new BorderRadius.only(
-                  topLeft: const Radius.circular(40.0),
-                  topRight: const Radius.circular(40.0),
+                  topLeft: const Radius.circular(32),
+                  topRight: const Radius.circular(32),
                 ),
               ),
               child: Padding(
@@ -76,11 +77,11 @@ class AngkaPage extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        CustomButton(value: '1'),
-                        CustomButton(value: '2'),
-                        CustomButton(value: '3'),
-                        CustomButton(value: '4'),
-                        CustomButton(value: '5'),
+                        AngkaButton(value: '1'),
+                        AngkaButton(value: '2'),
+                        AngkaButton(value: '3'),
+                        AngkaButton(value: '4'),
+                        AngkaButton(value: '5'),
                       ],
                     ),
                     SizedBox(
@@ -89,11 +90,11 @@ class AngkaPage extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        CustomButton(value: '6'),
-                        CustomButton(value: '7'),
-                        CustomButton(value: '8'),
-                        CustomButton(value: '9'),
-                        CustomButton(value: '10'),
+                        AngkaButton(value: '6'),
+                        AngkaButton(value: '7'),
+                        AngkaButton(value: '8'),
+                        AngkaButton(value: '9'),
+                        AngkaButton(value: '10'),
                       ],
                     )
                   ],
