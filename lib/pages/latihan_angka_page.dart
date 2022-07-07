@@ -86,7 +86,7 @@ class _LatihanAngkaPageState extends State<LatihanAngkaPage> {
         backgroundColor: blue500,
         leading: IconButton(
           icon: SvgPicture.asset(
-            "assets/icons/nav.svg",
+            "assets/icons/arrow-left.svg",
             color: neutral100,
             height: 32,
             width: 32,

@@ -14,6 +14,7 @@ import 'package:unity_disleksia_platform/pages/latihan_angka_page.dart';
 import 'package:unity_disleksia_platform/pages/latihan_huruf_page.dart';
 import 'package:unity_disleksia_platform/pages/latihan_page.dart';
 import 'package:unity_disleksia_platform/pages/menu_page.dart';
+import 'package:unity_disleksia_platform/pages/tips_page.dart';
 import 'package:unity_disleksia_platform/pages/video_menu_page.dart';
 import 'package:unity_disleksia_platform/pages/video_page.dart';
 import 'package:unity_disleksia_platform/pages/webinar_menu_page.dart';
@@ -67,6 +68,7 @@ class MyApp extends StatelessWidget {
         LatihanAngkaPage.routeName: (context) => LatihanAngkaPage(
               value: ModalRoute.of(context)?.settings.arguments as String,
             ),
+        TipsPage.routeName: (context) => const TipsPage(),
       },
     );
   }

@@ -69,7 +69,7 @@ class _InstruksiPageState extends State<InstruksiPage> {
             backgroundColor: blue500,
             leading: IconButton(
               icon: SvgPicture.asset(
-                "assets/icons/nav.svg",
+                "assets/icons/arrow-left.svg",
                 color: neutral100,
                 height: 32,
                 width: 32,

@@ -30,7 +30,7 @@ class LatihanPage extends StatelessWidget {
         backgroundColor: blue500,
         leading: IconButton(
           icon: SvgPicture.asset(
-            "assets/icons/nav.svg",
+            "assets/icons/arrow-left.svg",
             color: neutral100,
             height: 32,
             width: 32,
@@ -46,9 +46,49 @@ class LatihanPage extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.only(left: 24, right: 24, top: 24),
-              child: SvgPicture.asset(
-                "assets/illustrations/latihanhome.svg",
-                width: 380,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    flex: 2,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Hallo, Sahabat 👋", // Headline 2
+                          style: GoogleFonts.inter(
+                            textStyle: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w500,
+                                letterSpacing: -0.8,
+                                color: neutral100),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 6,
+                        ),
+                        Text(
+                          "Ayo kita bermain sambil belajar ",
+                          style: GoogleFonts.inter(
+                            textStyle: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w400,
+                                letterSpacing: -0.5,
+                                color: neutral100),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    flex: 0,
+                    child: SvgPicture.asset(
+                      "assets/illustrations/latihanhome.svg",
+                      width: 142,
+                      height: 134,
+                    ),
+                  ),
+                ],
               ),
             ),
             SizedBox(

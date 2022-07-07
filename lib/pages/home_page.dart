@@ -8,6 +8,7 @@ import 'package:unity_disleksia_platform/data/api/api_service.dart';
 import 'package:unity_disleksia_platform/data/model/banner_model.dart';
 import 'package:unity_disleksia_platform/pages/latihan_page.dart';
 import 'package:unity_disleksia_platform/pages/menu_page.dart';
+import 'package:unity_disleksia_platform/pages/tips_page.dart';
 import 'package:unity_disleksia_platform/pages/video_menu_page.dart';
 import 'package:unity_disleksia_platform/pages/video_page.dart';
 import 'package:unity_disleksia_platform/pages/video_recent_page.dart';
@@ -289,7 +290,7 @@ class _HomePageState extends State<HomePage> {
                       padding: EdgeInsets.zero,
                     ),
                     onPressed: () {
-                      Navigator.pushNamed(context, LatihanPage.routeName);
+                      Navigator.pushNamed(context, TipsPage.routeName);
                     },
                   ),
                 ),

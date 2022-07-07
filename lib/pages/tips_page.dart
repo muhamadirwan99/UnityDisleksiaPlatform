@@ -11,6 +11,8 @@ import 'package:unity_disleksia_platform/utils/result_state.dart';
 import 'package:unity_disleksia_platform/widgets/list_tips.dart';
 
 class TipsPage extends StatelessWidget {
+  static const routeName = '/tipsPage';
+
   const TipsPage({Key? key}) : super(key: key);
 
   @override
@@ -31,7 +33,9 @@ class TipsPage extends StatelessWidget {
             height: 32,
             width: 32,
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
         ),
       ),
       body: TipsList(),
