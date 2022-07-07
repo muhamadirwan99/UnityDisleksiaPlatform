@@ -27,7 +27,7 @@ class MyFlexibleAppBar extends StatelessWidget {
                     padding: const EdgeInsets.only(bottom: 24),
                     child: Container(
                       child: Text(
-                        "Ayo kita mulai belajar",
+                        "Ayo kita mulai belajar", //headline 5
                         style: GoogleFonts.inter(
                           textStyle: TextStyle(
                               fontSize: 16,

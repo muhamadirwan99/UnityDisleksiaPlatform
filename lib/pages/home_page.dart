@@ -15,6 +15,7 @@ import 'package:unity_disleksia_platform/pages/webinar_menu_page.dart';
 import 'package:unity_disleksia_platform/pages/webinar_recent_page.dart';
 import 'package:unity_disleksia_platform/provider/video_recent_provider.dart';
 import 'package:unity_disleksia_platform/provider/webinar_provider.dart';
+import 'package:unity_disleksia_platform/provider/webinar_recent_provider.dart';
 import 'package:unity_disleksia_platform/widgets/myappbar.dart';
 import 'package:unity_disleksia_platform/widgets/myflexible_appbar.dart';
 
@@ -56,78 +57,241 @@ class _HomePageState extends State<HomePage> {
                 Banner(),
                 Padding(
                   padding: const EdgeInsets.only(top: 24, right: 24, left: 24),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  child: Column(
                     children: [
-                      Text(
-                        "Video Terbaru 🔥",
-                        style: myTextTheme.headline3,
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, VideoMenuPage.routeName);
-                        },
-                        child: Text(
-                          "Lainnya",
-                          style: GoogleFonts.inter(
-                            textStyle: const TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
-                                letterSpacing: -0.5,
-                                color: blue500),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Video Pembelajaran 🔥",
+                            style: myTextTheme.headline4,
                           ),
+                          SizedBox(
+                            child: TextButton(
+                              onPressed: () {
+                                Navigator.pushNamed(
+                                    context, VideoMenuPage.routeName);
+                              },
+                              child: Text(
+                                "Lainnya",
+                                style: GoogleFonts.inter(
+                                  textStyle: const TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w600,
+                                      letterSpacing: -0.5,
+                                      color: blue500),
+                                ),
+                              ),
+                              style: TextButton.styleFrom(
+                                minimumSize: Size.zero,
+                                padding: EdgeInsets.zero,
+                                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 4,
+                      ),
+                      Container(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          "Untuk Adik Belajar",
+                          style: myTextTheme.bodyText2,
                         ),
-                      )
+                      ),
                     ],
                   ),
+                ),
+                SizedBox(
+                  height: 24,
                 ),
                 ChangeNotifierProvider<VideoRecentProvider>(
                   create: (_) => VideoRecentProvider(apiService: ApiService()),
                   child: VideoRecentPage(),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 24, right: 24, left: 24),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "Webinar 📚",
-                        style: myTextTheme.headline3,
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          Navigator.pushNamed(
-                              context, WebinarMenuPage.routeName);
-                        },
-                        child: Text(
-                          "Lainnya",
-                          style: GoogleFonts.inter(
-                            textStyle: const TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
-                                letterSpacing: -0.5,
-                                color: blue500),
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
+                SizedBox(
+                  height: 32,
                 ),
-                ChangeNotifierProvider<WebinarProvider>(
-                  create: (_) => WebinarProvider(apiService: ApiService()),
-                  child: WebinarRecentPage(),
+                Padding(
+                  padding: const EdgeInsets.only(right: 24, left: 24),
+                  child: ElevatedButton(
+                    child: Padding(
+                      padding: EdgeInsets.all(16),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  Text(
+                                    "Ayo Latihan", //headline 3
+                                    style: GoogleFonts.inter(
+                                      textStyle: TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.w500,
+                                          letterSpacing: -0.8,
+                                          color: neutral100),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 16,
+                                  ),
+                                  Image.asset(
+                                    "assets/icons/icon-latihan.png",
+                                    width: 30.03,
+                                    height: 29,
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 4,
+                              ),
+                              Text(
+                                "Belajar Menulis Huruf dan Angka",
+                                style: myTextTheme.bodyText2,
+                              ),
+                            ],
+                          ),
+                          SvgPicture.asset(
+                            "assets/icons/chevron-right.svg",
+                            color: neutral100,
+                            height: 32,
+                            width: 32,
+                          ),
+                        ],
+                      ),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      primary: blue500,
+                      shape: new RoundedRectangleBorder(
+                        borderRadius: new BorderRadius.circular(8),
+                      ),
+                      minimumSize: Size.zero,
+                      padding: EdgeInsets.zero,
+                    ),
+                    onPressed: () {
+                      Navigator.pushNamed(context, LatihanPage.routeName);
+                    },
+                  ),
                 ),
                 SizedBox(
                   height: 32,
                 ),
-                IconButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, LatihanPage.routeName);
-                  },
-                  icon: Image.asset(
-                    "assets/buttons/button-latihan.png",
+                Padding(
+                  padding: const EdgeInsets.only(top: 24, right: 24, left: 24),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Webinar 📚",
+                            style: myTextTheme.headline4,
+                          ),
+                          SizedBox(
+                            child: TextButton(
+                              onPressed: () {
+                                Navigator.pushNamed(
+                                    context, WebinarMenuPage.routeName);
+                              },
+                              child: Text(
+                                "Lainnya",
+                                style: GoogleFonts.inter(
+                                  textStyle: const TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w600,
+                                      letterSpacing: -0.5,
+                                      color: blue500),
+                                ),
+                              ),
+                              style: TextButton.styleFrom(
+                                minimumSize: Size.zero,
+                                padding: EdgeInsets.zero,
+                                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 4,
+                      ),
+                      Container(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          "Untuk Ayah & Bunda Belajar",
+                          style: myTextTheme.bodyText2,
+                        ),
+                      ),
+                    ],
                   ),
-                  iconSize: 68,
+                ),
+                const SizedBox(
+                  height: 24,
+                ),
+                ChangeNotifierProvider<WebinarRecentProvider>(
+                  create: (_) =>
+                      WebinarRecentProvider(apiService: ApiService()),
+                  child: WebinarRecentPage(),
+                ),
+                const SizedBox(
+                  height: 32,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 24, left: 24),
+                  child: ElevatedButton(
+                    child: Padding(
+                      padding: EdgeInsets.all(16),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Kiat Membimbing ✨", //headline 3
+                                style: GoogleFonts.inter(
+                                  textStyle: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w500,
+                                      letterSpacing: -0.8,
+                                      color: neutral100),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 4,
+                              ),
+                              Text(
+                                "Untuk Ayah & Bunda Menemani Adik Belajar",
+                                style: myTextTheme.bodyText2,
+                              ),
+                            ],
+                          ),
+                          SvgPicture.asset(
+                            "assets/icons/chevron-right.svg",
+                            color: neutral100,
+                            height: 32,
+                            width: 32,
+                          ),
+                        ],
+                      ),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      primary: blue500,
+                      shape: new RoundedRectangleBorder(
+                        borderRadius: new BorderRadius.circular(8),
+                      ),
+                      minimumSize: Size.zero,
+                      padding: EdgeInsets.zero,
+                    ),
+                    onPressed: () {
+                      Navigator.pushNamed(context, LatihanPage.routeName);
+                    },
+                  ),
                 ),
                 SizedBox(
                   height: 32,

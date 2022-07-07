@@ -13,8 +13,12 @@ class CardGridVideo extends StatelessWidget {
   Widget build(BuildContext context) {
     const String _baseUrl = 'http://34.128.78.90:5000/';
     return Container(
-      width: 200,
+      width: 182,
       child: Card(
+        shape: RoundedRectangleBorder(
+          side: BorderSide(color: neutral300, width: 1),
+          borderRadius: BorderRadius.circular(8),
+        ),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
@@ -56,7 +60,6 @@ class CardGridVideo extends StatelessWidget {
             ],
           ),
         ),
-        elevation: 2,
       ),
     );
   }

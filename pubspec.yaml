@@ -45,6 +45,7 @@ dependencies:
   path_provider:
   url_launcher: ^6.1.4
   flutter_colorpicker: ^1.0.3
+  getwidget: ^2.0.4
 
 dev_dependencies:
   flutter_test:
