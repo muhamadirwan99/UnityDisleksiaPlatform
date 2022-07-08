@@ -46,6 +46,7 @@ dependencies:
   url_launcher: ^6.1.4
   flutter_colorpicker: ^1.0.3
   getwidget: ^2.0.4
+  splash_screen_view: ^3.0.0
 
 dev_dependencies:
   flutter_test:

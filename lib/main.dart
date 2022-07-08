@@ -14,6 +14,7 @@ import 'package:unity_disleksia_platform/pages/latihan_angka_page.dart';
 import 'package:unity_disleksia_platform/pages/latihan_huruf_page.dart';
 import 'package:unity_disleksia_platform/pages/latihan_page.dart';
 import 'package:unity_disleksia_platform/pages/menu_page.dart';
+import 'package:unity_disleksia_platform/pages/splash_page.dart';
 import 'package:unity_disleksia_platform/pages/tips_page.dart';
 import 'package:unity_disleksia_platform/pages/video_menu_page.dart';
 import 'package:unity_disleksia_platform/pages/video_page.dart';
@@ -43,9 +44,10 @@ class MyApp extends StatelessWidget {
         ),
         textTheme: myTextTheme,
       ),
-      initialRoute: MenuPage.routeName,
+      initialRoute: SplashPage.routeName,
       navigatorKey: navigatorKey,
       routes: {
+        SplashPage.routeName: (context) => const SplashPage(),
         MenuPage.routeName: (context) => const MenuPage(),
         VideoPage.routeName: (context) => const VideoPage(),
         VideoMenuPage.routeName: (context) => const VideoMenuPage(),
