@@ -134,14 +134,17 @@ class _LatihanHurufPageState extends State<LatihanHurufPage> {
                         style: myTextTheme.headline3,
                       ),
                     ),
-                    Text(
-                      widget.value,
-                      style: GoogleFonts.ralewayDots(
-                        textStyle: const TextStyle(
-                            fontSize: 200,
-                            fontWeight: FontWeight.w100,
-                            letterSpacing: -0.3,
-                            color: neutral900),
+                    Expanded(
+                      flex: 0,
+                      child: Text(
+                        widget.value,
+                        style: GoogleFonts.ralewayDots(
+                          textStyle: const TextStyle(
+                              fontSize: 200,
+                              fontWeight: FontWeight.w100,
+                              letterSpacing: -0.3,
+                              color: neutral900),
+                        ),
                       ),
                     ),
                   ],

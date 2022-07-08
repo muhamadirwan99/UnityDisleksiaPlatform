@@ -135,7 +135,7 @@ class _LatihanAngkaPageState extends State<LatihanAngkaPage> {
                       ),
                     ),
                     Expanded(
-                      flex: 1,
+                      flex: 0,
                       child: Text(
                         widget.value,
                         style: GoogleFonts.ralewayDots(

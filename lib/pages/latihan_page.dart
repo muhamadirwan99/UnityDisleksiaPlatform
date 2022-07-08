@@ -5,6 +5,7 @@ import 'package:unity_disleksia_platform/common/style.dart';
 import 'package:unity_disleksia_platform/pages/angka_page.dart';
 import 'package:unity_disleksia_platform/pages/huruf_page.dart';
 import 'package:unity_disleksia_platform/pages/instruksi_page.dart';
+import 'package:unity_disleksia_platform/pages/menu_page.dart';
 
 class LatihanPage extends StatelessWidget {
   static const routeName = '/latihanPage';
@@ -36,7 +37,7 @@ class LatihanPage extends StatelessWidget {
             width: 32,
           ),
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.pushNamed(context, MenuPage.routeName);
           },
         ),
       ),
