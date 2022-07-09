@@ -12,17 +12,22 @@ class CardListVideo extends StatelessWidget {
   Widget build(BuildContext context) {
     const String _baseUrl = 'http://34.128.78.90:5000/';
     return Card(
+      shape: RoundedRectangleBorder(
+        side: BorderSide(color: neutral300, width: 1),
+        borderRadius: BorderRadius.circular(8),
+      ),
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(12),
         child: Row(
           children: [
             Container(
-              height: 110,
+              height: 91,
               width: 160,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(8),
-                child: Image.network(
-                  _baseUrl + video.thumbnail,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(4)),
+                image: DecorationImage(
+                  fit: BoxFit.fill,
+                  image: NetworkImage(_baseUrl + video.thumbnail),
                 ),
               ),
             ),
@@ -43,15 +48,6 @@ class CardListVideo extends StatelessWidget {
                           overflow: TextOverflow.ellipsis,
                         ),
                       ),
-                      // Expanded(
-                      //   flex: 0,
-                      //   child: SvgPicture.asset(
-                      //     "assets/icons/bookmark-outline.svg",
-                      //     color: neutral900,
-                      //     height: 24,
-                      //     width: 24,
-                      //   ),
-                      // ),
                     ],
                   ),
                   SizedBox(height: 4),
@@ -73,7 +69,6 @@ class CardListVideo extends StatelessWidget {
           ],
         ),
       ),
-      elevation: 3,
     );
   }
 }

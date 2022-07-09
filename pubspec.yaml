@@ -47,6 +47,7 @@ dependencies:
   flutter_colorpicker: ^1.0.3
   getwidget: ^2.0.4
   splash_screen_view: ^3.0.0
+  sqflite: ^2.0.3
 
 dev_dependencies:
   flutter_test:

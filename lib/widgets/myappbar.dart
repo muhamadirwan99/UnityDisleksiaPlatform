@@ -31,7 +31,7 @@ class MyAppBar extends StatelessWidget {
                 ),
                 child: Center(
                   child: SvgPicture.asset(
-                    "assets/icons/bookmark.svg",
+                    "assets/icons/bookmark-variation.svg",
                     color: neutral100,
                     height: 16,
                     width: 16,

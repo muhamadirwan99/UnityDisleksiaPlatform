@@ -47,4 +47,15 @@ class Video {
         updatedAt: DateTime.parse(json["updatedAt"]),
         id: json["id"],
       );
+
+  Map<String, dynamic> toJson() => {
+        "name": name,
+        "idYt": idYt,
+        "desc": desc,
+        "thumbnail": thumbnail,
+        "modul": modul,
+        "createdAt": createdAt.toIso8601String(),
+        "updatedAt": updatedAt.toIso8601String(),
+        "id": id,
+      };
 }
