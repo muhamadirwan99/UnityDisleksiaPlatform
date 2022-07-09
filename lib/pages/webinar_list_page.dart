@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:unity_disleksia_platform/common/style.dart';
 import 'package:unity_disleksia_platform/pages/detail_webinar_page.dart';
 import 'package:unity_disleksia_platform/provider/webinar_provider.dart';
 import 'package:unity_disleksia_platform/utils/result_state.dart';
@@ -23,7 +24,20 @@ class WebinarListPage extends StatelessWidget {
               return GestureDetector(
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8),
-                  child: CardListWebinar(webinar: webinar),
+                  child: Padding(
+                    padding: const EdgeInsets.only(bottom: 16),
+                    child: Column(
+                      children: [
+                        CardListWebinar(webinar: webinar),
+                        SizedBox(
+                          height: 16,
+                        ),
+                        const Divider(
+                          color: neutral200,
+                        )
+                      ],
+                    ),
+                  ),
                 ),
                 onTap: () {
                   Navigator.pushNamed(context, DetailWebinarPage.routeName,

@@ -30,95 +30,53 @@ class _CardListWebinarState extends State<CardListWebinar> {
   @override
   Widget build(BuildContext context) {
     const String _baseUrl = 'http://34.128.78.90:5000/';
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Row(
-          children: [
-            Expanded(
-              flex: 0,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(24),
-                child: Image.network(
-                  _baseUrl + widget.webinar.thumbnail,
-                  width: 110,
-                  height: 110,
+    return Container(
+      height: 85,
+      width: 380,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Expanded(
+            flex: 2,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  alignment: Alignment.topLeft,
+                  child: Text(
+                    widget.webinar.name,
+                    style: myTextTheme.headline5,
+                  ),
+                ),
+                Container(
+                    alignment: Alignment.bottomLeft,
+                    child: Text(
+                      dateFormat.format(widget.webinar.date),
+                      style: myTextTheme.subtitle1,
+                    )),
+              ],
+            ),
+          ),
+          SizedBox(
+            width: 16,
+          ),
+          Expanded(
+            flex: 0,
+            child: Container(
+              height: 85,
+              width: 85,
+              alignment: Alignment.topRight,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(4)),
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: NetworkImage(_baseUrl + widget.webinar.thumbnail),
                 ),
               ),
             ),
-            const SizedBox(width: 8),
-            Expanded(
-              flex: 2,
-              child: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Expanded(
-                        flex: 1,
-                        child: Text(
-                          widget.webinar.name,
-                          style: myTextTheme.headline5,
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                      ),
-                      // Expanded(
-                      //   flex: 0,
-                      //   child: SvgPicture.asset(
-                      //     "assets/icons/bookmark-outline.svg",
-                      //     color: neutral900,
-                      //     height: 24,
-                      //     width: 24,
-                      //   ),
-                      // ),
-                    ],
-                  ),
-                  SizedBox(height: 8),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      SvgPicture.asset(
-                        "assets/icons/calendar.svg",
-                        color: blue900,
-                        height: 16,
-                        width: 16,
-                      ),
-                      const SizedBox(width: 8),
-                      Text(
-                        dateFormat.format(widget.webinar.date),
-                        style: GoogleFonts.inter(
-                          textStyle: const TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400,
-                              letterSpacing: 0,
-                              color: blue900),
-                        ),
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 8),
-                  Text(
-                    widget.webinar.desc,
-                    style: GoogleFonts.inter(
-                      textStyle: const TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
-                          letterSpacing: 0,
-                          color: neutral700),
-                    ),
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
-      elevation: 3,
     );
   }
 }
