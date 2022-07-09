@@ -6,7 +6,7 @@ import 'package:unity_disleksia_platform/data/model/video_model.dart';
 import 'package:unity_disleksia_platform/widgets/card_modul.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
-import '../provider/database_provider.dart';
+import '../provider/database_video_provider.dart';
 
 class DetailVideoPage extends StatefulWidget {
   static const routeName = '/detailVideoPage';
@@ -54,7 +54,7 @@ class _DetailVideoPageState extends State<DetailVideoPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<DatabaseProvider>(
+    return Consumer<DatabaseVideoProvider>(
       builder: (context, provider, child) {
         return FutureBuilder<bool>(
             future: provider.isBookmarked(widget.video.id),

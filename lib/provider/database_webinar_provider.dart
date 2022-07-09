@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:unity_disleksia_platform/data/model/video_model.dart';
+import 'package:unity_disleksia_platform/data/db/database_webinar_helper.dart';
+import 'package:unity_disleksia_platform/data/model/webinar_model.dart';
 
-import '../data/db/database_helper.dart';
 import '../utils/result_state.dart';
 
-class DatabaseProvider extends ChangeNotifier {
-  final DatabaseHelper databaseHelper;
+class DatabaseWebinarProvider extends ChangeNotifier {
+  final DatabaseWebinarHelper databaseHelper;
 
-  DatabaseProvider({required this.databaseHelper}) {
+  DatabaseWebinarProvider({required this.databaseHelper}) {
     _getBookmarks();
   }
 
@@ -17,8 +17,8 @@ class DatabaseProvider extends ChangeNotifier {
   String _message = '';
   String get message => _message;
 
-  List<Video> _bookmarks = [];
-  List<Video> get bookmarks => _bookmarks;
+  List<Webinar> _bookmarks = [];
+  List<Webinar> get bookmarks => _bookmarks;
 
   void _getBookmarks() async {
     _bookmarks = await databaseHelper.getBookmarks();
@@ -31,9 +31,9 @@ class DatabaseProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void addBookmark(Video video) async {
+  void addBookmark(Webinar webinar) async {
     try {
-      await databaseHelper.insertBookmark(video);
+      await databaseHelper.insertBookmark(webinar);
       _getBookmarks();
     } catch (e) {
       _state = ResultState.Error;
@@ -43,8 +43,8 @@ class DatabaseProvider extends ChangeNotifier {
   }
 
   Future<bool> isBookmarked(String id) async {
-    final bookmarkedArticle = await databaseHelper.getBookmarkById(id);
-    return bookmarkedArticle.isNotEmpty;
+    final bookmarkedVideo = await databaseHelper.getBookmarkById(id);
+    return bookmarkedVideo.isNotEmpty;
   }
 
   void removeBookmark(String id) async {

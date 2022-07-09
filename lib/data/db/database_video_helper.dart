@@ -2,22 +2,22 @@ import 'package:sqflite/sqflite.dart';
 
 import '../model/video_model.dart';
 
-class DatabaseHelper {
-  static DatabaseHelper? _instance;
+class DatabaseVideoHelper {
+  static DatabaseVideoHelper? _instance;
   static Database? _database;
 
-  DatabaseHelper._internal() {
+  DatabaseVideoHelper._internal() {
     _instance = this;
   }
 
-  factory DatabaseHelper() => _instance ?? DatabaseHelper._internal();
+  factory DatabaseVideoHelper() => _instance ?? DatabaseVideoHelper._internal();
 
   static const String _tblBookmark = 'bookmarks';
 
   Future<Database> _initializeDb() async {
     var path = await getDatabasesPath();
     var db = openDatabase(
-      '$path/udp.db',
+      '$path/video.db',
       onCreate: (db, version) async {
         await db.execute('''CREATE TABLE $_tblBookmark (
              name TEXT,

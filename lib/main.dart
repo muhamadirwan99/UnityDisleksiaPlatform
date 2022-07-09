@@ -3,6 +3,7 @@ import 'package:flutter_downloader/flutter_downloader.dart';
 import 'package:provider/provider.dart';
 import 'package:unity_disleksia_platform/common/navigation.dart';
 import 'package:unity_disleksia_platform/common/style.dart';
+import 'package:unity_disleksia_platform/data/db/database_webinar_helper.dart';
 import 'package:unity_disleksia_platform/data/model/video_model.dart';
 import 'package:unity_disleksia_platform/data/model/webinar_model.dart';
 import 'package:unity_disleksia_platform/pages/angka_page.dart';
@@ -21,9 +22,10 @@ import 'package:unity_disleksia_platform/pages/video_menu_page.dart';
 import 'package:unity_disleksia_platform/pages/video_page.dart';
 import 'package:unity_disleksia_platform/pages/webinar_menu_page.dart';
 import 'package:unity_disleksia_platform/pages/webinar_page.dart';
-import 'package:unity_disleksia_platform/provider/database_provider.dart';
+import 'package:unity_disleksia_platform/provider/database_video_provider.dart';
+import 'package:unity_disleksia_platform/provider/database_webinar_provider.dart';
 
-import 'data/db/database_helper.dart';
+import 'data/db/database_video_helper.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -41,7 +43,12 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (_) => DatabaseProvider(databaseHelper: DatabaseHelper()),
+          create: (_) =>
+              DatabaseVideoProvider(databaseHelper: DatabaseVideoHelper()),
+        ),
+        ChangeNotifierProvider(
+          create: (_) =>
+              DatabaseWebinarProvider(databaseHelper: DatabaseWebinarHelper()),
         ),
       ],
       child: MaterialApp(
