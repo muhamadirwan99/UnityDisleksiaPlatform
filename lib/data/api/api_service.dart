@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 import 'package:http/http.dart' as http;
 import 'package:unity_disleksia_platform/data/model/tips_model.dart';
 import 'package:unity_disleksia_platform/data/model/video_model.dart';
@@ -26,12 +27,36 @@ class ApiService {
     }
   }
 
+  Future<VideosResult> listSearchVideos(String name) async {
+    final response =
+        await http.get(Uri.parse(_baseUrl + "videos/search?name=" + name));
+    if (response.statusCode == 200) {
+      return VideosResult.fromJson(json.decode(response.body));
+    } else {
+      throw Exception('Failed to load search videos');
+    }
+  }
+
   Future<WebinarsResult> listWebinars() async {
     final response = await http.get(Uri.parse(_baseUrl + "webinars"));
     if (response.statusCode == 200) {
       return WebinarsResult.fromJson(json.decode(response.body));
     } else {
       throw Exception('Failed to load webinars');
+    }
+  }
+
+  Future<WebinarsResult> listSearchWebinars(String name) async {
+    try {
+      final response =
+          await http.get(Uri.parse(_baseUrl + "webinars/search?name=" + name));
+      if (response.statusCode == 200) {
+        return WebinarsResult.fromJson(json.decode(response.body));
+      } else {
+        throw Exception('Failed to load search webinars');
+      }
+    } on SocketException catch (_) {
+      throw Exception('Not Connected to Internet');
     }
   }
 

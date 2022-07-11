@@ -3,6 +3,7 @@ import 'package:flutter_downloader/flutter_downloader.dart';
 import 'package:provider/provider.dart';
 import 'package:unity_disleksia_platform/common/navigation.dart';
 import 'package:unity_disleksia_platform/common/style.dart';
+import 'package:unity_disleksia_platform/data/api/api_service.dart';
 import 'package:unity_disleksia_platform/data/db/database_webinar_helper.dart';
 import 'package:unity_disleksia_platform/data/model/video_model.dart';
 import 'package:unity_disleksia_platform/data/model/webinar_model.dart';
@@ -16,7 +17,11 @@ import 'package:unity_disleksia_platform/pages/latihan_angka_page.dart';
 import 'package:unity_disleksia_platform/pages/latihan_huruf_page.dart';
 import 'package:unity_disleksia_platform/pages/latihan_page.dart';
 import 'package:unity_disleksia_platform/pages/menu_page.dart';
+import 'package:unity_disleksia_platform/pages/video_search_page.dart';
+import 'package:unity_disleksia_platform/pages/webinar_search_page.dart';
 import 'package:unity_disleksia_platform/pages/splash_page.dart';
+import 'package:unity_disleksia_platform/pages/tabs/video_tab.dart';
+import 'package:unity_disleksia_platform/pages/tabs/webinar_tab.dart';
 import 'package:unity_disleksia_platform/pages/tips_page.dart';
 import 'package:unity_disleksia_platform/pages/video_menu_page.dart';
 import 'package:unity_disleksia_platform/pages/video_page.dart';
@@ -24,6 +29,10 @@ import 'package:unity_disleksia_platform/pages/webinar_menu_page.dart';
 import 'package:unity_disleksia_platform/pages/webinar_page.dart';
 import 'package:unity_disleksia_platform/provider/database_video_provider.dart';
 import 'package:unity_disleksia_platform/provider/database_webinar_provider.dart';
+import 'package:unity_disleksia_platform/provider/search_video_provider.dart';
+import 'package:unity_disleksia_platform/provider/search_webinar_provider.dart';
+import 'package:unity_disleksia_platform/provider/video_provider.dart';
+import 'package:unity_disleksia_platform/provider/webinar_provider.dart';
 
 import 'data/db/database_video_helper.dart';
 
@@ -42,6 +51,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
+        ChangeNotifierProvider<VideoProvider>(
+          create: (_) => VideoProvider(apiService: ApiService()),
+        ),
+        ChangeNotifierProvider<WebinarProvider>(
+          create: (_) => WebinarProvider(apiService: ApiService()),
+        ),
         ChangeNotifierProvider(
           create: (_) =>
               DatabaseVideoProvider(databaseHelper: DatabaseVideoHelper()),
@@ -49,6 +64,12 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (_) =>
               DatabaseWebinarProvider(databaseHelper: DatabaseWebinarHelper()),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => SearchWebinarProvider(apiService: ApiService()),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => SearchVideoProvider(apiService: ApiService()),
         ),
       ],
       child: MaterialApp(
@@ -88,6 +109,8 @@ class MyApp extends StatelessWidget {
                 value: ModalRoute.of(context)?.settings.arguments as String,
               ),
           TipsPage.routeName: (context) => const TipsPage(),
+          WebinarSearchPage.routeName: (context) => WebinarSearchPage(),
+          VideoSearchPage.routeName: (context) => VideoSearchPage(),
         },
       ),
     );

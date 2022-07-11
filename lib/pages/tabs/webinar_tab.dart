@@ -6,9 +6,14 @@ import 'package:unity_disleksia_platform/provider/database_webinar_provider.dart
 import 'package:unity_disleksia_platform/utils/result_state.dart';
 import 'package:unity_disleksia_platform/widgets/card_list_webinar.dart';
 
-class WebinarTab extends StatelessWidget {
+class WebinarTab extends StatefulWidget {
   const WebinarTab({Key? key}) : super(key: key);
 
+  @override
+  State<WebinarTab> createState() => _WebinarTabState();
+}
+
+class _WebinarTabState extends State<WebinarTab> {
   @override
   Widget build(BuildContext context) {
     return Consumer<DatabaseWebinarProvider>(

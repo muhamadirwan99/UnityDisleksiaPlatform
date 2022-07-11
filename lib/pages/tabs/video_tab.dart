@@ -5,9 +5,14 @@ import 'package:unity_disleksia_platform/provider/database_video_provider.dart';
 import 'package:unity_disleksia_platform/utils/result_state.dart';
 import 'package:unity_disleksia_platform/widgets/card_list_video.dart';
 
-class VideoTab extends StatelessWidget {
+class VideoTab extends StatefulWidget {
   const VideoTab({Key? key}) : super(key: key);
 
+  @override
+  State<VideoTab> createState() => _VideoTabState();
+}
+
+class _VideoTabState extends State<VideoTab> {
   @override
   Widget build(BuildContext context) {
     return Consumer<DatabaseVideoProvider>(

@@ -5,7 +5,6 @@ import 'package:unity_disleksia_platform/pages/detail_webinar_page.dart';
 import 'package:unity_disleksia_platform/provider/webinar_provider.dart';
 import 'package:unity_disleksia_platform/utils/result_state.dart';
 import 'package:unity_disleksia_platform/widgets/card_list_webinar.dart';
-import 'package:unity_disleksia_platform/widgets/card_webinar.dart';
 
 class WebinarListPage extends StatelessWidget {
   Widget _buildWebinar() {

@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:unity_disleksia_platform/common/style.dart';
 import 'package:unity_disleksia_platform/data/api/api_service.dart';
 import 'package:unity_disleksia_platform/pages/menu_page.dart';
+import 'package:unity_disleksia_platform/pages/webinar_search_page.dart';
 import 'package:unity_disleksia_platform/pages/webinar_list_page.dart';
 import 'package:unity_disleksia_platform/provider/webinar_provider.dart';
 
@@ -60,7 +61,8 @@ class _WebinarPageState extends State<WebinarPage> {
                               flex: 2,
                               child: ElevatedButton.icon(
                                 onPressed: () {
-                                  print("You pressed Icon Elevated Button");
+                                  Navigator.pushNamed(
+                                      context, WebinarSearchPage.routeName);
                                 },
                                 icon: SvgPicture.asset(
                                   "assets/icons/search.svg",
@@ -101,11 +103,7 @@ class _WebinarPageState extends State<WebinarPage> {
                     Padding(
                       padding: const EdgeInsets.only(
                           right: 24, left: 24, bottom: 14),
-                      child: ChangeNotifierProvider<WebinarProvider>(
-                        create: (_) =>
-                            WebinarProvider(apiService: ApiService()),
-                        child: WebinarListPage(),
-                      ),
+                      child: WebinarListPage(),
                     ),
                   ],
                 ),
