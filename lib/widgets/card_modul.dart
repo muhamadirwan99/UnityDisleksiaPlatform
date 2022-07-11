@@ -79,7 +79,7 @@ class _CardModulState extends State<CardModul> {
           children: [
             Text(
               "Modul " + widget.video.name,
-              style: myTextTheme.headline4,
+              style: myTextTheme.headline5,
             ),
             SizedBox(
               height: 8,
@@ -94,11 +94,11 @@ class _CardModulState extends State<CardModul> {
                   children: [
                     Text(
                       "Unduh",
-                      style: GoogleFonts.inter(
+                      style: GoogleFonts.roboto(
                         textStyle: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w600,
-                            letterSpacing: 0,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                            letterSpacing: 0.1,
                             color: neutral100),
                       ),
                     ),

@@ -2,55 +2,60 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 final TextTheme myTextTheme = TextTheme(
-  headline1: GoogleFonts.inter(
+  headline1: GoogleFonts.roboto(
+    fontSize: 32,
+    fontWeight: FontWeight.w400,
+    letterSpacing: 0,
+  ),
+  headline2: GoogleFonts.roboto(
     fontSize: 28,
-    fontWeight: FontWeight.w700,
-    letterSpacing: -1,
+    fontWeight: FontWeight.w400,
+    letterSpacing: 0,
   ),
-  headline2: GoogleFonts.inter(
-    fontSize: 20,
+  headline3: GoogleFonts.roboto(
+    fontSize: 24,
     fontWeight: FontWeight.w500,
-    letterSpacing: -0.8,
+    letterSpacing: 0,
   ),
-  headline3: GoogleFonts.inter(
+  headline4: GoogleFonts.roboto(
     fontSize: 20,
-    fontWeight: FontWeight.w700,
-    letterSpacing: -0.8,
-  ),
-  headline4: GoogleFonts.inter(
-    fontSize: 16,
-    fontWeight: FontWeight.w600,
-    letterSpacing: -0.5,
-  ),
-  headline5: GoogleFonts.inter(
-    fontSize: 14,
-    fontWeight: FontWeight.w600,
-    letterSpacing: -0.3,
-  ),
-  headline6: GoogleFonts.inter(
-    fontSize: 12,
-    fontWeight: FontWeight.w600,
-    letterSpacing: 0,
-  ),
-  subtitle1: GoogleFonts.inter(
-    fontSize: 12,
     fontWeight: FontWeight.w400,
     letterSpacing: 0,
   ),
-  bodyText1: GoogleFonts.inter(
+  headline5: GoogleFonts.roboto(
     fontSize: 16,
-    fontWeight: FontWeight.w400,
-    letterSpacing: -0.5,
+    fontWeight: FontWeight.w500,
+    letterSpacing: 0.2,
   ),
-  bodyText2: GoogleFonts.inter(
+  headline6: GoogleFonts.roboto(
     fontSize: 14,
-    fontWeight: FontWeight.w400,
-    letterSpacing: -0.3,
+    fontWeight: FontWeight.w500,
+    letterSpacing: 0.1,
   ),
-  caption: GoogleFonts.inter(
+  subtitle1: GoogleFonts.roboto(
+    fontSize: 12,
+    fontWeight: FontWeight.w500,
+    letterSpacing: 0.5,
+  ),
+  subtitle2: GoogleFonts.roboto(
     fontSize: 10,
+    fontWeight: FontWeight.w500,
+    letterSpacing: 0.5,
+  ),
+  bodyText1: GoogleFonts.roboto(
+    fontSize: 16,
     fontWeight: FontWeight.w400,
-    letterSpacing: 0,
+    letterSpacing: 0.5,
+  ),
+  bodyText2: GoogleFonts.roboto(
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    letterSpacing: 0.25,
+  ),
+  caption: GoogleFonts.roboto(
+    fontSize: 12,
+    fontWeight: FontWeight.w400,
+    letterSpacing: 0.4,
   ),
 );
 

@@ -56,11 +56,11 @@ class _InstruksiPageState extends State<InstruksiPage> {
           appBar: AppBar(
             title: Text(
               'Instruksi',
-              style: GoogleFonts.inter(
+              style: GoogleFonts.roboto(
                 textStyle: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w700,
-                    letterSpacing: -0.8,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                    letterSpacing: 0.2,
                     color: neutral100),
               ),
             ),

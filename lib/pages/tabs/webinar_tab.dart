@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:unity_disleksia_platform/common/style.dart';
 import 'package:unity_disleksia_platform/pages/detail_webinar_page.dart';
+import 'package:unity_disleksia_platform/pages/webinar_menu_page.dart';
 import 'package:unity_disleksia_platform/provider/database_webinar_provider.dart';
 import 'package:unity_disleksia_platform/utils/result_state.dart';
 import 'package:unity_disleksia_platform/widgets/card_list_webinar.dart';
@@ -55,7 +58,34 @@ class _WebinarTabState extends State<WebinarTab> {
             },
           );
         } else if (provider.state == ResultState.NoData) {
-          return Center(child: Text(provider.message));
+          return Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SvgPicture.asset(
+                "assets/illustrations/webinar-bookmark-empty.svg",
+              ),
+              TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, WebinarMenuPage.routeName);
+                },
+                child: Text(
+                  "Tambahkan Webinar?",
+                  style: GoogleFonts.roboto(
+                    textStyle: const TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                        letterSpacing: 0.2,
+                        color: blue500),
+                  ),
+                ),
+                style: TextButton.styleFrom(
+                  minimumSize: Size.zero,
+                  padding: EdgeInsets.zero,
+                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                ),
+              ),
+            ],
+          );
         } else if (provider.state == ResultState.Error) {
           return Center(child: Text(provider.message));
         } else {

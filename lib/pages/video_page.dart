@@ -29,8 +29,8 @@ class _VideoPageState extends State<VideoPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Video',
-          style: myTextTheme.headline3,
+          'Video Pembelajaran',
+          style: myTextTheme.headline5,
         ),
         titleTextStyle: const TextStyle(color: neutral100),
         elevation: 0,

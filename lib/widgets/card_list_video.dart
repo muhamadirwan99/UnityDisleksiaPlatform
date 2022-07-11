@@ -43,7 +43,7 @@ class CardListVideo extends StatelessWidget {
                         flex: 1,
                         child: Text(
                           video.name,
-                          style: myTextTheme.headline5,
+                          style: myTextTheme.subtitle1,
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                         ),
@@ -53,11 +53,11 @@ class CardListVideo extends StatelessWidget {
                   SizedBox(height: 4),
                   Text(
                     video.desc,
-                    style: GoogleFonts.inter(
+                    style: GoogleFonts.roboto(
                       textStyle: const TextStyle(
                           fontSize: 12,
                           fontWeight: FontWeight.w400,
-                          letterSpacing: 0,
+                          letterSpacing: 0.4,
                           color: neutral700),
                     ),
                     maxLines: 4,

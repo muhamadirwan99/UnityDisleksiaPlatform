@@ -52,7 +52,7 @@ class _CardListWebinarState extends State<CardListWebinar> {
                     alignment: Alignment.bottomLeft,
                     child: Text(
                       dateFormat.format(widget.webinar.date),
-                      style: myTextTheme.subtitle1,
+                      style: myTextTheme.caption,
                     )),
               ],
             ),

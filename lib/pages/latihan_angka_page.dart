@@ -135,7 +135,7 @@ class _LatihanAngkaPageState extends State<LatihanAngkaPage> {
                       ),
                     ),
                     Expanded(
-                      flex: 0,
+                      flex: 1,
                       child: Text(
                         widget.value,
                         style: GoogleFonts.ralewayDots(
@@ -225,20 +225,12 @@ class _LatihanAngkaPageState extends State<LatihanAngkaPage> {
                         ),
                         onPressed: () {
                           setState(() {
-                            points.removeLast();
+                            if (points.length > 1) {
+                              points.removeLast();
+                            }
                           });
                         },
                       ),
-                      onLongPress: () {
-                        setState(() {
-                          points.removeLast();
-                        });
-                      },
-                      onDoubleTap: () {
-                        setState(() {
-                          points.removeLast();
-                        });
-                      },
                     ),
                     Expanded(
                       child: Slider(

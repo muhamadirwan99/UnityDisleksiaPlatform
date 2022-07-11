@@ -104,7 +104,7 @@ class _DetailWebinarPageState extends State<DetailWebinarPage> {
                         alignment: Alignment.centerLeft,
                         child: Text(
                           widget.webinar.name,
-                          style: myTextTheme.headline2,
+                          style: myTextTheme.headline3,
                         ),
                       ),
                       SizedBox(
@@ -114,11 +114,11 @@ class _DetailWebinarPageState extends State<DetailWebinarPage> {
                         alignment: Alignment.centerLeft,
                         child: Text(
                           dateFormat.format(widget.webinar.date),
-                          style: GoogleFonts.inter(
+                          style: GoogleFonts.roboto(
                             textStyle: const TextStyle(
                                 fontSize: 14,
-                                fontWeight: FontWeight.w600,
-                                letterSpacing: -0.3,
+                                fontWeight: FontWeight.w500,
+                                letterSpacing: 0.1,
                                 color: blue800),
                           ),
                         ),
@@ -143,11 +143,11 @@ class _DetailWebinarPageState extends State<DetailWebinarPage> {
                             children: [
                               Text(
                                 "Daftar",
-                                style: GoogleFonts.inter(
+                                style: GoogleFonts.roboto(
                                   textStyle: TextStyle(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w600,
-                                      letterSpacing: 0,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w500,
+                                      letterSpacing: 0.2,
                                       color: neutral100),
                                 ),
                               ),

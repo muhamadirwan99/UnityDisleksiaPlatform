@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'package:unity_disleksia_platform/pages/detail_webinar_page.dart';
 import 'package:unity_disleksia_platform/provider/webinar_recent_provider.dart';
@@ -35,7 +36,11 @@ class WebinarRecentPage extends StatelessWidget {
             ),
           );
         } else if (state.state == ResultState.NoData) {
-          return Center(child: Text(state.message));
+          return Center(
+            child: SvgPicture.asset(
+              "assets/illustrations/webinar-empty.svg",
+            ),
+          );
         } else if (state.state == ResultState.Error) {
           return Center(child: Text(state.message));
         } else {

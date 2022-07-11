@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'package:unity_disleksia_platform/pages/detail_video_page.dart';
 import 'package:unity_disleksia_platform/provider/video_provider.dart';
@@ -32,7 +33,14 @@ class VideoListPage extends StatelessWidget {
             },
           );
         } else if (state.state == ResultState.NoData) {
-          return Center(child: Text(state.message));
+          return Center(
+            child: Padding(
+              padding: const EdgeInsets.only(top: 180),
+              child: SvgPicture.asset(
+                "assets/illustrations/video-empty.svg",
+              ),
+            ),
+          );
         } else if (state.state == ResultState.Error) {
           return Center(child: Text(state.message));
         } else {

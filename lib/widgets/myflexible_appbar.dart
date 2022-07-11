@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:unity_disleksia_platform/common/style.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:unity_disleksia_platform/pages/video_search_page.dart';
 
 class MyFlexibleAppBar extends StatelessWidget {
   final double appBarHeight = 66.0;
@@ -28,11 +29,11 @@ class MyFlexibleAppBar extends StatelessWidget {
                     child: Container(
                       child: Text(
                         "Ayo kita mulai belajar", //headline 5
-                        style: GoogleFonts.inter(
+                        style: GoogleFonts.roboto(
                           textStyle: TextStyle(
                               fontSize: 16,
-                              fontWeight: FontWeight.w600,
-                              letterSpacing: -0.5,
+                              fontWeight: FontWeight.w500,
+                              letterSpacing: 0.2,
                               color: Colors.white),
                         ),
                       ),
@@ -47,7 +48,7 @@ class MyFlexibleAppBar extends StatelessWidget {
                 child: Container(
                   child: ElevatedButton.icon(
                     onPressed: () {
-                      print("You pressed Icon Elevated Button");
+                      Navigator.pushNamed(context, VideoSearchPage.routeName);
                     },
                     icon: SvgPicture.asset(
                       "assets/icons/search.svg",
@@ -56,8 +57,8 @@ class MyFlexibleAppBar extends StatelessWidget {
                       width: 24,
                     ),
                     label: Text(
-                      "Pencarian",
-                      style: GoogleFonts.inter(
+                      "Cari Video",
+                      style: GoogleFonts.roboto(
                         textStyle: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.w400,

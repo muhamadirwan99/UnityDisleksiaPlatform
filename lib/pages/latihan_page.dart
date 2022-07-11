@@ -18,11 +18,11 @@ class LatihanPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'Latihan',
-          style: GoogleFonts.inter(
+          style: GoogleFonts.roboto(
             textStyle: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w700,
-                letterSpacing: -0.8,
+                fontSize: 16,
+                fontWeight: FontWeight.w500,
+                letterSpacing: 0.2,
                 color: neutral100),
           ),
         ),
@@ -57,11 +57,11 @@ class LatihanPage extends StatelessWidget {
                       children: [
                         Text(
                           "Hallo, Sahabat 👋", // Headline 2
-                          style: GoogleFonts.inter(
+                          style: GoogleFonts.roboto(
                             textStyle: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w500,
-                                letterSpacing: -0.8,
+                                fontSize: 28,
+                                fontWeight: FontWeight.w400,
+                                letterSpacing: 0,
                                 color: neutral100),
                           ),
                         ),
@@ -70,11 +70,11 @@ class LatihanPage extends StatelessWidget {
                         ),
                         Text(
                           "Ayo kita bermain sambil belajar ",
-                          style: GoogleFonts.inter(
+                          style: GoogleFonts.roboto(
                             textStyle: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w400,
-                                letterSpacing: -0.5,
+                                letterSpacing: 0.5,
                                 color: neutral100),
                           ),
                         ),
@@ -82,10 +82,10 @@ class LatihanPage extends StatelessWidget {
                     ),
                   ),
                   Expanded(
-                    flex: 0,
+                    flex: 1,
                     child: SvgPicture.asset(
                       "assets/illustrations/latihanhome.svg",
-                      width: 142,
+                      width: 146,
                       height: 134,
                     ),
                   ),
@@ -122,14 +122,31 @@ class LatihanPage extends StatelessWidget {
                             SizedBox(
                               width: 16,
                             ),
-                            Text(
-                              "Materi Angka",
-                              style: GoogleFonts.inter(
-                                textStyle: TextStyle(
-                                    fontSize: 28,
-                                    fontWeight: FontWeight.w600,
-                                    letterSpacing: -2.1,
-                                    color: neutral100),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "Materi Angka",
+                                    style: GoogleFonts.roboto(
+                                      textStyle: TextStyle(
+                                          fontSize: 24,
+                                          fontWeight: FontWeight.w500,
+                                          letterSpacing: 0,
+                                          color: neutral100),
+                                    ),
+                                  ),
+                                  Text(
+                                    "Belajar Mengenal dan Menulis Angka",
+                                    style: GoogleFonts.roboto(
+                                      textStyle: TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w400,
+                                          letterSpacing: 0.25,
+                                          color: neutral100),
+                                    ),
+                                  ),
+                                ],
                               ),
                             )
                           ],
@@ -162,14 +179,31 @@ class LatihanPage extends StatelessWidget {
                             SizedBox(
                               width: 16,
                             ),
-                            Text(
-                              "Materi Huruf",
-                              style: GoogleFonts.inter(
-                                textStyle: TextStyle(
-                                    fontSize: 28,
-                                    fontWeight: FontWeight.w600,
-                                    letterSpacing: -2.1,
-                                    color: neutral100),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "Materi Huruf",
+                                    style: GoogleFonts.roboto(
+                                      textStyle: TextStyle(
+                                          fontSize: 24,
+                                          fontWeight: FontWeight.w500,
+                                          letterSpacing: 0,
+                                          color: neutral100),
+                                    ),
+                                  ),
+                                  Text(
+                                    "Belajar Mengenal dan Menulis Huruf",
+                                    style: GoogleFonts.roboto(
+                                      textStyle: TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w400,
+                                          letterSpacing: 0.25,
+                                          color: neutral100),
+                                    ),
+                                  ),
+                                ],
                               ),
                             )
                           ],
@@ -202,15 +236,30 @@ class LatihanPage extends StatelessWidget {
                             SizedBox(
                               width: 16,
                             ),
-                            Text(
-                              "Instruksi",
-                              style: GoogleFonts.inter(
-                                textStyle: TextStyle(
-                                    fontSize: 28,
-                                    fontWeight: FontWeight.w600,
-                                    letterSpacing: -2.1,
-                                    color: neutral100),
-                              ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Instruksi",
+                                  style: GoogleFonts.roboto(
+                                    textStyle: TextStyle(
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.w500,
+                                        letterSpacing: 0,
+                                        color: neutral100),
+                                  ),
+                                ),
+                                Text(
+                                  "Informasi cara bermain",
+                                  style: GoogleFonts.roboto(
+                                    textStyle: TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w400,
+                                        letterSpacing: 0.25,
+                                        color: neutral100),
+                                  ),
+                                ),
+                              ],
                             )
                           ],
                         ),

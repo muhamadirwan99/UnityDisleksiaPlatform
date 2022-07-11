@@ -28,8 +28,8 @@ class ApiService {
   }
 
   Future<VideosResult> listSearchVideos(String name) async {
-    final response =
-        await http.get(Uri.parse(_baseUrl + "videos/search?name=" + name));
+    final response = await http
+        .get(Uri.parse(_baseUrl + "videos/search/video?name=" + name));
     if (response.statusCode == 200) {
       return VideosResult.fromJson(json.decode(response.body));
     } else {
@@ -48,8 +48,8 @@ class ApiService {
 
   Future<WebinarsResult> listSearchWebinars(String name) async {
     try {
-      final response =
-          await http.get(Uri.parse(_baseUrl + "webinars/search?name=" + name));
+      final response = await http
+          .get(Uri.parse(_baseUrl + "webinars/search/webinar?name=" + name));
       if (response.statusCode == 200) {
         return WebinarsResult.fromJson(json.decode(response.body));
       } else {

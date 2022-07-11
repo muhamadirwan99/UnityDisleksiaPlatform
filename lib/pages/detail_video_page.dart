@@ -68,7 +68,7 @@ class _DetailVideoPageState extends State<DetailVideoPage> {
                   appBar: AppBar(
                     title: Text(
                       'Detail Video',
-                      style: myTextTheme.headline3,
+                      style: myTextTheme.headline5,
                     ),
                     titleTextStyle: const TextStyle(color: neutral900),
                     elevation: 0,
@@ -125,7 +125,7 @@ class _DetailVideoPageState extends State<DetailVideoPage> {
                             alignment: Alignment.centerLeft,
                             child: Text(
                               widget.video.name,
-                              style: myTextTheme.headline2,
+                              style: myTextTheme.headline3,
                             ),
                           ),
                           SizedBox(

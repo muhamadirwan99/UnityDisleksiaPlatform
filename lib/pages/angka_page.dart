@@ -16,11 +16,11 @@ class AngkaPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'Materi Angka',
-          style: GoogleFonts.inter(
+          style: GoogleFonts.roboto(
             textStyle: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w700,
-                letterSpacing: -0.8,
+                fontSize: 16,
+                fontWeight: FontWeight.w500,
+                letterSpacing: 0.2,
                 color: neutral100),
           ),
         ),
@@ -55,11 +55,11 @@ class AngkaPage extends StatelessWidget {
                       children: [
                         Text(
                           "Hallo, Sahabat 👋", // Headline 2
-                          style: GoogleFonts.inter(
+                          style: GoogleFonts.roboto(
                             textStyle: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w500,
-                                letterSpacing: -0.8,
+                                fontSize: 28,
+                                fontWeight: FontWeight.w400,
+                                letterSpacing: 0,
                                 color: neutral100),
                           ),
                         ),
@@ -68,11 +68,11 @@ class AngkaPage extends StatelessWidget {
                         ),
                         Text(
                           "Ayo kita bermain sambil belajar mengenal angka",
-                          style: GoogleFonts.inter(
+                          style: GoogleFonts.roboto(
                             textStyle: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w400,
-                                letterSpacing: -0.5,
+                                letterSpacing: 0.5,
                                 color: neutral100),
                           ),
                         ),
@@ -80,7 +80,7 @@ class AngkaPage extends StatelessWidget {
                     ),
                   ),
                   Expanded(
-                    flex: 0,
+                    flex: 1,
                     child: SvgPicture.asset(
                       "assets/illustrations/angka.svg",
                       width: 107,

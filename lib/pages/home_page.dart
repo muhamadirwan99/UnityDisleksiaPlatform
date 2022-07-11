@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:unity_disleksia_platform/common/style.dart';
 import 'package:unity_disleksia_platform/data/api/api_service.dart';
 import 'package:unity_disleksia_platform/data/model/banner_model.dart';
+import 'package:unity_disleksia_platform/pages/latihan_menu_page.dart';
 import 'package:unity_disleksia_platform/pages/latihan_page.dart';
 import 'package:unity_disleksia_platform/pages/menu_page.dart';
 import 'package:unity_disleksia_platform/pages/tips_page.dart';
@@ -55,17 +56,16 @@ class _HomePageState extends State<HomePage> {
           SliverList(
             delegate: SliverChildListDelegate(
               <Widget>[
-                Banner(),
                 Padding(
-                  padding: const EdgeInsets.only(top: 24, right: 24, left: 24),
+                  padding: const EdgeInsets.only(top: 32, right: 24, left: 24),
                   child: Column(
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            "Video Pembelajaran 🔥",
-                            style: myTextTheme.headline4,
+                            "Video Pembelajaran 📚",
+                            style: myTextTheme.headline3,
                           ),
                           SizedBox(
                             child: TextButton(
@@ -75,11 +75,11 @@ class _HomePageState extends State<HomePage> {
                               },
                               child: Text(
                                 "Lainnya",
-                                style: GoogleFonts.inter(
+                                style: GoogleFonts.roboto(
                                   textStyle: const TextStyle(
                                       fontSize: 16,
-                                      fontWeight: FontWeight.w600,
-                                      letterSpacing: -0.5,
+                                      fontWeight: FontWeight.w500,
+                                      letterSpacing: 0.2,
                                       color: blue500),
                                 ),
                               ),
@@ -98,7 +98,7 @@ class _HomePageState extends State<HomePage> {
                       Container(
                         alignment: Alignment.centerLeft,
                         child: Text(
-                          "Untuk Adik Belajar",
+                          "Belajar dimanapun dan kapanpun adik mau",
                           style: myTextTheme.bodyText2,
                         ),
                       ),
@@ -130,11 +130,11 @@ class _HomePageState extends State<HomePage> {
                                 children: [
                                   Text(
                                     "Ayo Latihan", //headline 3
-                                    style: GoogleFonts.inter(
+                                    style: GoogleFonts.roboto(
                                       textStyle: TextStyle(
-                                          fontSize: 20,
+                                          fontSize: 24,
                                           fontWeight: FontWeight.w500,
-                                          letterSpacing: -0.8,
+                                          letterSpacing: 0,
                                           color: neutral100),
                                     ),
                                   ),
@@ -153,7 +153,7 @@ class _HomePageState extends State<HomePage> {
                               ),
                               Text(
                                 "Belajar Menulis Huruf dan Angka",
-                                style: myTextTheme.bodyText2,
+                                style: myTextTheme.caption,
                               ),
                             ],
                           ),
@@ -175,7 +175,7 @@ class _HomePageState extends State<HomePage> {
                       padding: EdgeInsets.zero,
                     ),
                     onPressed: () {
-                      Navigator.pushNamed(context, LatihanPage.routeName);
+                      Navigator.pushNamed(context, LatihanMenuPage.routeName);
                     },
                   ),
                 ),
@@ -190,8 +190,8 @@ class _HomePageState extends State<HomePage> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            "Webinar 📚",
-                            style: myTextTheme.headline4,
+                            "Info Webinar 📝",
+                            style: myTextTheme.headline3,
                           ),
                           SizedBox(
                             child: TextButton(
@@ -201,11 +201,11 @@ class _HomePageState extends State<HomePage> {
                               },
                               child: Text(
                                 "Lainnya",
-                                style: GoogleFonts.inter(
+                                style: GoogleFonts.roboto(
                                   textStyle: const TextStyle(
                                       fontSize: 16,
-                                      fontWeight: FontWeight.w600,
-                                      letterSpacing: -0.5,
+                                      fontWeight: FontWeight.w500,
+                                      letterSpacing: 0.2,
                                       color: blue500),
                                 ),
                               ),
@@ -224,7 +224,7 @@ class _HomePageState extends State<HomePage> {
                       Container(
                         alignment: Alignment.centerLeft,
                         child: Text(
-                          "Untuk Ayah & Bunda Belajar",
+                          "Lebih memahami kondisi adik",
                           style: myTextTheme.bodyText2,
                         ),
                       ),
@@ -250,33 +250,39 @@ class _HomePageState extends State<HomePage> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Kiat Membimbing ✨", //headline 3
-                                style: GoogleFonts.inter(
-                                  textStyle: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.w500,
-                                      letterSpacing: -0.8,
-                                      color: neutral100),
+                          Expanded(
+                            flex: 2,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Kiat Membimbing ✨", //headline 3
+                                  style: GoogleFonts.roboto(
+                                    textStyle: TextStyle(
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.w500,
+                                        letterSpacing: 0,
+                                        color: neutral100),
+                                  ),
                                 ),
-                              ),
-                              SizedBox(
-                                height: 4,
-                              ),
-                              Text(
-                                "Untuk Ayah & Bunda Menemani Adik Belajar",
-                                style: myTextTheme.bodyText2,
-                              ),
-                            ],
+                                SizedBox(
+                                  height: 4,
+                                ),
+                                Text(
+                                  "Untuk Ayah & Bunda Menemani Adik Belajar",
+                                  style: myTextTheme.caption,
+                                ),
+                              ],
+                            ),
                           ),
-                          SvgPicture.asset(
-                            "assets/icons/chevron-right.svg",
-                            color: neutral100,
-                            height: 32,
-                            width: 32,
+                          Expanded(
+                            flex: 0,
+                            child: SvgPicture.asset(
+                              "assets/icons/chevron-right.svg",
+                              color: neutral100,
+                              height: 32,
+                              width: 32,
+                            ),
                           ),
                         ],
                       ),

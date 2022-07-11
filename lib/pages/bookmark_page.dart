@@ -37,52 +37,6 @@ class BookmarkPage extends StatelessWidget {
           ),
           body: Column(
             children: [
-              Container(
-                color: blue500,
-                child: Padding(
-                  padding: const EdgeInsets.only(
-                      right: 24, left: 24, bottom: 16, top: 16),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Expanded(
-                        flex: 2,
-                        child: ElevatedButton.icon(
-                          onPressed: () {
-                            print("You pressed Icon Elevated Button");
-                          },
-                          icon: SvgPicture.asset(
-                            "assets/icons/search.svg",
-                            color: neutral500,
-                            height: 24,
-                            width: 24,
-                          ),
-                          label: Text(
-                            "Pencarian",
-                            style: GoogleFonts.inter(
-                              textStyle: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w400,
-                                  letterSpacing: -0.6,
-                                  color: neutral500),
-                            ),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.white,
-                            minimumSize: const Size.fromHeight(50),
-                            shape: new RoundedRectangleBorder(
-                              borderRadius: new BorderRadius.circular(12.0),
-                            ),
-                            alignment: Alignment.centerLeft,
-                            padding: const EdgeInsets.only(
-                                left: 16, right: 16, top: 12, bottom: 12),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
               Material(
                 color: blue500,
                 child: TabBar(
