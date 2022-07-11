@@ -13,11 +13,11 @@ class ListTips extends StatelessWidget {
     return ListTile(
       title: Text(
         tips.name,
-        style: GoogleFonts.inter(
+        style: GoogleFonts.roboto(
           textStyle: TextStyle(
               fontSize: 16,
-              fontWeight: FontWeight.w600,
-              letterSpacing: -0.5,
+              fontWeight: FontWeight.w500,
+              letterSpacing: 0.2,
               color: neutral900),
         ),
       ),

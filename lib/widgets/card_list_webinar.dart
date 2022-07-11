@@ -30,52 +30,56 @@ class _CardListWebinarState extends State<CardListWebinar> {
   @override
   Widget build(BuildContext context) {
     const String _baseUrl = 'http://34.128.78.90:5000/';
-    return Container(
-      height: 85,
-      width: 380,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Expanded(
-            flex: 2,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  alignment: Alignment.topLeft,
-                  child: Text(
-                    widget.webinar.name,
-                    style: myTextTheme.headline5,
-                  ),
-                ),
-                Container(
-                    alignment: Alignment.bottomLeft,
+    return Card(
+      color: neutral100,
+      elevation: 0,
+      child: Container(
+        height: 85,
+        width: 380,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Expanded(
+              flex: 2,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    alignment: Alignment.topLeft,
                     child: Text(
-                      dateFormat.format(widget.webinar.date),
-                      style: myTextTheme.caption,
-                    )),
-              ],
+                      widget.webinar.name,
+                      style: myTextTheme.headline5,
+                    ),
+                  ),
+                  Container(
+                      alignment: Alignment.bottomLeft,
+                      child: Text(
+                        dateFormat.format(widget.webinar.date),
+                        style: myTextTheme.caption,
+                      )),
+                ],
+              ),
             ),
-          ),
-          SizedBox(
-            width: 16,
-          ),
-          Expanded(
-            flex: 0,
-            child: Container(
-              height: 85,
-              width: 85,
-              alignment: Alignment.topRight,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(4)),
-                image: DecorationImage(
-                  fit: BoxFit.cover,
-                  image: NetworkImage(_baseUrl + widget.webinar.thumbnail),
+            SizedBox(
+              width: 16,
+            ),
+            Expanded(
+              flex: 0,
+              child: Container(
+                height: 85,
+                width: 85,
+                alignment: Alignment.topRight,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(4)),
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: NetworkImage(_baseUrl + widget.webinar.thumbnail),
+                  ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

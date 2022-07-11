@@ -148,12 +148,6 @@ class _VideoSearchPageState extends State<VideoSearchPage> {
                                     child: Column(
                                       children: [
                                         CardListVideo(video: video),
-                                        SizedBox(
-                                          height: 16,
-                                        ),
-                                        const Divider(
-                                          color: neutral200,
-                                        )
                                       ],
                                     ),
                                   ),

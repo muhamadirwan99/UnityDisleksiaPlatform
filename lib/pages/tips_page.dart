@@ -21,7 +21,7 @@ class TipsPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'Tips & Trik',
-          style: myTextTheme.headline3,
+          style: myTextTheme.headline5,
         ),
         titleTextStyle: const TextStyle(color: neutral900),
         elevation: 0,
@@ -90,11 +90,11 @@ class TipsList extends StatelessWidget {
             padding: const EdgeInsets.all(24),
             child: Text(
               text,
-              style: GoogleFonts.inter(
+              style: GoogleFonts.roboto(
                 textStyle: TextStyle(
                     fontSize: 20,
-                    fontWeight: FontWeight.w600,
-                    letterSpacing: -0.8,
+                    fontWeight: FontWeight.w400,
+                    letterSpacing: 0,
                     color: neutral100),
               ),
             ),

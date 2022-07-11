@@ -23,7 +23,7 @@ class WebinarRecentPage extends StatelessWidget {
               itemBuilder: (context, index) {
                 var webinar = state.result.data[index];
                 return Padding(
-                  padding: const EdgeInsets.only(bottom: 16),
+                  padding: const EdgeInsets.only(bottom: 24),
                   child: GestureDetector(
                     child: CardRecentWebinar(webinar: webinar),
                     onTap: () {

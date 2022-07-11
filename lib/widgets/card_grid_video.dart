@@ -42,21 +42,6 @@ class CardGridVideo extends StatelessWidget {
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
               ),
-              const SizedBox(
-                height: 8,
-              ),
-              Text(
-                video.desc,
-                style: GoogleFonts.inter(
-                  textStyle: const TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.w400,
-                      letterSpacing: 0,
-                      color: neutral700),
-                ),
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-              ),
             ],
           ),
         ),

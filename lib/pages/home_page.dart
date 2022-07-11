@@ -183,7 +183,17 @@ class _HomePageState extends State<HomePage> {
                   height: 32,
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 24, right: 24, left: 24),
+                  padding: const EdgeInsets.only(right: 24, left: 24),
+                  child: const Divider(
+                    color: neutral200,
+                    thickness: 1,
+                  ),
+                ),
+                SizedBox(
+                  height: 32,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 24, left: 24),
                   child: Column(
                     children: [
                       Row(
