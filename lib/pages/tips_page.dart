@@ -111,28 +111,19 @@ class TipsList extends StatelessWidget {
         _header('Pembelajaran'),
         SliverList(
           delegate: SliverChildListDelegate(<Widget>[
-            ChangeNotifierProvider<TipsPembelajaranProvider>(
-              create: (_) => TipsPembelajaranProvider(apiService: ApiService()),
-              child: _buildTipsPembelajaran(),
-            ),
+            _buildTipsPembelajaran(),
           ]),
         ),
         _header('Peningkatan Minat'),
         SliverList(
           delegate: SliverChildListDelegate(<Widget>[
-            ChangeNotifierProvider<TipsPeningkatanProvider>(
-              create: (_) => TipsPeningkatanProvider(apiService: ApiService()),
-              child: _buildTipsPeningkatan(),
-            ),
+            _buildTipsPeningkatan(),
           ]),
         ),
         _header('Disleksia'),
         SliverList(
           delegate: SliverChildListDelegate(<Widget>[
-            ChangeNotifierProvider<TipsDisleksiaProvider>(
-              create: (_) => TipsDisleksiaProvider(apiService: ApiService()),
-              child: _buildTipsDisleksia(),
-            ),
+            _buildTipsDisleksia(),
           ]),
         ),
       ],

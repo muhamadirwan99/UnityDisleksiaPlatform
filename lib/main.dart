@@ -32,8 +32,13 @@ import 'package:unity_disleksia_platform/provider/database_video_provider.dart';
 import 'package:unity_disleksia_platform/provider/database_webinar_provider.dart';
 import 'package:unity_disleksia_platform/provider/search_video_provider.dart';
 import 'package:unity_disleksia_platform/provider/search_webinar_provider.dart';
+import 'package:unity_disleksia_platform/provider/tips_disleksia_provider.dart';
+import 'package:unity_disleksia_platform/provider/tips_pembelajaran_provider.dart';
+import 'package:unity_disleksia_platform/provider/tips_peningkatan_provider.dart';
 import 'package:unity_disleksia_platform/provider/video_provider.dart';
+import 'package:unity_disleksia_platform/provider/video_recent_provider.dart';
 import 'package:unity_disleksia_platform/provider/webinar_provider.dart';
+import 'package:unity_disleksia_platform/provider/webinar_recent_provider.dart';
 
 import 'data/db/database_video_helper.dart';
 
@@ -55,8 +60,14 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider<VideoProvider>(
           create: (_) => VideoProvider(apiService: ApiService()),
         ),
+        ChangeNotifierProvider<VideoRecentProvider>(
+          create: (_) => VideoRecentProvider(apiService: ApiService()),
+        ),
         ChangeNotifierProvider<WebinarProvider>(
           create: (_) => WebinarProvider(apiService: ApiService()),
+        ),
+        ChangeNotifierProvider<WebinarRecentProvider>(
+          create: (_) => WebinarRecentProvider(apiService: ApiService()),
         ),
         ChangeNotifierProvider(
           create: (_) =>
@@ -66,11 +77,20 @@ class MyApp extends StatelessWidget {
           create: (_) =>
               DatabaseWebinarProvider(databaseHelper: DatabaseWebinarHelper()),
         ),
-        ChangeNotifierProvider(
+        ChangeNotifierProvider<SearchWebinarProvider>(
           create: (_) => SearchWebinarProvider(apiService: ApiService()),
         ),
-        ChangeNotifierProvider(
+        ChangeNotifierProvider<SearchVideoProvider>(
           create: (_) => SearchVideoProvider(apiService: ApiService()),
+        ),
+        ChangeNotifierProvider<TipsPembelajaranProvider>(
+          create: (_) => TipsPembelajaranProvider(apiService: ApiService()),
+        ),
+        ChangeNotifierProvider<TipsPeningkatanProvider>(
+          create: (_) => TipsPeningkatanProvider(apiService: ApiService()),
+        ),
+        ChangeNotifierProvider<TipsDisleksiaProvider>(
+          create: (_) => TipsDisleksiaProvider(apiService: ApiService()),
         ),
       ],
       child: MaterialApp(

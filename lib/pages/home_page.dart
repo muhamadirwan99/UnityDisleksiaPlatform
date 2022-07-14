@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -6,6 +7,7 @@ import 'package:provider/provider.dart';
 import 'package:unity_disleksia_platform/common/style.dart';
 import 'package:unity_disleksia_platform/data/api/api_service.dart';
 import 'package:unity_disleksia_platform/data/model/banner_model.dart';
+import 'package:unity_disleksia_platform/pages/carousel_webinar_recent_page.dart';
 import 'package:unity_disleksia_platform/pages/latihan_menu_page.dart';
 import 'package:unity_disleksia_platform/pages/latihan_page.dart';
 import 'package:unity_disleksia_platform/pages/menu_page.dart';
@@ -29,6 +31,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final List<String> imgList = [
+    'https://images.unsplash.com/photo-1520342868574-5fa3804e551c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6ff92caffcdd63681a35134a6770ed3b&auto=format&fit=crop&w=1951&q=80',
+    'https://images.unsplash.com/photo-1522205408450-add114ad53fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=368f45b0888aeb0b7b08e3a1084d3ede&auto=format&fit=crop&w=1950&q=80',
+    'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=94a1e718d89ca60a6337a6008341ca50&auto=format&fit=crop&w=1950&q=80',
+    'https://images.unsplash.com/photo-1523205771623-e0faa4d2813d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=89719a0d55dd05e2deae4120227e6efc&auto=format&fit=crop&w=1953&q=80',
+    'https://images.unsplash.com/photo-1508704019882-f9cf40e475b4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8c6e5e3aba713b17aa1fe71ab4f0ae5b&auto=format&fit=crop&w=1352&q=80',
+    'https://images.unsplash.com/photo-1519985176271-adb1088fa94c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a0c8d632e977f94e5d312d9893258f59&auto=format&fit=crop&w=1355&q=80'
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -108,10 +118,7 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(
                   height: 24,
                 ),
-                ChangeNotifierProvider<VideoRecentProvider>(
-                  create: (_) => VideoRecentProvider(apiService: ApiService()),
-                  child: VideoRecentPage(),
-                ),
+                VideoRecentPage(),
                 SizedBox(
                   height: 32,
                 ),
@@ -244,11 +251,74 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(
                   height: 24,
                 ),
-                ChangeNotifierProvider<WebinarRecentProvider>(
-                  create: (_) =>
-                      WebinarRecentProvider(apiService: ApiService()),
-                  child: WebinarRecentPage(),
+                CarouselWebinarRecentPage(),
+                // Padding(
+                //   padding: const EdgeInsets.only(right: 24, left: 24),
+                //   child: Container(
+                //     child: CarouselSlider(
+                //       options: CarouselOptions(
+                //         height: 200,
+                //         enlargeCenterPage: true,
+                //         autoPlay: true,
+                //         viewportFraction: 1.0,
+                //       ),
+                //       items: imgList
+                //           .map(
+                //             (item) => Container(
+                //               child: Center(
+                //                 child: ClipRRect(
+                //                   borderRadius: BorderRadius.circular(8),
+                //                   child: Stack(
+                //                     children: [
+                //                       Image.network(item,
+                //                           fit: BoxFit.cover, width: 1000),
+                //                       Container(
+                //                         decoration: BoxDecoration(
+                //                           borderRadius:
+                //                               BorderRadius.circular(10),
+                //                           gradient: LinearGradient(
+                //                             begin: Alignment.bottomRight,
+                //                             stops: [0.1, 0.9],
+                //                             colors: [
+                //                               Colors.black.withOpacity(.8),
+                //                               Colors.black.withOpacity(.1)
+                //                             ],
+                //                           ),
+                //                         ),
+                //                       ),
+                //                       Padding(
+                //                         padding: const EdgeInsets.only(
+                //                             bottom: 24, left: 24, right: 24),
+                //                         child: Container(
+                //                           alignment: Alignment.bottomLeft,
+                //                           child: Expanded(
+                //                             child: Text(
+                //                               "Kenali Disleksia pada Anak di Masa Pandemi COVID-19",
+                //                               style: GoogleFonts.roboto(
+                //                                 textStyle: TextStyle(
+                //                                     fontSize: 16,
+                //                                     fontWeight: FontWeight.w500,
+                //                                     letterSpacing: 0.2,
+                //                                     color: neutral100),
+                //                               ),
+                //                             ),
+                //                           ),
+                //                         ),
+                //                       ),
+                //                     ],
+                //                   ),
+                //                 ),
+                //               ),
+                //             ),
+                //           )
+                //           .toList(),
+                //     ),
+                //   ),
+                // ),
+                const SizedBox(
+                  height: 24,
                 ),
+                WebinarRecentPage(),
                 const SizedBox(
                   height: 32,
                 ),
