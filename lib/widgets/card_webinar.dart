@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
@@ -9,7 +8,7 @@ import 'package:unity_disleksia_platform/data/model/webinar_model.dart';
 class CardWebinar extends StatefulWidget {
   final Webinar webinar;
 
-  const CardWebinar({required this.webinar});
+  const CardWebinar({Key? key, required this.webinar}) : super(key: key);
 
   @override
   State<CardWebinar> createState() => _CardWebinarState();
@@ -23,14 +22,14 @@ class _CardWebinarState extends State<CardWebinar> {
   void initState() {
     super.initState();
     initializeDateFormatting();
-    dateFormat = new DateFormat.yMMMMd('id');
-    timeFormat = new DateFormat.Hms('id');
+    dateFormat = DateFormat.yMMMMd('id');
+    timeFormat = DateFormat.Hms('id');
   }
 
   @override
   Widget build(BuildContext context) {
     const String _baseUrl = 'http://34.128.78.90:5000/';
-    return Container(
+    return SizedBox(
       height: 210.0,
       width: 182.0,
       child: Card(
@@ -43,7 +42,7 @@ class _CardWebinarState extends State<CardWebinar> {
                 width: 166,
                 height: 166,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                  borderRadius: const BorderRadius.all(Radius.circular(8.0)),
                   image: DecorationImage(
                     fit: BoxFit.fill,
                     image: NetworkImage(_baseUrl + widget.webinar.thumbnail),

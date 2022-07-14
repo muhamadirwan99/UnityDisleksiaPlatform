@@ -2,22 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:unity_disleksia_platform/common/style.dart';
-import 'package:unity_disleksia_platform/widgets/angka_button.dart';
 import 'package:unity_disleksia_platform/widgets/huruf_button.dart';
 
-class AngkaPage extends StatelessWidget {
-  static const routeName = '/angkaPage';
+class HurufPage extends StatelessWidget {
+  static const routeName = '/hurufPage';
 
-  const AngkaPage({Key? key}) : super(key: key);
+  const HurufPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Materi Angka',
+          'Materi Huruf',
           style: GoogleFonts.roboto(
-            textStyle: TextStyle(
+            textStyle: const TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w500,
                 letterSpacing: 0.2,
@@ -56,20 +55,20 @@ class AngkaPage extends StatelessWidget {
                         Text(
                           "Hallo, Sahabat 👋", // Headline 2
                           style: GoogleFonts.roboto(
-                            textStyle: TextStyle(
+                            textStyle: const TextStyle(
                                 fontSize: 28,
                                 fontWeight: FontWeight.w400,
                                 letterSpacing: 0,
                                 color: neutral100),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 6,
                         ),
                         Text(
-                          "Ayo kita bermain sambil belajar mengenal angka",
+                          "Ayo kita bermain sambil belajar mengenal huruf",
                           style: GoogleFonts.roboto(
-                            textStyle: TextStyle(
+                            textStyle: const TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w400,
                                 letterSpacing: 0.5,
@@ -82,7 +81,7 @@ class AngkaPage extends StatelessWidget {
                   Expanded(
                     flex: 1,
                     child: SvgPicture.asset(
-                      "assets/illustrations/angka.svg",
+                      "assets/illustrations/huruf.svg",
                       width: 107,
                       height: 118,
                     ),
@@ -90,17 +89,17 @@ class AngkaPage extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 32,
             ),
             Container(
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
-              decoration: new BoxDecoration(
+              decoration: const BoxDecoration(
                 color: neutral100,
-                borderRadius: new BorderRadius.only(
-                  topLeft: const Radius.circular(32),
-                  topRight: const Radius.circular(32),
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(32),
+                  topRight: Radius.circular(32),
                 ),
               ),
               child: Padding(
@@ -108,35 +107,80 @@ class AngkaPage extends StatelessWidget {
                 child: Column(
                   children: [
                     Text(
-                      "Pilih Angka",
+                      "Pilih Huruf",
                       style: myTextTheme.headline3,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 24,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        AngkaButton(value: '1'),
-                        AngkaButton(value: '2'),
-                        AngkaButton(value: '3'),
-                        AngkaButton(value: '4'),
-                        AngkaButton(value: '5'),
+                      children: const [
+                        HurufButton(value: 'A'),
+                        HurufButton(value: 'B'),
+                        HurufButton(value: 'C'),
+                        HurufButton(value: 'D'),
+                        HurufButton(value: 'E'),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 24,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        AngkaButton(value: '6'),
-                        AngkaButton(value: '7'),
-                        AngkaButton(value: '8'),
-                        AngkaButton(value: '9'),
-                        AngkaButton(value: '10'),
+                      children: const [
+                        HurufButton(value: 'F'),
+                        HurufButton(value: 'G'),
+                        HurufButton(value: 'H'),
+                        HurufButton(value: 'I'),
+                        HurufButton(value: 'J'),
                       ],
-                    )
+                    ),
+                    const SizedBox(
+                      height: 24,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: const [
+                        HurufButton(value: 'K'),
+                        HurufButton(value: 'L'),
+                        HurufButton(value: 'M'),
+                        HurufButton(value: 'N'),
+                        HurufButton(value: 'O'),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 24,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: const [
+                        HurufButton(value: 'P'),
+                        HurufButton(value: 'Q'),
+                        HurufButton(value: 'R'),
+                        HurufButton(value: 'S'),
+                        HurufButton(value: 'T'),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 24,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: const [
+                        HurufButton(value: 'U'),
+                        HurufButton(value: 'V'),
+                        HurufButton(value: 'W'),
+                        HurufButton(value: 'X'),
+                        HurufButton(value: 'Y'),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 24,
+                    ),
+                    Container(
+                        alignment: Alignment.centerLeft,
+                        child: const HurufButton(value: 'Z')),
                   ],
                 ),
               ),

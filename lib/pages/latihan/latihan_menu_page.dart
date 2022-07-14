@@ -3,14 +3,13 @@ import 'package:unity_disleksia_platform/common/style.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:unity_disleksia_platform/pages/home_page.dart';
 import 'package:unity_disleksia_platform/pages/latihan_page.dart';
-import 'package:unity_disleksia_platform/pages/tips_page.dart';
 import 'package:unity_disleksia_platform/pages/video_page.dart';
 import 'package:unity_disleksia_platform/pages/webinar_page.dart';
 
 class LatihanMenuPage extends StatefulWidget {
   static const routeName = '/latihanMenuPage';
 
-  const LatihanMenuPage();
+  const LatihanMenuPage({Key? key}) : super(key: key);
 
   @override
   State<LatihanMenuPage> createState() => _LatihanMenuPageState();
@@ -19,10 +18,10 @@ class LatihanMenuPage extends StatefulWidget {
 class _LatihanMenuPageState extends State<LatihanMenuPage> {
   int currentIndex = 2;
   final screens = [
-    HomePage(),
-    VideoPage(),
-    LatihanPage(),
-    WebinarPage(),
+    const HomePage(),
+    const VideoPage(),
+    const LatihanPage(),
+    const WebinarPage(),
   ];
 
   @override

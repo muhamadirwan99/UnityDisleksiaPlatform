@@ -57,7 +57,7 @@ class _InstruksiPageState extends State<InstruksiPage> {
             title: Text(
               'Instruksi',
               style: GoogleFonts.roboto(
-                textStyle: TextStyle(
+                textStyle: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w500,
                     letterSpacing: 0.2,
@@ -83,17 +83,17 @@ class _InstruksiPageState extends State<InstruksiPage> {
           body: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 32,
                 ),
                 Container(
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height,
-                  decoration: new BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: neutral100,
-                    borderRadius: new BorderRadius.only(
-                      topLeft: const Radius.circular(40.0),
-                      topRight: const Radius.circular(40.0),
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(40.0),
+                      topRight: Radius.circular(40.0),
                     ),
                   ),
                   child: Padding(
@@ -108,7 +108,7 @@ class _InstruksiPageState extends State<InstruksiPage> {
                             style: myTextTheme.headline4,
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 8,
                         ),
                         Container(
@@ -118,7 +118,7 @@ class _InstruksiPageState extends State<InstruksiPage> {
                             style: myTextTheme.bodyText2,
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 32,
                         ),
                         Container(
@@ -128,7 +128,7 @@ class _InstruksiPageState extends State<InstruksiPage> {
                             style: myTextTheme.headline4,
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 8,
                         ),
                         Container(
@@ -138,14 +138,14 @@ class _InstruksiPageState extends State<InstruksiPage> {
                             style: myTextTheme.bodyText2,
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 32,
                         ),
                         ClipRRect(
                           borderRadius: BorderRadius.circular(16),
                           child: player,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 32,
                         ),
                         Container(
@@ -155,7 +155,7 @@ class _InstruksiPageState extends State<InstruksiPage> {
                             style: myTextTheme.headline4,
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 8,
                         ),
                         ListTile(

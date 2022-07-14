@@ -7,26 +7,24 @@ import 'package:unity_disleksia_platform/data/api/api_service.dart';
 import 'package:unity_disleksia_platform/data/db/database_webinar_helper.dart';
 import 'package:unity_disleksia_platform/data/model/video_model.dart';
 import 'package:unity_disleksia_platform/data/model/webinar_model.dart';
-import 'package:unity_disleksia_platform/pages/angka_page.dart';
-import 'package:unity_disleksia_platform/pages/bookmark_page.dart';
-import 'package:unity_disleksia_platform/pages/detail_video_page.dart';
-import 'package:unity_disleksia_platform/pages/detail_webinar_page.dart';
-import 'package:unity_disleksia_platform/pages/huruf_page.dart';
-import 'package:unity_disleksia_platform/pages/instruksi_page.dart';
-import 'package:unity_disleksia_platform/pages/latihan_angka_page.dart';
-import 'package:unity_disleksia_platform/pages/latihan_huruf_page.dart';
-import 'package:unity_disleksia_platform/pages/latihan_menu_page.dart';
+import 'package:unity_disleksia_platform/pages/latihan/angka_page.dart';
+import 'package:unity_disleksia_platform/pages/bookmarks/bookmark_page.dart';
+import 'package:unity_disleksia_platform/pages/videos/detail_video_page.dart';
+import 'package:unity_disleksia_platform/pages/webinars/detail_webinar_page.dart';
+import 'package:unity_disleksia_platform/pages/latihan/huruf_page.dart';
+import 'package:unity_disleksia_platform/pages/latihan/instruksi_page.dart';
+import 'package:unity_disleksia_platform/pages/latihan/latihan_angka_page.dart';
+import 'package:unity_disleksia_platform/pages/latihan/latihan_huruf_page.dart';
+import 'package:unity_disleksia_platform/pages/latihan/latihan_menu_page.dart';
 import 'package:unity_disleksia_platform/pages/latihan_page.dart';
 import 'package:unity_disleksia_platform/pages/menu_page.dart';
-import 'package:unity_disleksia_platform/pages/video_search_page.dart';
-import 'package:unity_disleksia_platform/pages/webinar_search_page.dart';
+import 'package:unity_disleksia_platform/pages/videos/video_search_page.dart';
+import 'package:unity_disleksia_platform/pages/webinars/webinar_search_page.dart';
 import 'package:unity_disleksia_platform/pages/splash_page.dart';
-import 'package:unity_disleksia_platform/pages/tabs/video_tab.dart';
-import 'package:unity_disleksia_platform/pages/tabs/webinar_tab.dart';
 import 'package:unity_disleksia_platform/pages/tips_page.dart';
-import 'package:unity_disleksia_platform/pages/video_menu_page.dart';
+import 'package:unity_disleksia_platform/pages/videos/video_menu_page.dart';
 import 'package:unity_disleksia_platform/pages/video_page.dart';
-import 'package:unity_disleksia_platform/pages/webinar_menu_page.dart';
+import 'package:unity_disleksia_platform/pages/webinars/webinar_menu_page.dart';
 import 'package:unity_disleksia_platform/pages/webinar_page.dart';
 import 'package:unity_disleksia_platform/provider/database_video_provider.dart';
 import 'package:unity_disleksia_platform/provider/database_webinar_provider.dart';
@@ -123,7 +121,9 @@ class MyApp extends StatelessWidget {
           InstruksiPage.routeName: (context) => const InstruksiPage(),
           AngkaPage.routeName: (context) => const AngkaPage(),
           HurufPage.routeName: (context) => const HurufPage(),
-          BookmarkPage.routeName: (context) => const BookmarkPage(),
+          BookmarkPage.routeName: (context) => BookmarkPage(
+                init: ModalRoute.of(context)?.settings.arguments as int,
+              ),
           LatihanHurufPage.routeName: (context) => LatihanHurufPage(
                 value: ModalRoute.of(context)?.settings.arguments as String,
               ),
@@ -131,8 +131,8 @@ class MyApp extends StatelessWidget {
                 value: ModalRoute.of(context)?.settings.arguments as String,
               ),
           TipsPage.routeName: (context) => const TipsPage(),
-          WebinarSearchPage.routeName: (context) => WebinarSearchPage(),
-          VideoSearchPage.routeName: (context) => VideoSearchPage(),
+          WebinarSearchPage.routeName: (context) => const WebinarSearchPage(),
+          VideoSearchPage.routeName: (context) => const VideoSearchPage(),
         },
       ),
     );

@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:unity_disleksia_platform/common/style.dart';
 import 'package:unity_disleksia_platform/data/model/video_model.dart';
+import 'package:unity_disleksia_platform/pages/bookmarks/bookmark_page.dart';
 import 'package:unity_disleksia_platform/widgets/card_modul.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
-import '../provider/database_video_provider.dart';
+import '../../provider/database_video_provider.dart';
 
 class DetailVideoPage extends StatefulWidget {
   static const routeName = '/detailVideoPage';
 
   final Video video;
 
-  const DetailVideoPage({required this.video});
+  const DetailVideoPage({Key? key, required this.video}) : super(key: key);
 
   @override
   State<DetailVideoPage> createState() => _DetailVideoPageState();
@@ -81,6 +83,7 @@ class _DetailVideoPageState extends State<DetailVideoPage> {
                         width: 32,
                       ),
                       onPressed: () {
+                        ScaffoldMessenger.of(context).hideCurrentSnackBar();
                         Navigator.pop(context);
                       },
                     ),
@@ -103,9 +106,75 @@ class _DetailVideoPageState extends State<DetailVideoPage> {
                                 height: 32,
                                 width: 32,
                               ),
-                              onPressed: () =>
-                                  provider.addBookmark(widget.video),
-                            ),
+                              onPressed: () {
+                                provider.addBookmark(widget.video);
+                                final snackBar = SnackBar(
+                                  backgroundColor: blue100,
+                                  behavior: SnackBarBehavior.floating,
+                                  content: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        'Berhasil ditambahkan',
+                                        style: GoogleFonts.roboto(
+                                          textStyle: const TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w400,
+                                              letterSpacing: 0.5,
+                                              color: neutral900),
+                                        ),
+                                      ),
+                                      ElevatedButton(
+                                        style: ElevatedButton.styleFrom(
+                                          elevation: 0.0,
+                                          shadowColor: Colors.transparent,
+                                          primary: blue100,
+                                          onPrimary: neutral400,
+                                        ),
+                                        onPressed: () {
+                                          ScaffoldMessenger.of(context)
+                                              .hideCurrentSnackBar();
+
+                                          Navigator.pushNamed(
+                                              context, BookmarkPage.routeName);
+                                        },
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            Text(
+                                              'Lihat',
+                                              style: GoogleFonts.roboto(
+                                                textStyle: const TextStyle(
+                                                    fontSize: 16,
+                                                    fontWeight: FontWeight.w500,
+                                                    letterSpacing: 0.2,
+                                                    color: blue500),
+                                              ),
+                                            ),
+                                            const SizedBox(
+                                              width: 8,
+                                            ),
+                                            SvgPicture.asset(
+                                              "assets/icons/chevron-right.svg",
+                                              color: blue500,
+                                              height: 24,
+                                              width: 24,
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  shape: const RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(8),
+                                    ),
+                                  ),
+                                );
+                                ScaffoldMessenger.of(context)
+                                    .showSnackBar(snackBar);
+                              }),
                     ],
                   ),
                   body: SingleChildScrollView(
@@ -118,7 +187,7 @@ class _DetailVideoPageState extends State<DetailVideoPage> {
                             borderRadius: BorderRadius.circular(16),
                             child: player,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 32,
                           ),
                           Container(
@@ -128,14 +197,14 @@ class _DetailVideoPageState extends State<DetailVideoPage> {
                               style: myTextTheme.headline3,
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 16,
                           ),
                           Text(
                             widget.video.desc,
                             style: myTextTheme.bodyText1,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 32,
                           ),
                           CardModul(video: widget.video),

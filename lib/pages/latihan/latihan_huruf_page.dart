@@ -5,7 +5,7 @@ import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:unity_disleksia_platform/common/style.dart';
-import 'package:unity_disleksia_platform/pages/instruksi_page.dart';
+import 'package:unity_disleksia_platform/pages/latihan/instruksi_page.dart';
 
 class DrawingArea {
   Offset point;
@@ -19,7 +19,7 @@ class LatihanHurufPage extends StatefulWidget {
 
   final String value;
 
-  const LatihanHurufPage({required this.value});
+  const LatihanHurufPage({Key? key, required this.value}) : super(key: key);
 
   @override
   State<LatihanHurufPage> createState() => _LatihanHurufPageState();
@@ -58,7 +58,7 @@ class _LatihanHurufPageState extends State<LatihanHurufPage> {
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
-                  child: Text("OK"))
+                  child: const Text("OK"))
             ],
           );
         });
@@ -74,7 +74,7 @@ class _LatihanHurufPageState extends State<LatihanHurufPage> {
         title: Text(
           'Huruf',
           style: GoogleFonts.inter(
-            textStyle: TextStyle(
+            textStyle: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.w700,
                 letterSpacing: -0.8,
@@ -117,9 +117,9 @@ class _LatihanHurufPageState extends State<LatihanHurufPage> {
             Container(
               height: 300,
               width: 380,
-              decoration: new BoxDecoration(
+              decoration: const BoxDecoration(
                 color: blue100,
-                borderRadius: new BorderRadius.all(
+                borderRadius: BorderRadius.all(
                   Radius.circular(8),
                 ),
               ),
@@ -151,15 +151,15 @@ class _LatihanHurufPageState extends State<LatihanHurufPage> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 32,
             ),
             Container(
               width: width,
               height: height * 0.4,
-              decoration: new BoxDecoration(
+              decoration: const BoxDecoration(
                 color: neutral100,
-                borderRadius: new BorderRadius.all(
+                borderRadius: BorderRadius.all(
                   Radius.circular(8),
                 ),
               ),
@@ -193,7 +193,7 @@ class _LatihanHurufPageState extends State<LatihanHurufPage> {
                 },
                 child: SizedBox.expand(
                   child: ClipRRect(
-                    borderRadius: BorderRadius.all(Radius.circular(8)),
+                    borderRadius: const BorderRadius.all(Radius.circular(8)),
                     child: CustomPaint(
                       painter: MyCustomPainter(points: points),
                     ),
@@ -201,10 +201,10 @@ class _LatihanHurufPageState extends State<LatihanHurufPage> {
                 ),
               ),
             ),
-            SizedBox(height: 9),
+            const SizedBox(height: 9),
             Container(
                 width: width,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     color: neutral100,
                     borderRadius: BorderRadius.all(Radius.circular(8))),
                 child: Row(
@@ -220,7 +220,7 @@ class _LatihanHurufPageState extends State<LatihanHurufPage> {
                     ),
                     GestureDetector(
                       child: IconButton(
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.undo,
                         ),
                         onPressed: () {
@@ -246,7 +246,7 @@ class _LatihanHurufPageState extends State<LatihanHurufPage> {
                       ),
                     ),
                     IconButton(
-                      icon: Icon(Icons.layers_clear),
+                      icon: const Icon(Icons.layers_clear),
                       onPressed: () {
                         setState(() {
                           points.clear();
@@ -287,7 +287,6 @@ class MyCustomPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    // TODO: implement shouldRepaint
     return true;
   }
 }

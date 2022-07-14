@@ -13,7 +13,7 @@ import 'package:path_provider/path_provider.dart';
 class CardModul extends StatefulWidget {
   final Video video;
 
-  const CardModul({required this.video});
+  const CardModul({Key? key, required this.video}) : super(key: key);
 
   @override
   State<CardModul> createState() => _CardModulState();
@@ -35,19 +35,13 @@ class _CardModulState extends State<CardModul> {
     }
   }
 
-  ReceivePort _port = ReceivePort();
+  final ReceivePort _port = ReceivePort();
 
   @override
   void initState() {
     IsolateNameServer.registerPortWithName(
         _port.sendPort, 'downloader_send_port');
     _port.listen((dynamic data) {
-      String id = data[0];
-      DownloadTaskStatus status = data[1];
-      int progress = data[2];
-      if (status == DownloadTaskStatus.complete) {
-        print("Download complete");
-      }
       setState(() {});
     });
 
@@ -74,14 +68,14 @@ class _CardModulState extends State<CardModul> {
     const String _baseUrl = 'http://34.128.78.90:5000/';
     return Card(
       child: Padding(
-        padding: EdgeInsets.all(8),
+        padding: const EdgeInsets.all(8),
         child: Column(
           children: [
             Text(
               "Modul " + widget.video.name,
               style: myTextTheme.headline5,
             ),
-            SizedBox(
+            const SizedBox(
               height: 8,
             ),
             ElevatedButton(
@@ -95,14 +89,14 @@ class _CardModulState extends State<CardModul> {
                     Text(
                       "Unduh",
                       style: GoogleFonts.roboto(
-                        textStyle: TextStyle(
+                        textStyle: const TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.w500,
                             letterSpacing: 0.1,
                             color: neutral100),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 5,
                     ),
                     SvgPicture.asset(
@@ -117,8 +111,8 @@ class _CardModulState extends State<CardModul> {
               style: ElevatedButton.styleFrom(
                 primary: blue500,
                 minimumSize: const Size.fromHeight(50),
-                shape: new RoundedRectangleBorder(
-                  borderRadius: new BorderRadius.circular(8),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
                 ),
                 alignment: Alignment.centerLeft,
                 padding: const EdgeInsets.only(top: 8, bottom: 8),

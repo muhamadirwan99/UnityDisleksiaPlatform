@@ -6,14 +6,14 @@ import 'package:unity_disleksia_platform/data/model/video_model.dart';
 class CardListVideo extends StatelessWidget {
   final Video video;
 
-  const CardListVideo({required this.video});
+  const CardListVideo({Key? key, required this.video}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     const String _baseUrl = 'http://34.128.78.90:5000/';
     return Card(
       shape: RoundedRectangleBorder(
-        side: BorderSide(color: neutral300, width: 1),
+        side: const BorderSide(color: neutral300, width: 1),
         borderRadius: BorderRadius.circular(8),
       ),
       child: Padding(
@@ -24,7 +24,7 @@ class CardListVideo extends StatelessWidget {
               height: 91,
               width: 160,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(4)),
+                borderRadius: const BorderRadius.all(Radius.circular(4)),
                 image: DecorationImage(
                   fit: BoxFit.fill,
                   image: NetworkImage(_baseUrl + video.thumbnail),
@@ -50,7 +50,7 @@ class CardListVideo extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(height: 4),
+                  const SizedBox(height: 4),
                   Text(
                     video.desc,
                     style: GoogleFonts.roboto(

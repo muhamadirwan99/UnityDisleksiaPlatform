@@ -3,26 +3,26 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:unity_disleksia_platform/common/style.dart';
-import 'package:unity_disleksia_platform/pages/detail_video_page.dart';
-import 'package:unity_disleksia_platform/pages/video_menu_page.dart';
-import 'package:unity_disleksia_platform/provider/database_video_provider.dart';
+import 'package:unity_disleksia_platform/pages/webinars/detail_webinar_page.dart';
+import 'package:unity_disleksia_platform/pages/webinars/webinar_menu_page.dart';
+import 'package:unity_disleksia_platform/provider/database_webinar_provider.dart';
 import 'package:unity_disleksia_platform/utils/result_state.dart';
-import 'package:unity_disleksia_platform/widgets/card_list_video.dart';
+import 'package:unity_disleksia_platform/widgets/card_list_webinar.dart';
 
-class VideoTab extends StatefulWidget {
-  const VideoTab({Key? key}) : super(key: key);
+class WebinarTab extends StatefulWidget {
+  const WebinarTab({Key? key}) : super(key: key);
 
   @override
-  State<VideoTab> createState() => _VideoTabState();
+  State<WebinarTab> createState() => _WebinarTabState();
 }
 
-class _VideoTabState extends State<VideoTab> {
+class _WebinarTabState extends State<WebinarTab> {
   @override
   Widget build(BuildContext context) {
-    return Consumer<DatabaseVideoProvider>(
+    return Consumer<DatabaseWebinarProvider>(
       builder: (context, provider, child) {
         if (provider.state == ResultState.Loading) {
-          return Center(child: CircularProgressIndicator());
+          return const Center(child: CircularProgressIndicator());
         } else if (provider.state == ResultState.HasData) {
           return ListView.builder(
             physics: const ClampingScrollPhysics(),
@@ -31,7 +31,7 @@ class _VideoTabState extends State<VideoTab> {
             itemCount: provider.bookmarks.length,
             padding: const EdgeInsets.only(left: 24, right: 24, top: 32),
             itemBuilder: (context, index) {
-              var video = provider.bookmarks[index];
+              var webinar = provider.bookmarks[index];
               return GestureDetector(
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8),
@@ -39,17 +39,20 @@ class _VideoTabState extends State<VideoTab> {
                     padding: const EdgeInsets.only(bottom: 16),
                     child: Column(
                       children: [
-                        CardListVideo(video: video),
-                        SizedBox(
+                        CardListWebinar(webinar: webinar),
+                        const SizedBox(
                           height: 16,
                         ),
+                        const Divider(
+                          color: neutral200,
+                        )
                       ],
                     ),
                   ),
                 ),
                 onTap: () {
-                  Navigator.pushNamed(context, DetailVideoPage.routeName,
-                      arguments: video);
+                  Navigator.pushNamed(context, DetailWebinarPage.routeName,
+                      arguments: webinar);
                 },
               );
             },
@@ -59,14 +62,14 @@ class _VideoTabState extends State<VideoTab> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SvgPicture.asset(
-                "assets/illustrations/video-bookmark-empty.svg",
+                "assets/illustrations/webinar-bookmark-empty.svg",
               ),
               TextButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, VideoMenuPage.routeName);
+                  Navigator.pushNamed(context, WebinarMenuPage.routeName);
                 },
                 child: Text(
-                  "Tambahkan Video Pembelajaran?",
+                  "Tambahkan Webinar?",
                   style: GoogleFonts.roboto(
                     textStyle: const TextStyle(
                         fontSize: 16,
@@ -86,7 +89,7 @@ class _VideoTabState extends State<VideoTab> {
         } else if (provider.state == ResultState.Error) {
           return Center(child: Text(provider.message));
         } else {
-          return Center(child: Text(''));
+          return const Center(child: Text(''));
         }
       },
     );

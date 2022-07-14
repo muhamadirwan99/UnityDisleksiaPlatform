@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:unity_disleksia_platform/common/style.dart';
-import 'package:unity_disleksia_platform/pages/tabs/video_tab.dart';
-import 'package:unity_disleksia_platform/pages/tabs/webinar_tab.dart';
+import 'package:unity_disleksia_platform/pages/bookmarks/tabs/video_tab.dart';
+import 'package:unity_disleksia_platform/pages/bookmarks/tabs/webinar_tab.dart';
 
+// ignore: must_be_immutable
 class BookmarkPage extends StatelessWidget {
   static const routeName = '/bookmarkPage';
 
-  const BookmarkPage({Key? key}) : super(key: key);
+  int? init;
+
+  BookmarkPage({Key? key, required this.init}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
+      initialIndex: init ?? 0,
       length: 2,
       child: Scaffold(
           appBar: AppBar(
@@ -36,7 +39,7 @@ class BookmarkPage extends StatelessWidget {
             ),
           ),
           body: Column(
-            children: [
+            children: const [
               Material(
                 color: blue500,
                 child: TabBar(

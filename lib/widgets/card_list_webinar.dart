@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
 import 'package:unity_disleksia_platform/common/style.dart';
@@ -9,7 +7,7 @@ import 'package:unity_disleksia_platform/data/model/webinar_model.dart';
 class CardListWebinar extends StatefulWidget {
   final Webinar webinar;
 
-  const CardListWebinar({required this.webinar});
+  const CardListWebinar({Key? key, required this.webinar}) : super(key: key);
 
   @override
   State<CardListWebinar> createState() => _CardListWebinarState();
@@ -23,8 +21,8 @@ class _CardListWebinarState extends State<CardListWebinar> {
   void initState() {
     super.initState();
     initializeDateFormatting();
-    dateFormat = new DateFormat.yMMMMd('id');
-    timeFormat = new DateFormat.Hms('id');
+    dateFormat = DateFormat.yMMMMd('id');
+    timeFormat = DateFormat.Hms('id');
   }
 
   @override
@@ -33,7 +31,7 @@ class _CardListWebinarState extends State<CardListWebinar> {
     return Card(
       color: neutral100,
       elevation: 0,
-      child: Container(
+      child: SizedBox(
         height: 85,
         width: 380,
         child: Row(
@@ -60,7 +58,7 @@ class _CardListWebinarState extends State<CardListWebinar> {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               width: 16,
             ),
             Expanded(
@@ -70,7 +68,7 @@ class _CardListWebinarState extends State<CardListWebinar> {
                 width: 85,
                 alignment: Alignment.topRight,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(4)),
+                  borderRadius: const BorderRadius.all(Radius.circular(4)),
                   image: DecorationImage(
                     fit: BoxFit.cover,
                     image: NetworkImage(_baseUrl + widget.webinar.thumbnail),

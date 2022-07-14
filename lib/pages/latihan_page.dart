@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:unity_disleksia_platform/common/style.dart';
-import 'package:unity_disleksia_platform/pages/angka_page.dart';
-import 'package:unity_disleksia_platform/pages/huruf_page.dart';
-import 'package:unity_disleksia_platform/pages/instruksi_page.dart';
+import 'package:unity_disleksia_platform/pages/latihan/angka_page.dart';
+import 'package:unity_disleksia_platform/pages/latihan/huruf_page.dart';
+import 'package:unity_disleksia_platform/pages/latihan/instruksi_page.dart';
 import 'package:unity_disleksia_platform/pages/menu_page.dart';
 
 class LatihanPage extends StatelessWidget {
@@ -19,7 +19,7 @@ class LatihanPage extends StatelessWidget {
         title: Text(
           'Latihan',
           style: GoogleFonts.roboto(
-            textStyle: TextStyle(
+            textStyle: const TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w500,
                 letterSpacing: 0.2,
@@ -58,20 +58,20 @@ class LatihanPage extends StatelessWidget {
                         Text(
                           "Hallo, Sahabat 👋", // Headline 2
                           style: GoogleFonts.roboto(
-                            textStyle: TextStyle(
+                            textStyle: const TextStyle(
                                 fontSize: 28,
                                 fontWeight: FontWeight.w400,
                                 letterSpacing: 0,
                                 color: neutral100),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 6,
                         ),
                         Text(
                           "Ayo kita bermain sambil belajar ",
                           style: GoogleFonts.roboto(
-                            textStyle: TextStyle(
+                            textStyle: const TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w400,
                                 letterSpacing: 0.5,
@@ -92,16 +92,16 @@ class LatihanPage extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 32,
             ),
             Container(
               height: MediaQuery.of(context).size.height,
-              decoration: new BoxDecoration(
+              decoration: const BoxDecoration(
                 color: neutral100,
-                borderRadius: new BorderRadius.only(
-                  topLeft: const Radius.circular(32),
-                  topRight: const Radius.circular(32),
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(32),
+                  topRight: Radius.circular(32),
                 ),
               ),
               child: Padding(
@@ -110,7 +110,7 @@ class LatihanPage extends StatelessWidget {
                   children: [
                     ElevatedButton(
                       child: Padding(
-                        padding: EdgeInsets.all(16),
+                        padding: const EdgeInsets.all(16),
                         child: Row(
                           children: [
                             SvgPicture.asset(
@@ -119,7 +119,7 @@ class LatihanPage extends StatelessWidget {
                               height: 60,
                               width: 60,
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 16,
                             ),
                             Expanded(
@@ -129,7 +129,7 @@ class LatihanPage extends StatelessWidget {
                                   Text(
                                     "Materi Angka",
                                     style: GoogleFonts.roboto(
-                                      textStyle: TextStyle(
+                                      textStyle: const TextStyle(
                                           fontSize: 24,
                                           fontWeight: FontWeight.w500,
                                           letterSpacing: 0,
@@ -139,7 +139,7 @@ class LatihanPage extends StatelessWidget {
                                   Text(
                                     "Belajar Mengenal dan Menulis Angka",
                                     style: GoogleFonts.roboto(
-                                      textStyle: TextStyle(
+                                      textStyle: const TextStyle(
                                           fontSize: 14,
                                           fontWeight: FontWeight.w400,
                                           letterSpacing: 0.25,
@@ -154,20 +154,20 @@ class LatihanPage extends StatelessWidget {
                       ),
                       style: ElevatedButton.styleFrom(
                         primary: red600,
-                        shape: new RoundedRectangleBorder(
-                          borderRadius: new BorderRadius.circular(16.0),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16.0),
                         ),
                       ),
                       onPressed: () {
                         Navigator.pushNamed(context, AngkaPage.routeName);
                       },
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 32,
                     ),
                     ElevatedButton(
                       child: Padding(
-                        padding: EdgeInsets.all(16),
+                        padding: const EdgeInsets.all(16),
                         child: Row(
                           children: [
                             SvgPicture.asset(
@@ -176,7 +176,7 @@ class LatihanPage extends StatelessWidget {
                               height: 60,
                               width: 60,
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 16,
                             ),
                             Expanded(
@@ -186,7 +186,7 @@ class LatihanPage extends StatelessWidget {
                                   Text(
                                     "Materi Huruf",
                                     style: GoogleFonts.roboto(
-                                      textStyle: TextStyle(
+                                      textStyle: const TextStyle(
                                           fontSize: 24,
                                           fontWeight: FontWeight.w500,
                                           letterSpacing: 0,
@@ -196,7 +196,7 @@ class LatihanPage extends StatelessWidget {
                                   Text(
                                     "Belajar Mengenal dan Menulis Huruf",
                                     style: GoogleFonts.roboto(
-                                      textStyle: TextStyle(
+                                      textStyle: const TextStyle(
                                           fontSize: 14,
                                           fontWeight: FontWeight.w400,
                                           letterSpacing: 0.25,
@@ -210,21 +210,21 @@ class LatihanPage extends StatelessWidget {
                         ),
                       ),
                       style: ElevatedButton.styleFrom(
-                        primary: Color(0xffFFAA00),
-                        shape: new RoundedRectangleBorder(
-                          borderRadius: new BorderRadius.circular(16.0),
+                        primary: const Color(0xffFFAA00),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16.0),
                         ),
                       ),
                       onPressed: () {
                         Navigator.pushNamed(context, HurufPage.routeName);
                       },
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 32,
                     ),
                     ElevatedButton(
                       child: Padding(
-                        padding: EdgeInsets.all(16),
+                        padding: const EdgeInsets.all(16),
                         child: Row(
                           children: [
                             SvgPicture.asset(
@@ -233,7 +233,7 @@ class LatihanPage extends StatelessWidget {
                               height: 60,
                               width: 60,
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 16,
                             ),
                             Column(
@@ -242,7 +242,7 @@ class LatihanPage extends StatelessWidget {
                                 Text(
                                   "Instruksi",
                                   style: GoogleFonts.roboto(
-                                    textStyle: TextStyle(
+                                    textStyle: const TextStyle(
                                         fontSize: 24,
                                         fontWeight: FontWeight.w500,
                                         letterSpacing: 0,
@@ -252,7 +252,7 @@ class LatihanPage extends StatelessWidget {
                                 Text(
                                   "Informasi cara bermain",
                                   style: GoogleFonts.roboto(
-                                    textStyle: TextStyle(
+                                    textStyle: const TextStyle(
                                         fontSize: 14,
                                         fontWeight: FontWeight.w400,
                                         letterSpacing: 0.25,
@@ -266,8 +266,8 @@ class LatihanPage extends StatelessWidget {
                       ),
                       style: ElevatedButton.styleFrom(
                         primary: blue400,
-                        shape: new RoundedRectangleBorder(
-                          borderRadius: new BorderRadius.circular(16.0),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16.0),
                         ),
                       ),
                       onPressed: () {

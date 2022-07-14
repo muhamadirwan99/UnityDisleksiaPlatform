@@ -22,7 +22,7 @@ class DatabaseVideoProvider extends ChangeNotifier {
 
   void _getBookmarks() async {
     _bookmarks = await databaseHelper.getBookmarks();
-    if (_bookmarks.length > 0) {
+    if (_bookmarks.isNotEmpty) {
       _state = ResultState.HasData;
     } else {
       _state = ResultState.NoData;

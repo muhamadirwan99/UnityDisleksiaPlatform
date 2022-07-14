@@ -3,7 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:unity_disleksia_platform/common/style.dart';
-import 'package:unity_disleksia_platform/data/api/api_service.dart';
 import 'package:unity_disleksia_platform/provider/tips_disleksia_provider.dart';
 import 'package:unity_disleksia_platform/provider/tips_pembelajaran_provider.dart';
 import 'package:unity_disleksia_platform/provider/tips_peningkatan_provider.dart';
@@ -38,7 +37,7 @@ class TipsPage extends StatelessWidget {
           },
         ),
       ),
-      body: TipsList(),
+      body: const TipsList(),
     );
   }
 }
@@ -91,7 +90,7 @@ class TipsList extends StatelessWidget {
             child: Text(
               text,
               style: GoogleFonts.roboto(
-                textStyle: TextStyle(
+                textStyle: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.w400,
                     letterSpacing: 0,
@@ -134,7 +133,7 @@ class TipsList extends StatelessWidget {
     return Consumer<TipsPembelajaranProvider>(
       builder: (context, state, _) {
         if (state.state == ResultState.Loading) {
-          return Center(child: CircularProgressIndicator());
+          return const Center(child: CircularProgressIndicator());
         } else if (state.state == ResultState.HasData) {
           return ListView.builder(
             physics: const ClampingScrollPhysics(),
@@ -153,7 +152,7 @@ class TipsList extends StatelessWidget {
         } else if (state.state == ResultState.Error) {
           return Center(child: Text(state.message));
         } else {
-          return Center(child: Text(''));
+          return const Center(child: Text(''));
         }
       },
     );
@@ -163,7 +162,7 @@ class TipsList extends StatelessWidget {
     return Consumer<TipsPeningkatanProvider>(
       builder: (context, state, _) {
         if (state.state == ResultState.Loading) {
-          return Center(child: CircularProgressIndicator());
+          return const Center(child: CircularProgressIndicator());
         } else if (state.state == ResultState.HasData) {
           return ListView.builder(
             physics: const ClampingScrollPhysics(),
@@ -182,7 +181,7 @@ class TipsList extends StatelessWidget {
         } else if (state.state == ResultState.Error) {
           return Center(child: Text(state.message));
         } else {
-          return Center(child: Text(''));
+          return const Center(child: Text(''));
         }
       },
     );
@@ -192,7 +191,7 @@ class TipsList extends StatelessWidget {
     return Consumer<TipsDisleksiaProvider>(
       builder: (context, state, _) {
         if (state.state == ResultState.Loading) {
-          return Center(child: CircularProgressIndicator());
+          return const Center(child: CircularProgressIndicator());
         } else if (state.state == ResultState.HasData) {
           return ListView.builder(
             physics: const ClampingScrollPhysics(),
@@ -211,7 +210,7 @@ class TipsList extends StatelessWidget {
         } else if (state.state == ResultState.Error) {
           return Center(child: Text(state.message));
         } else {
-          return Center(child: Text(''));
+          return const Center(child: Text(''));
         }
       },
     );

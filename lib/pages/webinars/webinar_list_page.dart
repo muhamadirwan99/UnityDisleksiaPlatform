@@ -2,17 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'package:unity_disleksia_platform/common/style.dart';
-import 'package:unity_disleksia_platform/pages/detail_webinar_page.dart';
+import 'package:unity_disleksia_platform/pages/webinars/detail_webinar_page.dart';
 import 'package:unity_disleksia_platform/provider/webinar_provider.dart';
 import 'package:unity_disleksia_platform/utils/result_state.dart';
 import 'package:unity_disleksia_platform/widgets/card_list_webinar.dart';
 
 class WebinarListPage extends StatelessWidget {
+  const WebinarListPage({Key? key}) : super(key: key);
+
   Widget _buildWebinar() {
     return Consumer<WebinarProvider>(
       builder: (context, state, _) {
         if (state.state == ResultState.Loading) {
-          return Center(child: CircularProgressIndicator());
+          return const Center(child: CircularProgressIndicator());
         } else if (state.state == ResultState.HasData) {
           return ListView.builder(
             physics: const ClampingScrollPhysics(),
@@ -29,7 +31,7 @@ class WebinarListPage extends StatelessWidget {
                     child: Column(
                       children: [
                         CardListWebinar(webinar: webinar),
-                        SizedBox(
+                        const SizedBox(
                           height: 16,
                         ),
                         const Divider(
@@ -58,7 +60,7 @@ class WebinarListPage extends StatelessWidget {
         } else if (state.state == ResultState.Error) {
           return Center(child: Text(state.message));
         } else {
-          return Center(child: Text(''));
+          return const Center(child: Text(''));
         }
       },
     );

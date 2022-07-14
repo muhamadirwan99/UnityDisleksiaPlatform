@@ -3,26 +3,25 @@ import 'package:unity_disleksia_platform/common/style.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:unity_disleksia_platform/pages/home_page.dart';
 import 'package:unity_disleksia_platform/pages/latihan_page.dart';
-import 'package:unity_disleksia_platform/pages/tips_page.dart';
 import 'package:unity_disleksia_platform/pages/video_page.dart';
 import 'package:unity_disleksia_platform/pages/webinar_page.dart';
 
-class VideoMenuPage extends StatefulWidget {
-  static const routeName = '/videoMenuPage';
+class WebinarMenuPage extends StatefulWidget {
+  static const routeName = '/webinarMenuPage';
 
-  const VideoMenuPage();
+  const WebinarMenuPage({Key? key}) : super(key: key);
 
   @override
-  State<VideoMenuPage> createState() => _VideoMenuPageState();
+  State<WebinarMenuPage> createState() => _WebinarMenuPageState();
 }
 
-class _VideoMenuPageState extends State<VideoMenuPage> {
-  int currentIndex = 1;
+class _WebinarMenuPageState extends State<WebinarMenuPage> {
+  int currentIndex = 3;
   final screens = [
-    HomePage(),
-    VideoPage(),
-    LatihanPage(),
-    WebinarPage(),
+    const HomePage(),
+    const VideoPage(),
+    const LatihanPage(),
+    const WebinarPage(),
   ];
 
   @override

@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'package:unity_disleksia_platform/common/style.dart';
-import 'package:unity_disleksia_platform/data/api/api_service.dart';
 import 'package:unity_disleksia_platform/pages/menu_page.dart';
-import 'package:unity_disleksia_platform/pages/webinar_search_page.dart';
-import 'package:unity_disleksia_platform/pages/webinar_list_page.dart';
-import 'package:unity_disleksia_platform/provider/webinar_provider.dart';
+import 'package:unity_disleksia_platform/pages/webinars/webinar_search_page.dart';
+import 'package:unity_disleksia_platform/pages/webinars/webinar_list_page.dart';
 
 class WebinarPage extends StatefulWidget {
   static const routeName = '/webinarPage';
@@ -73,7 +70,7 @@ class _WebinarPageState extends State<WebinarPage> {
                                 label: Text(
                                   "Pencarian",
                                   style: GoogleFonts.inter(
-                                    textStyle: TextStyle(
+                                    textStyle: const TextStyle(
                                         fontSize: 14,
                                         fontWeight: FontWeight.w400,
                                         letterSpacing: -0.6,
@@ -83,9 +80,8 @@ class _WebinarPageState extends State<WebinarPage> {
                                 style: ElevatedButton.styleFrom(
                                   primary: Colors.white,
                                   minimumSize: const Size.fromHeight(50),
-                                  shape: new RoundedRectangleBorder(
-                                    borderRadius:
-                                        new BorderRadius.circular(12.0),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(12.0),
                                   ),
                                   alignment: Alignment.centerLeft,
                                   padding: const EdgeInsets.only(
@@ -97,12 +93,11 @@ class _WebinarPageState extends State<WebinarPage> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 24,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          right: 24, left: 24, bottom: 14),
+                    const Padding(
+                      padding: EdgeInsets.only(right: 24, left: 24, bottom: 14),
                       child: WebinarListPage(),
                     ),
                   ],

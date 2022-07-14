@@ -1,22 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:unity_disleksia_platform/common/style.dart';
 import 'package:unity_disleksia_platform/data/model/video_model.dart';
 
 class CardGridVideo extends StatelessWidget {
   final Video video;
 
-  const CardGridVideo({required this.video});
+  const CardGridVideo({Key? key, required this.video}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     const String _baseUrl = 'http://34.128.78.90:5000/';
-    return Container(
+    return SizedBox(
       width: 182,
       child: Card(
         shape: RoundedRectangleBorder(
-          side: BorderSide(color: neutral300, width: 1),
+          side: const BorderSide(color: neutral300, width: 1),
           borderRadius: BorderRadius.circular(8),
         ),
         child: Padding(
@@ -28,7 +26,7 @@ class CardGridVideo extends StatelessWidget {
                 height: 110,
                 width: 166,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(4)),
+                  borderRadius: const BorderRadius.all(Radius.circular(4)),
                   image: DecorationImage(
                     fit: BoxFit.fill,
                     image: NetworkImage(_baseUrl + video.thumbnail),

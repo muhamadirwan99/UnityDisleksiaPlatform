@@ -3,19 +3,22 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:unity_disleksia_platform/common/style.dart';
-import 'package:unity_disleksia_platform/pages/detail_video_page.dart';
-import 'package:unity_disleksia_platform/provider/search_video_provider.dart';
+import 'package:unity_disleksia_platform/provider/search_webinar_provider.dart';
 import 'package:unity_disleksia_platform/utils/result_state.dart';
-import 'package:unity_disleksia_platform/widgets/card_list_video.dart';
 
-class VideoSearchPage extends StatefulWidget {
-  static const routeName = '/videoSearchPage';
+import '../../widgets/card_list_webinar.dart';
+import 'detail_webinar_page.dart';
+
+class WebinarSearchPage extends StatefulWidget {
+  static const routeName = '/webinarSearchPage';
+
+  const WebinarSearchPage({Key? key}) : super(key: key);
 
   @override
-  State<VideoSearchPage> createState() => _VideoSearchPageState();
+  State<WebinarSearchPage> createState() => _WebinarSearchPageState();
 }
 
-class _VideoSearchPageState extends State<VideoSearchPage> {
+class _WebinarSearchPageState extends State<WebinarSearchPage> {
   final _searchController = TextEditingController();
 
   String name = '';
@@ -25,7 +28,7 @@ class _VideoSearchPageState extends State<VideoSearchPage> {
     return Scaffold(
       body: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 34,
           ),
           Padding(
@@ -46,11 +49,11 @@ class _VideoSearchPageState extends State<VideoSearchPage> {
                     },
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 16,
                 ),
                 Expanded(
-                  child: Consumer<SearchVideoProvider>(
+                  child: Consumer<SearchWebinarProvider>(
                     builder: (context, state, _) {
                       return TextField(
                         controller: _searchController,
@@ -59,12 +62,12 @@ class _VideoSearchPageState extends State<VideoSearchPage> {
                             name = value;
                           });
                           if (value != '') {
-                            state.fetchSearchVideo(name: name);
+                            state.fetchSearchWebinar(name: name);
                           }
                         },
                         cursorColor: neutral900,
                         style: GoogleFonts.inter(
-                          textStyle: TextStyle(
+                          textStyle: const TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w400,
                               letterSpacing: -0.5,
@@ -88,25 +91,23 @@ class _VideoSearchPageState extends State<VideoSearchPage> {
                               ),
                             ),
                           ),
-                          hintText: "Cari Video", //body 1
+                          hintText: "Cari Webinar", //body 1
                           hintStyle: GoogleFonts.inter(
-                            textStyle: TextStyle(
+                            textStyle: const TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w400,
                                 letterSpacing: -0.5,
                                 color: neutral500),
                           ),
                           filled: true,
-                          border: OutlineInputBorder(
+                          border: const OutlineInputBorder(
                             borderRadius: BorderRadius.all(Radius.circular(8)),
                           ),
-                          enabledBorder: OutlineInputBorder(
-                            borderSide:
-                                const BorderSide(color: neutral400, width: 1),
+                          enabledBorder: const OutlineInputBorder(
+                            borderSide: BorderSide(color: neutral400, width: 1),
                           ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide:
-                                const BorderSide(color: blue400, width: 1),
+                          focusedBorder: const OutlineInputBorder(
+                            borderSide: BorderSide(color: blue400, width: 1),
                           ),
                           focusColor: neutral900,
                         ),
@@ -121,25 +122,25 @@ class _VideoSearchPageState extends State<VideoSearchPage> {
             child: name.isEmpty
                 ? Center(
                     child: SvgPicture.asset(
-                      "assets/illustrations/video-search.svg",
+                      "assets/illustrations/webinar-search.svg",
                     ),
                   )
                 : Padding(
                     padding:
                         const EdgeInsets.only(right: 24, left: 24, bottom: 14),
-                    child: Consumer<SearchVideoProvider>(
+                    child: Consumer<SearchWebinarProvider>(
                       builder: (context, state, _) {
                         if (state.state == ResultState.Loading) {
-                          return Center(child: CircularProgressIndicator());
+                          return const Center(
+                              child: CircularProgressIndicator());
                         } else if (state.state == ResultState.HasData) {
-                          print(state.result!.data.length);
                           return ListView.builder(
                             physics: const ClampingScrollPhysics(),
                             shrinkWrap: true,
                             scrollDirection: Axis.vertical,
                             itemCount: state.result!.data.length,
                             itemBuilder: (context, index) {
-                              var video = state.result!.data[index];
+                              var webinar = state.result!.data[index];
                               return GestureDetector(
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(8),
@@ -147,15 +148,21 @@ class _VideoSearchPageState extends State<VideoSearchPage> {
                                     padding: const EdgeInsets.only(bottom: 16),
                                     child: Column(
                                       children: [
-                                        CardListVideo(video: video),
+                                        CardListWebinar(webinar: webinar),
+                                        const SizedBox(
+                                          height: 16,
+                                        ),
+                                        const Divider(
+                                          color: neutral200,
+                                        )
                                       ],
                                     ),
                                   ),
                                 ),
                                 onTap: () {
                                   Navigator.pushNamed(
-                                      context, DetailVideoPage.routeName,
-                                      arguments: video);
+                                      context, DetailWebinarPage.routeName,
+                                      arguments: webinar);
                                 },
                               );
                             },
@@ -163,13 +170,13 @@ class _VideoSearchPageState extends State<VideoSearchPage> {
                         } else if (state.state == ResultState.NoData) {
                           return Center(
                             child: SvgPicture.asset(
-                              "assets/illustrations/video-search-notfound.svg",
+                              "assets/illustrations/webinar-search-notfound.svg",
                             ),
                           );
                         } else if (state.state == ResultState.Error) {
                           return Center(child: Text(state.message));
                         } else {
-                          return Center(child: Text(''));
+                          return const Center(child: Text(''));
                         }
                       },
                     ),
