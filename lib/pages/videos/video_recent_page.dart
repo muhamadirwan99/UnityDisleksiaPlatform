@@ -15,31 +15,29 @@ class VideoRecentPage extends StatelessWidget {
         if (state.state == ResultState.Loading) {
           return const Center(child: CircularProgressIndicator());
         } else if (state.state == ResultState.HasData) {
-          return Expanded(
-            child: SizedBox(
-              height: 200,
-              child: ListView.builder(
-                padding: const EdgeInsets.only(left: 20, right: 16),
-                physics: const ClampingScrollPhysics(),
-                shrinkWrap: true,
-                scrollDirection: Axis.horizontal,
-                itemCount: state.result.data.length,
-                itemBuilder: (context, index) {
-                  var video = state.result.data[index];
-                  return GestureDetector(
-                    child: Padding(
-                      padding: const EdgeInsets.only(right: 8),
-                      child: ClipRRect(
-                          borderRadius: BorderRadius.circular(8),
-                          child: CardGridVideo(video: video)),
-                    ),
-                    onTap: () {
-                      Navigator.pushNamed(context, DetailVideoPage.routeName,
-                          arguments: video);
-                    },
-                  );
-                },
-              ),
+          return SizedBox(
+            height: 190,
+            child: ListView.builder(
+              padding: const EdgeInsets.only(left: 20, right: 16),
+              physics: const ClampingScrollPhysics(),
+              shrinkWrap: true,
+              scrollDirection: Axis.horizontal,
+              itemCount: state.result.data.length,
+              itemBuilder: (context, index) {
+                var video = state.result.data[index];
+                return GestureDetector(
+                  child: Padding(
+                    padding: const EdgeInsets.only(right: 8),
+                    child: ClipRRect(
+                        borderRadius: BorderRadius.circular(8),
+                        child: CardGridVideo(video: video)),
+                  ),
+                  onTap: () {
+                    Navigator.pushNamed(context, DetailVideoPage.routeName,
+                        arguments: video);
+                  },
+                );
+              },
             ),
           );
         } else if (state.state == ResultState.NoData) {
