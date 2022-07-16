@@ -54,9 +54,13 @@ class _HomePageState extends State<HomePage> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            "Video Pembelajaran 📚",
-                            style: myTextTheme.headline3,
+                          Expanded(
+                            child: Text(
+                              "Video Pembelajaran 📚",
+                              style: myTextTheme.headline3,
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
                           ),
                           SizedBox(
                             child: TextButton(
@@ -187,9 +191,13 @@ class _HomePageState extends State<HomePage> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            "Info Webinar 📝",
-                            style: myTextTheme.headline3,
+                          Expanded(
+                            child: Text(
+                              "Info Webinar 📝",
+                              style: myTextTheme.headline3,
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
                           ),
                           SizedBox(
                             child: TextButton(

@@ -87,8 +87,6 @@ class _InstruksiPageState extends State<InstruksiPage> {
                   height: 32,
                 ),
                 Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height,
                   decoration: const BoxDecoration(
                     color: neutral100,
                     borderRadius: BorderRadius.only(

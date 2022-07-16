@@ -236,30 +236,32 @@ class LatihanPage extends StatelessWidget {
                             const SizedBox(
                               width: 16,
                             ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Instruksi",
-                                  style: GoogleFonts.roboto(
-                                    textStyle: const TextStyle(
-                                        fontSize: 24,
-                                        fontWeight: FontWeight.w500,
-                                        letterSpacing: 0,
-                                        color: neutral100),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "Instruksi",
+                                    style: GoogleFonts.roboto(
+                                      textStyle: const TextStyle(
+                                          fontSize: 24,
+                                          fontWeight: FontWeight.w500,
+                                          letterSpacing: 0,
+                                          color: neutral100),
+                                    ),
                                   ),
-                                ),
-                                Text(
-                                  "Informasi cara bermain",
-                                  style: GoogleFonts.roboto(
-                                    textStyle: const TextStyle(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w400,
-                                        letterSpacing: 0.25,
-                                        color: neutral100),
+                                  Text(
+                                    "Informasi cara bermain",
+                                    style: GoogleFonts.roboto(
+                                      textStyle: const TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w400,
+                                          letterSpacing: 0.25,
+                                          color: neutral100),
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             )
                           ],
                         ),

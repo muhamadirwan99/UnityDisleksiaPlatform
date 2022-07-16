@@ -110,99 +110,100 @@ class _LatihanAngkaPageState extends State<LatihanAngkaPage> {
         ],
       ),
       backgroundColor: blue500,
-      body: Padding(
-        padding: const EdgeInsets.only(top: 16, left: 24, right: 24),
-        child: Column(
-          children: [
-            Container(
-              height: 300,
-              width: 380,
-              decoration: const BoxDecoration(
-                color: blue100,
-                borderRadius: BorderRadius.all(
-                  Radius.circular(8),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.only(top: 16, left: 24, right: 24),
+          child: Column(
+            children: [
+              Container(
+                height: 300,
+                width: 380,
+                decoration: const BoxDecoration(
+                  color: blue100,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(8),
+                  ),
                 ),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(24),
-                child: Column(
-                  children: [
-                    Container(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        "Contoh",
-                        style: myTextTheme.headline3,
-                      ),
-                    ),
-                    Expanded(
-                      flex: 1,
-                      child: Text(
-                        widget.value,
-                        style: GoogleFonts.ralewayDots(
-                          textStyle: const TextStyle(
-                              fontSize: 200,
-                              fontWeight: FontWeight.w100,
-                              letterSpacing: -0.3,
-                              color: neutral900),
+                child: Padding(
+                  padding: const EdgeInsets.all(24),
+                  child: Column(
+                    children: [
+                      Container(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          "Contoh",
+                          style: myTextTheme.headline3,
                         ),
                       ),
-                    ),
-                  ],
+                      Expanded(
+                        flex: 1,
+                        child: Text(
+                          widget.value,
+                          style: GoogleFonts.ralewayDots(
+                            textStyle: const TextStyle(
+                                fontSize: 200,
+                                fontWeight: FontWeight.w100,
+                                letterSpacing: -0.3,
+                                color: neutral900),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-            const SizedBox(
-              height: 32,
-            ),
-            Container(
-              width: width,
-              height: height * 0.4,
-              decoration: const BoxDecoration(
-                color: neutral100,
-                borderRadius: BorderRadius.all(
-                  Radius.circular(8),
-                ),
+              const SizedBox(
+                height: 32,
               ),
-              child: GestureDetector(
-                onPanDown: (details) {
-                  setState(() {
-                    points.add(DrawingArea(
-                        point: details.localPosition,
-                        areaPaint: Paint()
-                          ..strokeCap = StrokeCap.round
-                          ..isAntiAlias = true
-                          ..color = selectedColor
-                          ..strokeWidth = strokeWidth));
-                  });
-                },
-                onPanUpdate: (details) {
-                  setState(() {
-                    points.add(DrawingArea(
-                        point: details.localPosition,
-                        areaPaint: Paint()
-                          ..strokeCap = StrokeCap.round
-                          ..isAntiAlias = true
-                          ..color = selectedColor
-                          ..strokeWidth = strokeWidth));
-                  });
-                },
-                onPanEnd: (details) {
-                  setState(() {
-                    points.add(null);
-                  });
-                },
-                child: SizedBox.expand(
-                  child: ClipRRect(
-                    borderRadius: const BorderRadius.all(Radius.circular(8)),
-                    child: CustomPaint(
-                      painter: MyCustomPainter(points: points),
+              Container(
+                width: width,
+                height: height * 0.4,
+                decoration: const BoxDecoration(
+                  color: neutral100,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(8),
+                  ),
+                ),
+                child: GestureDetector(
+                  onPanDown: (details) {
+                    setState(() {
+                      points.add(DrawingArea(
+                          point: details.localPosition,
+                          areaPaint: Paint()
+                            ..strokeCap = StrokeCap.round
+                            ..isAntiAlias = true
+                            ..color = selectedColor
+                            ..strokeWidth = strokeWidth));
+                    });
+                  },
+                  onPanUpdate: (details) {
+                    setState(() {
+                      points.add(DrawingArea(
+                          point: details.localPosition,
+                          areaPaint: Paint()
+                            ..strokeCap = StrokeCap.round
+                            ..isAntiAlias = true
+                            ..color = selectedColor
+                            ..strokeWidth = strokeWidth));
+                    });
+                  },
+                  onPanEnd: (details) {
+                    setState(() {
+                      points.add(null);
+                    });
+                  },
+                  child: SizedBox.expand(
+                    child: ClipRRect(
+                      borderRadius: const BorderRadius.all(Radius.circular(8)),
+                      child: CustomPaint(
+                        painter: MyCustomPainter(points: points),
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-            const SizedBox(height: 9),
-            Container(
+              const SizedBox(height: 9),
+              Container(
                 width: width,
                 decoration: const BoxDecoration(
                     color: neutral100,
@@ -254,8 +255,13 @@ class _LatihanAngkaPageState extends State<LatihanAngkaPage> {
                       },
                     ),
                   ],
-                ))
-          ],
+                ),
+              ),
+              const SizedBox(
+                height: 32,
+              ),
+            ],
+          ),
         ),
       ),
     );

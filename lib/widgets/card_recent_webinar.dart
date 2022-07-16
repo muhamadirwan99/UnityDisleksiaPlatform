@@ -39,11 +39,15 @@ class _CardRecentWebinarState extends State<CardRecentWebinar> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(
-                  alignment: Alignment.topLeft,
-                  child: Text(
-                    widget.webinar.name,
-                    style: myTextTheme.headline5,
+                Expanded(
+                  child: Container(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      widget.webinar.name,
+                      style: myTextTheme.headline5,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   ),
                 ),
                 Container(

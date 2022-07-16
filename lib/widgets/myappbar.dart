@@ -13,9 +13,11 @@ class MyAppBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          Text(
-            "Hallo, Sahabat 👋",
-            style: myTextTheme.headline1,
+          Expanded(
+            child: Text(
+              "Hallo, Sahabat 👋",
+              style: myTextTheme.headline1,
+            ),
           ),
           IconButton(
             onPressed: () {

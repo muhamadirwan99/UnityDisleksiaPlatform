@@ -34,11 +34,13 @@ class CardGridVideo extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 8),
-              Text(
-                video.name,
-                style: myTextTheme.headline5,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
+              Expanded(
+                child: Text(
+                  video.name,
+                  style: myTextTheme.headline5,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
               ),
             ],
           ),

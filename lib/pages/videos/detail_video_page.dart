@@ -125,43 +125,52 @@ class _DetailVideoPageState extends State<DetailVideoPage> {
                                               color: neutral900),
                                         ),
                                       ),
-                                      ElevatedButton(
-                                        style: ElevatedButton.styleFrom(
-                                          elevation: 0.0,
-                                          shadowColor: Colors.transparent,
-                                          primary: blue100,
-                                          onPrimary: neutral400,
-                                        ),
-                                        onPressed: () {
-                                          ScaffoldMessenger.of(context)
-                                              .hideCurrentSnackBar();
+                                      Expanded(
+                                        child: ElevatedButton(
+                                          style: ElevatedButton.styleFrom(
+                                            elevation: 0.0,
+                                            shadowColor: Colors.transparent,
+                                            primary: blue100,
+                                            onPrimary: neutral400,
+                                          ),
+                                          onPressed: () {
+                                            ScaffoldMessenger.of(context)
+                                                .hideCurrentSnackBar();
 
-                                          Navigator.pushNamed(
-                                              context, BookmarkPage.routeName);
-                                        },
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.min,
-                                          children: [
-                                            Text(
-                                              'Lihat',
-                                              style: GoogleFonts.roboto(
-                                                textStyle: const TextStyle(
-                                                    fontSize: 16,
-                                                    fontWeight: FontWeight.w500,
-                                                    letterSpacing: 0.2,
-                                                    color: blue500),
+                                            Navigator.pushNamed(
+                                                context, BookmarkPage.routeName,
+                                                arguments: 0);
+                                          },
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.min,
+                                            children: [
+                                              Expanded(
+                                                child: Text(
+                                                  'Lihat',
+                                                  maxLines: 1,
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
+                                                  style: GoogleFonts.roboto(
+                                                    textStyle: const TextStyle(
+                                                        fontSize: 16,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                        letterSpacing: 0.2,
+                                                        color: blue500),
+                                                  ),
+                                                ),
                                               ),
-                                            ),
-                                            const SizedBox(
-                                              width: 8,
-                                            ),
-                                            SvgPicture.asset(
-                                              "assets/icons/chevron-right.svg",
-                                              color: blue500,
-                                              height: 24,
-                                              width: 24,
-                                            ),
-                                          ],
+                                              const SizedBox(
+                                                width: 8,
+                                              ),
+                                              SvgPicture.asset(
+                                                "assets/icons/chevron-right.svg",
+                                                color: blue500,
+                                                height: 24,
+                                                width: 24,
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                       ),
                                     ],
