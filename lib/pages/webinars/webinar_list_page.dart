@@ -6,6 +6,7 @@ import 'package:unity_disleksia_platform/pages/webinars/detail_webinar_page.dart
 import 'package:unity_disleksia_platform/provider/webinar_provider.dart';
 import 'package:unity_disleksia_platform/utils/result_state.dart';
 import 'package:unity_disleksia_platform/widgets/card_list_webinar.dart';
+import 'package:unity_disleksia_platform/widgets/skeleton.dart';
 
 class WebinarListPage extends StatelessWidget {
   const WebinarListPage({Key? key}) : super(key: key);
@@ -14,7 +15,19 @@ class WebinarListPage extends StatelessWidget {
     return Consumer<WebinarProvider>(
       builder: (context, state, _) {
         if (state.state == ResultState.Loading) {
-          return const Center(child: CircularProgressIndicator());
+          return SizedBox(
+            height: 96,
+            child: ListView.separated(
+              padding: EdgeInsets.only(right: 24, left: 24, bottom: 14),
+              scrollDirection: Axis.vertical,
+              itemCount: 6,
+              itemBuilder: (context, index) => Skeleton(
+                width: 380,
+                height: 96,
+              ),
+              separatorBuilder: (context, index) => const SizedBox(width: 10),
+            ),
+          );
         } else if (state.state == ResultState.HasData) {
           return ListView.builder(
             physics: const ClampingScrollPhysics(),
@@ -27,7 +40,7 @@ class WebinarListPage extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8),
                   child: Padding(
-                    padding: const EdgeInsets.only(bottom: 16),
+                    padding: const EdgeInsets.only(bottom: 10),
                     child: Column(
                       children: [
                         CardListWebinar(webinar: webinar),
@@ -58,7 +71,11 @@ class WebinarListPage extends StatelessWidget {
             ),
           );
         } else if (state.state == ResultState.Error) {
-          return Center(child: Text(state.message));
+          return Center(
+            child: SvgPicture.asset(
+              "assets/illustrations/noconnection.svg",
+            ),
+          );
         } else {
           return const Center(child: Text(''));
         }

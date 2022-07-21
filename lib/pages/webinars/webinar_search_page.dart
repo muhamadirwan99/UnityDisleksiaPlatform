@@ -174,7 +174,11 @@ class _WebinarSearchPageState extends State<WebinarSearchPage> {
                             ),
                           );
                         } else if (state.state == ResultState.Error) {
-                          return Center(child: Text(state.message));
+                          return Center(
+                            child: SvgPicture.asset(
+                              "assets/illustrations/noconnection.svg",
+                            ),
+                          );
                         } else {
                           return const Center(child: Text(''));
                         }

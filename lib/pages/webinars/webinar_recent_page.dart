@@ -5,6 +5,7 @@ import 'package:unity_disleksia_platform/pages/webinars/detail_webinar_page.dart
 import 'package:unity_disleksia_platform/provider/webinar_recent_provider.dart';
 import 'package:unity_disleksia_platform/utils/result_state.dart';
 import 'package:unity_disleksia_platform/widgets/card_recent_webinar.dart';
+import 'package:unity_disleksia_platform/widgets/skeleton.dart';
 
 class WebinarRecentPage extends StatelessWidget {
   const WebinarRecentPage({Key? key}) : super(key: key);
@@ -13,7 +14,19 @@ class WebinarRecentPage extends StatelessWidget {
     return Consumer<WebinarRecentProvider>(
       builder: (context, state, _) {
         if (state.state == ResultState.Loading) {
-          return const Center(child: CircularProgressIndicator());
+          return SizedBox(
+            height: 96,
+            child: ListView.separated(
+              padding: const EdgeInsets.only(left: 24, right: 24),
+              scrollDirection: Axis.vertical,
+              itemCount: 3,
+              itemBuilder: (context, index) => Skeleton(
+                width: 380,
+                height: 96,
+              ),
+              separatorBuilder: (context, index) => const SizedBox(height: 24),
+            ),
+          );
         } else if (state.state == ResultState.HasData) {
           return SizedBox(
             child: ListView.builder(
@@ -44,7 +57,11 @@ class WebinarRecentPage extends StatelessWidget {
             ),
           );
         } else if (state.state == ResultState.Error) {
-          return Center(child: Text(state.message));
+          return Center(
+            child: SvgPicture.asset(
+              "assets/illustrations/noconnection.svg",
+            ),
+          );
         } else {
           return const Center(child: Text(''));
         }

@@ -257,9 +257,6 @@ class _LatihanAngkaPageState extends State<LatihanAngkaPage> {
                   ],
                 ),
               ),
-              const SizedBox(
-                height: 32,
-              ),
             ],
           ),
         ),

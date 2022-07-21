@@ -1,7 +1,9 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:unity_disleksia_platform/common/style.dart';
 import 'package:unity_disleksia_platform/data/model/webinar_model.dart';
+import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 
 class CardCarouselWebinar extends StatelessWidget {
   final Webinar webinar;
@@ -17,8 +19,28 @@ class CardCarouselWebinar extends StatelessWidget {
         borderRadius: BorderRadius.circular(8),
         child: Stack(
           children: [
-            Image.network(_baseUrl + webinar.thumbnail,
-                fit: BoxFit.cover, width: 1000),
+            FancyShimmerImage(
+              imageUrl: _baseUrl + webinar.thumbnail,
+              width: 1000,
+              boxFit: BoxFit.cover,
+            ),
+            // CachedNetworkImage(
+            //   imageUrl: _baseUrl + webinar.thumbnail,
+            //   imageBuilder: (context, imageProvider) => Container(
+            //     width: 1000,
+            //     decoration: BoxDecoration(
+            //       image: DecorationImage(
+            //         image: imageProvider,
+            //         fit: BoxFit.cover,
+            //       ),
+            //     ),
+            //   ),
+            //   placeholder: (context, url) => Container(
+            //     width: 1000,
+            //     color: neutral200,
+            //   ),
+            // ),
+
             Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),

@@ -1,3 +1,8 @@
+import 'dart:convert';
+
+VideosResult videosResultFromJson(String str) =>
+    VideosResult.fromJson(json.decode(str));
+
 class VideosResult {
   VideosResult({
     required this.status,

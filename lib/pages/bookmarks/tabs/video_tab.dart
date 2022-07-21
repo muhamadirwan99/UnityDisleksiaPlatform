@@ -36,15 +36,8 @@ class _VideoTabState extends State<VideoTab> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8),
                   child: Padding(
-                    padding: const EdgeInsets.only(bottom: 16),
-                    child: Column(
-                      children: [
-                        CardListVideo(video: video),
-                        const SizedBox(
-                          height: 16,
-                        ),
-                      ],
-                    ),
+                    padding: const EdgeInsets.only(bottom: 10),
+                    child: CardListVideo(video: video),
                   ),
                 ),
                 onTap: () {

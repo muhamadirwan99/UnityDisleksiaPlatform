@@ -1,3 +1,4 @@
+import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:unity_disleksia_platform/common/style.dart';
@@ -20,15 +21,12 @@ class CardListVideo extends StatelessWidget {
         padding: const EdgeInsets.all(12),
         child: Row(
           children: [
-            Container(
-              height: 91,
-              width: 160,
-              decoration: BoxDecoration(
-                borderRadius: const BorderRadius.all(Radius.circular(4)),
-                image: DecorationImage(
-                  fit: BoxFit.fill,
-                  image: NetworkImage(_baseUrl + video.thumbnail),
-                ),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(4),
+              child: FancyShimmerImage(
+                imageUrl: video.thumbnail,
+                height: 91,
+                width: 160,
               ),
             ),
             const SizedBox(width: 8),

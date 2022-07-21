@@ -1,3 +1,4 @@
+import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -71,10 +72,14 @@ class _DetailWebinarPageState extends State<DetailWebinarPage> {
                 padding: const EdgeInsets.only(top: 16, right: 24, left: 24),
                 child: Column(
                   children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(16),
-                      child: Image.network(
-                        _baseUrl + widget.webinar.thumbnail,
+                    FancyShimmerImage(
+                      imageUrl: _baseUrl + widget.webinar.thumbnail,
+                      height: 380,
+                      width: 380,
+                      boxFit: BoxFit.fill,
+                      boxDecoration: BoxDecoration(
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(16)),
                       ),
                     ),
                     const SizedBox(
@@ -156,17 +161,21 @@ class _DetailWebinarPageState extends State<DetailWebinarPage> {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Text(
-                                      'Berhasil ditambahkan',
-                                      style: GoogleFonts.roboto(
-                                        textStyle: const TextStyle(
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.w400,
-                                            letterSpacing: 0.5,
-                                            color: neutral900),
+                                    Expanded(
+                                      flex: 2,
+                                      child: Text(
+                                        'Berhasil ditambahkan',
+                                        style: GoogleFonts.roboto(
+                                          textStyle: const TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w400,
+                                              letterSpacing: 0.5,
+                                              color: neutral900),
+                                        ),
                                       ),
                                     ),
                                     Expanded(
+                                      flex: 1,
                                       child: ElevatedButton(
                                         style: ElevatedButton.styleFrom(
                                           elevation: 0.0,
@@ -184,6 +193,8 @@ class _DetailWebinarPageState extends State<DetailWebinarPage> {
                                         },
                                         child: Row(
                                           mainAxisSize: MainAxisSize.min,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.end,
                                           children: [
                                             Expanded(
                                               child: Text(

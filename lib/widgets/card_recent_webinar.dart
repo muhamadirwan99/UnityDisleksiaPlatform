@@ -1,3 +1,4 @@
+import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
@@ -64,15 +65,16 @@ class _CardRecentWebinarState extends State<CardRecentWebinar> {
           ),
           Expanded(
             flex: 0,
-            child: Container(
-              height: 85,
-              width: 85,
-              alignment: Alignment.topRight,
-              decoration: BoxDecoration(
-                borderRadius: const BorderRadius.all(Radius.circular(4)),
-                image: DecorationImage(
-                  fit: BoxFit.cover,
-                  image: NetworkImage(_baseUrl + widget.webinar.thumbnail),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(4),
+              child: FancyShimmerImage(
+                imageUrl: _baseUrl + widget.webinar.thumbnail,
+                height: 85,
+                width: 85,
+                boxFit: BoxFit.cover,
+                alignment: Alignment.topRight,
+                boxDecoration: BoxDecoration(
+                  borderRadius: const BorderRadius.all(Radius.circular(4)),
                 ),
               ),
             ),
