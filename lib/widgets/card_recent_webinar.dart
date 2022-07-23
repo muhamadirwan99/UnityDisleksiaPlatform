@@ -29,57 +29,61 @@ class _CardRecentWebinarState extends State<CardRecentWebinar> {
   @override
   Widget build(BuildContext context) {
     const String _baseUrl = 'http://34.128.78.90:5000/';
-    return SizedBox(
-      height: 85,
-      width: 380,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Expanded(
-            flex: 2,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Expanded(
-                  child: Container(
-                    alignment: Alignment.topLeft,
-                    child: Text(
-                      widget.webinar.name,
-                      style: myTextTheme.headline5,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
+    return Card(
+      color: neutral100,
+      elevation: 0,
+      child: SizedBox(
+        height: 85,
+        width: 380,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Expanded(
+              flex: 2,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    child: Container(
+                      alignment: Alignment.topLeft,
+                      child: Text(
+                        widget.webinar.name,
+                        style: myTextTheme.headline5,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                      ),
                     ),
                   ),
-                ),
-                Container(
-                    alignment: Alignment.bottomLeft,
-                    child: Text(
-                      dateFormat.format(widget.webinar.date),
-                      style: myTextTheme.caption,
-                    )),
-              ],
+                  Container(
+                      alignment: Alignment.bottomLeft,
+                      child: Text(
+                        dateFormat.format(widget.webinar.date),
+                        style: myTextTheme.caption,
+                      )),
+                ],
+              ),
             ),
-          ),
-          const SizedBox(
-            width: 16,
-          ),
-          Expanded(
-            flex: 0,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(4),
-              child: FancyShimmerImage(
-                imageUrl: _baseUrl + widget.webinar.thumbnail,
-                height: 85,
-                width: 85,
-                boxFit: BoxFit.cover,
-                alignment: Alignment.topRight,
-                boxDecoration: BoxDecoration(
-                  borderRadius: const BorderRadius.all(Radius.circular(4)),
+            const SizedBox(
+              width: 16,
+            ),
+            Expanded(
+              flex: 0,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(4),
+                child: FancyShimmerImage(
+                  imageUrl: _baseUrl + widget.webinar.thumbnail,
+                  height: 85,
+                  width: 85,
+                  boxFit: BoxFit.cover,
+                  alignment: Alignment.topRight,
+                  boxDecoration: BoxDecoration(
+                    borderRadius: const BorderRadius.all(Radius.circular(4)),
+                  ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

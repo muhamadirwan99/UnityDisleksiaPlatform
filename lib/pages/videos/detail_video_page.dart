@@ -115,17 +115,21 @@ class _DetailVideoPageState extends State<DetailVideoPage> {
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Text(
-                                        'Berhasil ditambahkan',
-                                        style: GoogleFonts.roboto(
-                                          textStyle: const TextStyle(
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.w400,
-                                              letterSpacing: 0.5,
-                                              color: neutral900),
+                                      Expanded(
+                                        flex: 2,
+                                        child: Text(
+                                          'Berhasil ditambahkan',
+                                          style: GoogleFonts.roboto(
+                                            textStyle: const TextStyle(
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.w400,
+                                                letterSpacing: 0.5,
+                                                color: neutral900),
+                                          ),
                                         ),
                                       ),
                                       Expanded(
+                                        flex: 1,
                                         child: ElevatedButton(
                                           style: ElevatedButton.styleFrom(
                                             elevation: 0.0,
@@ -143,6 +147,8 @@ class _DetailVideoPageState extends State<DetailVideoPage> {
                                           },
                                           child: Row(
                                             mainAxisSize: MainAxisSize.min,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.end,
                                             children: [
                                               Expanded(
                                                 child: Text(
