@@ -11,7 +11,6 @@ class CardListVideo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const String _baseUrl = 'http://34.128.78.90:5000/';
     return Card(
       shape: RoundedRectangleBorder(
         side: const BorderSide(color: neutral300, width: 1),

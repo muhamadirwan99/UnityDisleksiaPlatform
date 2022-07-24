@@ -18,10 +18,10 @@ class WebinarListPage extends StatelessWidget {
           return SizedBox(
             height: 96,
             child: ListView.separated(
-              padding: EdgeInsets.only(right: 24, left: 24, bottom: 14),
+              padding: const EdgeInsets.only(right: 24, left: 24, bottom: 14),
               scrollDirection: Axis.vertical,
               itemCount: 6,
-              itemBuilder: (context, index) => Skeleton(
+              itemBuilder: (context, index) => const Skeleton(
                 width: 380,
                 height: 96,
               ),

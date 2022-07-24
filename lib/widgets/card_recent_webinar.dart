@@ -76,8 +76,8 @@ class _CardRecentWebinarState extends State<CardRecentWebinar> {
                   width: 85,
                   boxFit: BoxFit.cover,
                   alignment: Alignment.topRight,
-                  boxDecoration: BoxDecoration(
-                    borderRadius: const BorderRadius.all(Radius.circular(4)),
+                  boxDecoration: const BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(4)),
                   ),
                 ),
               ),

@@ -20,7 +20,7 @@ class WebinarRecentPage extends StatelessWidget {
               padding: const EdgeInsets.only(left: 24, right: 24),
               scrollDirection: Axis.vertical,
               itemCount: 3,
-              itemBuilder: (context, index) => Skeleton(
+              itemBuilder: (context, index) => const Skeleton(
                 width: 380,
                 height: 96,
               ),

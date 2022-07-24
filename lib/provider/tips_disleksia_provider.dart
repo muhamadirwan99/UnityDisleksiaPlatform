@@ -7,7 +7,7 @@ class TipsDisleksiaProvider extends ChangeNotifier {
   final ApiService apiService;
 
   TipsDisleksiaProvider({required this.apiService}) {
-    _fetchAllTips();
+    fetchAllTips();
   }
 
   late TipsResult _tipsResult;
@@ -20,7 +20,7 @@ class TipsDisleksiaProvider extends ChangeNotifier {
 
   ResultState get state => _state;
 
-  Future<dynamic> _fetchAllTips() async {
+  Future<dynamic> fetchAllTips() async {
     try {
       _state = ResultState.Loading;
       notifyListeners();

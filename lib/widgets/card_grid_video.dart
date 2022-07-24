@@ -10,7 +10,6 @@ class CardGridVideo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const String _baseUrl = 'http://34.128.78.90:5000/';
     return SizedBox(
       width: 160,
       child: Card(
@@ -31,8 +30,8 @@ class CardGridVideo extends StatelessWidget {
                   height: 90,
                   width: 140,
                   boxFit: BoxFit.fill,
-                  boxDecoration: BoxDecoration(
-                    borderRadius: const BorderRadius.all(Radius.circular(4)),
+                  boxDecoration: const BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(4)),
                   ),
                 ),
               ),

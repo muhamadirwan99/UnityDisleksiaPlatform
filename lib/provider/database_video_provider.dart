@@ -8,7 +8,7 @@ class DatabaseVideoProvider extends ChangeNotifier {
   final DatabaseVideoHelper databaseHelper;
 
   DatabaseVideoProvider({required this.databaseHelper}) {
-    _getBookmarks();
+    getBookmarks();
   }
 
   ResultState? _state;
@@ -20,7 +20,7 @@ class DatabaseVideoProvider extends ChangeNotifier {
   List<Video> _bookmarks = [];
   List<Video> get bookmarks => _bookmarks;
 
-  void _getBookmarks() async {
+  void getBookmarks() async {
     _bookmarks = await databaseHelper.getBookmarks();
     if (_bookmarks.isNotEmpty) {
       _state = ResultState.HasData;
@@ -34,7 +34,7 @@ class DatabaseVideoProvider extends ChangeNotifier {
   void addBookmark(Video video) async {
     try {
       await databaseHelper.insertBookmark(video);
-      _getBookmarks();
+      getBookmarks();
     } catch (e) {
       _state = ResultState.Error;
       _message = 'Error: $e';
@@ -50,7 +50,7 @@ class DatabaseVideoProvider extends ChangeNotifier {
   void removeBookmark(String id) async {
     try {
       await databaseHelper.removeBookmark(id);
-      _getBookmarks();
+      getBookmarks();
     } catch (e) {
       _state = ResultState.Error;
       _message = 'Error: $e';

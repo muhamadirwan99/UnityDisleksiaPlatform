@@ -7,7 +7,7 @@ class WebinarProvider extends ChangeNotifier {
   final ApiService apiService;
 
   WebinarProvider({required this.apiService}) {
-    _fetchAllWebinar();
+    fetchAllWebinar();
   }
 
   late WebinarsResult _webinarsResult;
@@ -20,7 +20,7 @@ class WebinarProvider extends ChangeNotifier {
 
   ResultState get state => _state;
 
-  Future<dynamic> _fetchAllWebinar() async {
+  Future<dynamic> fetchAllWebinar() async {
     try {
       _state = ResultState.Loading;
       notifyListeners();

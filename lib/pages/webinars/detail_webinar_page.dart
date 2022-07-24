@@ -77,9 +77,8 @@ class _DetailWebinarPageState extends State<DetailWebinarPage> {
                       height: 380,
                       width: 380,
                       boxFit: BoxFit.fill,
-                      boxDecoration: BoxDecoration(
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(16)),
+                      boxDecoration: const BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(16)),
                       ),
                     ),
                     const SizedBox(

@@ -7,7 +7,7 @@ class VideoRecentProvider extends ChangeNotifier {
   final ApiService apiService;
 
   VideoRecentProvider({required this.apiService}) {
-    _fetchAllVideoRecent();
+    fetchAllVideoRecent();
   }
 
   late VideosResult _videosResult;
@@ -20,7 +20,7 @@ class VideoRecentProvider extends ChangeNotifier {
 
   ResultState get state => _state;
 
-  Future<dynamic> _fetchAllVideoRecent() async {
+  Future<dynamic> fetchAllVideoRecent() async {
     try {
       _state = ResultState.Loading;
       notifyListeners();
