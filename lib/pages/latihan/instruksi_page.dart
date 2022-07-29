@@ -20,7 +20,7 @@ class _InstruksiPageState extends State<InstruksiPage> {
   void initState() {
     super.initState();
 
-    var url = "https://www.youtube.com/watch?v=FSWl_JAvROo";
+    var url = "https://www.youtube.com/watch?v=ba8vB7l8_FU";
 
     _controller = YoutubePlayerController(
       initialVideoId: YoutubePlayer.convertUrlToId(url)!,
