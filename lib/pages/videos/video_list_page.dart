@@ -22,10 +22,10 @@ class _VideoListPageState extends State<VideoListPage> {
           return SizedBox(
             height: 115,
             child: ListView.separated(
-              padding: EdgeInsets.only(right: 24, left: 24, bottom: 14),
+              padding: const EdgeInsets.only(right: 24, left: 24, bottom: 14),
               scrollDirection: Axis.vertical,
               itemCount: 6,
-              itemBuilder: (context, index) => Skeleton(
+              itemBuilder: (context, index) => const Skeleton(
                 height: 115,
                 width: 380,
               ),

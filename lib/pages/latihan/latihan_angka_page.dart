@@ -226,9 +226,22 @@ class _LatihanAngkaPageState extends State<LatihanAngkaPage> {
                         ),
                         onPressed: () {
                           setState(() {
-                            if (points.length > 1) {
-                              points.removeLast();
-                            }
+                            if (points.length > 100) {
+                              points.removeRange(
+                                  points.length - 20, points.length);
+                            } else if (points.length > 50) {
+                              points.removeRange(
+                                  points.length - 10, points.length);
+                            } else if (points.length > 25) {
+                              points.removeRange(
+                                  points.length - 5, points.length);
+                            } else if (points.length > 10) {
+                              points.removeRange(
+                                  points.length - 2, points.length);
+                            } else if (points.length > 1) {
+                              points.removeRange(
+                                  points.length - 1, points.length);
+                            } else {}
                           });
                         },
                       ),

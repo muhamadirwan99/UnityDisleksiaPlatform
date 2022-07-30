@@ -20,7 +20,7 @@ class VideoRecentPage extends StatelessWidget {
               padding: const EdgeInsets.only(left: 20, right: 16),
               scrollDirection: Axis.horizontal,
               itemCount: 3,
-              itemBuilder: (context, index) => Skeleton(
+              itemBuilder: (context, index) => const Skeleton(
                 width: 148,
                 height: 142,
               ),
