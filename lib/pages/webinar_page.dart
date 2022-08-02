@@ -35,7 +35,7 @@ class _WebinarPageState extends State<WebinarPage> {
             width: 32,
           ),
           onPressed: () {
-            Navigator.pushNamed(context, MenuPage.routeName);
+            Navigator.pop(context);
           },
         ),
       ),
@@ -68,7 +68,7 @@ class _WebinarPageState extends State<WebinarPage> {
                                   width: 24,
                                 ),
                                 label: Text(
-                                  "Pencarian",
+                                  "Cari Webinar",
                                   style: GoogleFonts.inter(
                                     textStyle: const TextStyle(
                                         fontSize: 14,

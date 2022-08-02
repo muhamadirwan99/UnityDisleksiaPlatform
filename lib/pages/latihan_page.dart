@@ -37,7 +37,7 @@ class LatihanPage extends StatelessWidget {
             width: 32,
           ),
           onPressed: () {
-            Navigator.pushNamed(context, MenuPage.routeName);
+            Navigator.pop(context);
           },
         ),
       ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:splash_screen_view/SplashScreenView.dart';
 import 'package:unity_disleksia_platform/common/style.dart';
-import 'package:unity_disleksia_platform/pages/menu_page.dart';
+import 'package:unity_disleksia_platform/pages/home_page.dart';
 
 class SplashPage extends StatelessWidget {
   static const routeName = '/splashPage';
@@ -11,7 +11,7 @@ class SplashPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SplashScreenView(
-      navigateRoute: const MenuPage(),
+      navigateRoute: const HomePage(),
       duration: 4000,
       imageSrc: "assets/icons/logo.png",
       backgroundColor: neutral100,

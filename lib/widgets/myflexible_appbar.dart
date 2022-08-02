@@ -51,7 +51,7 @@ class MyFlexibleAppBar extends StatelessWidget {
                   width: 24,
                 ),
                 label: Text(
-                  "Cari Video",
+                  "Mau belajar apa hari ini?",
                   style: GoogleFonts.roboto(
                     textStyle: const TextStyle(
                         fontSize: 14,

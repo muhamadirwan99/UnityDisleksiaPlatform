@@ -19,16 +19,16 @@ class TipsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Tips & Trik',
+          'Kiat Membimbing',
           style: myTextTheme.headline5,
         ),
-        titleTextStyle: const TextStyle(color: neutral900),
+        titleTextStyle: const TextStyle(color: neutral100),
         elevation: 0,
-        backgroundColor: neutral100,
+        backgroundColor: blue500,
         leading: IconButton(
           icon: SvgPicture.asset(
             "assets/icons/arrow-left.svg",
-            color: neutral900,
+            color: neutral100,
             height: 32,
             width: 32,
           ),

@@ -116,11 +116,11 @@ class HurufPage extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: const [
-                        HurufButton(value: 'A'),
-                        HurufButton(value: 'B'),
-                        HurufButton(value: 'C'),
-                        HurufButton(value: 'D'),
-                        HurufButton(value: 'E'),
+                        HurufButton(value: 'a'),
+                        HurufButton(value: 'b'),
+                        HurufButton(value: 'c'),
+                        HurufButton(value: 'd'),
+                        HurufButton(value: 'e'),
                       ],
                     ),
                     const SizedBox(
@@ -129,11 +129,11 @@ class HurufPage extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: const [
-                        HurufButton(value: 'F'),
-                        HurufButton(value: 'G'),
-                        HurufButton(value: 'H'),
-                        HurufButton(value: 'I'),
-                        HurufButton(value: 'J'),
+                        HurufButton(value: 'f'),
+                        HurufButton(value: 'g'),
+                        HurufButton(value: 'h'),
+                        HurufButton(value: 'i'),
+                        HurufButton(value: 'j'),
                       ],
                     ),
                     const SizedBox(
@@ -142,11 +142,11 @@ class HurufPage extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: const [
-                        HurufButton(value: 'K'),
-                        HurufButton(value: 'L'),
-                        HurufButton(value: 'M'),
-                        HurufButton(value: 'N'),
-                        HurufButton(value: 'O'),
+                        HurufButton(value: 'k'),
+                        HurufButton(value: 'l'),
+                        HurufButton(value: 'm'),
+                        HurufButton(value: 'n'),
+                        HurufButton(value: 'o'),
                       ],
                     ),
                     const SizedBox(
@@ -155,11 +155,11 @@ class HurufPage extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: const [
-                        HurufButton(value: 'P'),
-                        HurufButton(value: 'Q'),
-                        HurufButton(value: 'R'),
-                        HurufButton(value: 'S'),
-                        HurufButton(value: 'T'),
+                        HurufButton(value: 'p'),
+                        HurufButton(value: 'q'),
+                        HurufButton(value: 'r'),
+                        HurufButton(value: 's'),
+                        HurufButton(value: 't'),
                       ],
                     ),
                     const SizedBox(
@@ -168,11 +168,11 @@ class HurufPage extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: const [
-                        HurufButton(value: 'U'),
-                        HurufButton(value: 'V'),
-                        HurufButton(value: 'W'),
-                        HurufButton(value: 'X'),
-                        HurufButton(value: 'Y'),
+                        HurufButton(value: 'u'),
+                        HurufButton(value: 'v'),
+                        HurufButton(value: 'w'),
+                        HurufButton(value: 'x'),
+                        HurufButton(value: 'y'),
                       ],
                     ),
                     const SizedBox(
@@ -180,7 +180,7 @@ class HurufPage extends StatelessWidget {
                     ),
                     Container(
                         alignment: Alignment.centerLeft,
-                        child: const HurufButton(value: 'Z')),
+                        child: const HurufButton(value: 'z')),
                   ],
                 ),
               ),

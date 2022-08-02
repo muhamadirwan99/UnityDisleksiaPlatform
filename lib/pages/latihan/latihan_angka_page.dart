@@ -139,7 +139,7 @@ class _LatihanAngkaPageState extends State<LatihanAngkaPage> {
                         flex: 1,
                         child: Text(
                           widget.value,
-                          style: GoogleFonts.ralewayDots(
+                          style: GoogleFonts.roboto(
                             textStyle: const TextStyle(
                                 fontSize: 200,
                                 fontWeight: FontWeight.w100,
