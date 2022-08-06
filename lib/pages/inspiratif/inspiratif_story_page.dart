@@ -17,7 +17,7 @@ class InspiratifStoryPage extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.only(bottom: 24, left: 24, right: 24),
+          padding: const EdgeInsets.only(bottom: 16, left: 24, right: 24),
           child: GestureDetector(
             child: Card(
               color: neutral100,
