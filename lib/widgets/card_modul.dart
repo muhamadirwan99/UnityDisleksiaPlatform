@@ -65,7 +65,7 @@ class _CardModulState extends State<CardModul> {
 
   @override
   Widget build(BuildContext context) {
-    const String _baseUrl = 'http://34.128.78.90:5000/';
+    const String _baseUrl = 'http://34.101.40.203:5000/';
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(8),

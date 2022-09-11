@@ -28,6 +28,7 @@ import 'package:unity_disleksia_platform/pages/webinars/webinar_menu_page.dart';
 import 'package:unity_disleksia_platform/pages/webinar_page.dart';
 import 'package:unity_disleksia_platform/provider/database_video_provider.dart';
 import 'package:unity_disleksia_platform/provider/database_webinar_provider.dart';
+import 'package:unity_disleksia_platform/provider/kisah_provider.dart';
 import 'package:unity_disleksia_platform/provider/search_video_provider.dart';
 import 'package:unity_disleksia_platform/provider/search_webinar_provider.dart';
 import 'package:unity_disleksia_platform/provider/tips_disleksia_provider.dart';
@@ -89,6 +90,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider<TipsDisleksiaProvider>(
           create: (_) => TipsDisleksiaProvider(apiService: ApiService()),
+        ),
+        ChangeNotifierProvider<KisahProvider>(
+          create: (_) => KisahProvider(apiService: ApiService()),
         ),
       ],
       child: MaterialApp(

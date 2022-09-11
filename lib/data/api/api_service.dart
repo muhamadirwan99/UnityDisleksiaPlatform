@@ -1,12 +1,13 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:http/http.dart' as http;
+import 'package:unity_disleksia_platform/data/model/kisah_model.dart';
 import 'package:unity_disleksia_platform/data/model/tips_model.dart';
 import 'package:unity_disleksia_platform/data/model/video_model.dart';
 import 'package:unity_disleksia_platform/data/model/webinar_model.dart';
 
 class ApiService {
-  static const String _baseUrl = 'http://34.128.78.90:5000/api/';
+  static const String _baseUrl = 'http://34.101.40.203:5000/api/';
 
   Future<VideosResult> listVideos() async {
     final response = await http.get(Uri.parse(_baseUrl + "videos"));
@@ -107,6 +108,16 @@ class ApiService {
       return TipsResult.fromJson(json.decode(response.body));
     } else {
       throw Exception('Failed to load tips Peningkatan Minat');
+    }
+  }
+
+  Future<KisahResult> listKisah() async {
+    final response =
+        await http.get(Uri.parse(_baseUrl + "kisah/update/recent"));
+    if (response.statusCode == 200) {
+      return KisahResult.fromJson(json.decode(response.body));
+    } else {
+      throw Exception('Failed to load kisah inspiratif');
     }
   }
 }

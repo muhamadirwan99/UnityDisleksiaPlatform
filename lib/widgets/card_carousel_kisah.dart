@@ -1,45 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:unity_disleksia_platform/common/style.dart';
-import 'package:unity_disleksia_platform/data/model/webinar_model.dart';
+import 'package:unity_disleksia_platform/data/model/kisah_model.dart';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 
-class CardCarouselWebinar extends StatelessWidget {
-  final Webinar webinar;
+class CardCarouselKisah extends StatelessWidget {
+  final Kisah kisah;
 
-  const CardCarouselWebinar({Key? key, required this.webinar})
-      : super(key: key);
+  const CardCarouselKisah({Key? key, required this.kisah}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    const String _baseUrl = 'http://34.128.78.90:5000/';
+    const String _baseUrl = 'http://34.101.40.203:5000/';
     return Center(
       child: ClipRRect(
         borderRadius: BorderRadius.circular(8),
         child: Stack(
           children: [
             FancyShimmerImage(
-              imageUrl: _baseUrl + webinar.thumbnail,
+              imageUrl: _baseUrl + kisah.thumbnail,
               width: 1000,
               boxFit: BoxFit.cover,
             ),
-            // CachedNetworkImage(
-            //   imageUrl: _baseUrl + webinar.thumbnail,
-            //   imageBuilder: (context, imageProvider) => Container(
-            //     width: 1000,
-            //     decoration: BoxDecoration(
-            //       image: DecorationImage(
-            //         image: imageProvider,
-            //         fit: BoxFit.cover,
-            //       ),
-            //     ),
-            //   ),
-            //   placeholder: (context, url) => Container(
-            //     width: 1000,
-            //     color: neutral200,
-            //   ),
-            // ),
-
             Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
@@ -58,7 +40,7 @@ class CardCarouselWebinar extends StatelessWidget {
               child: Container(
                 alignment: Alignment.bottomLeft,
                 child: Text(
-                  webinar.name,
+                  kisah.name,
                   style: GoogleFonts.roboto(
                     textStyle: const TextStyle(
                         fontSize: 16,

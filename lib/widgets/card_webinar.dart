@@ -28,7 +28,7 @@ class _CardWebinarState extends State<CardWebinar> {
 
   @override
   Widget build(BuildContext context) {
-    const String _baseUrl = 'http://34.128.78.90:5000/';
+    const String _baseUrl = 'http://34.101.40.203:5000/';
     return SizedBox(
       height: 210.0,
       width: 182.0,

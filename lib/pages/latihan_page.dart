@@ -5,7 +5,6 @@ import 'package:unity_disleksia_platform/common/style.dart';
 import 'package:unity_disleksia_platform/pages/latihan/angka_page.dart';
 import 'package:unity_disleksia_platform/pages/latihan/huruf_page.dart';
 import 'package:unity_disleksia_platform/pages/latihan/instruksi_page.dart';
-import 'package:unity_disleksia_platform/pages/menu_page.dart';
 
 class LatihanPage extends StatelessWidget {
   static const routeName = '/latihanPage';

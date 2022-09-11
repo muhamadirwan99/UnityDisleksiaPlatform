@@ -1,17 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:unity_disleksia_platform/common/style.dart';
 import 'package:unity_disleksia_platform/pages/inspiratif/carousel_inspiratif_story_page.dart';
 import 'package:unity_disleksia_platform/pages/inspiratif/inspiratif_story_page.dart';
-import 'package:unity_disleksia_platform/pages/latihan/latihan_menu_page.dart';
 import 'package:unity_disleksia_platform/pages/latihan_page.dart';
 import 'package:unity_disleksia_platform/pages/tips_page.dart';
 import 'package:unity_disleksia_platform/pages/video_page.dart';
-import 'package:unity_disleksia_platform/pages/videos/video_menu_page.dart';
-import 'package:unity_disleksia_platform/pages/videos/video_recent_page.dart';
 import 'package:unity_disleksia_platform/pages/webinar_page.dart';
-import 'package:unity_disleksia_platform/pages/webinars/webinar_menu_page.dart';
 import 'package:unity_disleksia_platform/widgets/myappbar.dart';
 import 'package:unity_disleksia_platform/widgets/myflexible_appbar.dart';
 
@@ -66,7 +61,7 @@ class _HomePageState extends State<HomePage> {
                               height: 72,
                               width: 72,
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 8,
                             ),
                             Text(
@@ -88,7 +83,7 @@ class _HomePageState extends State<HomePage> {
                               height: 72,
                               width: 72,
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 8,
                             ),
                             Text(
@@ -110,7 +105,7 @@ class _HomePageState extends State<HomePage> {
                               height: 72,
                               width: 72,
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 8,
                             ),
                             Text(
@@ -132,7 +127,7 @@ class _HomePageState extends State<HomePage> {
                               height: 72,
                               width: 72,
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 8,
                             ),
                             Text(
@@ -165,7 +160,7 @@ class _HomePageState extends State<HomePage> {
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 8,
                           ),
                           SvgPicture.asset(
