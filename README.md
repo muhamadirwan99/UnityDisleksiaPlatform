@@ -1,6 +1,6 @@
 # Unity Disleksia Platform
 
-<a href="https://play.google.com/store/apps/details?id=com.udp.app" target="_blank"><img alt="Get it on Google Play" src="https://plyoapp.com/wp-content/uploads/2018/05/coming-soon-google-play.png" width="153" height="46">
+<a href="https://play.google.com/store/apps/details?id=com.udp.app" target="_blank"><img alt="Get it on Google Play" src="https://lh3.googleusercontent.com/q1k2l5CwMV31JdDXcpN4Ey7O43PxnjAuZBTmcHEwQxVuv_2wCE2gAAQMWxwNUC2FYEOnYgFPOpw6kmHJWuEGeIBLTj9CuxcOEeU8UXyzWJq4NJM3lg=s0" width="153" height="46">
 
 Unity Disleksia Platform is written in Dart with Flutter Framework.
 
