@@ -52,7 +52,7 @@ android {
         applicationId "com.udp.app"
         minSdkVersion 21
         targetSdkVersion 31
-        versionCode flutterVersionCode.toInteger()
+        versionCode 3
         versionName flutterVersionName
         multiDexEnabled true
     }

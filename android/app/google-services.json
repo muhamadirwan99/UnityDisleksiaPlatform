@@ -1,33 +1,41 @@
 {
   "project_info": {
-    "project_number": "525017551306",
-    "project_id": "udp-project-362111",
-    "storage_bucket": "udp-project-362111.appspot.com"
+    "project_number": "1025320049188",
+    "project_id": "udp-new",
+    "storage_bucket": "udp-new.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:525017551306:android:4b487ca7dbfe96ffebff33",
+        "mobilesdk_app_id": "1:1025320049188:android:6896d87a0eb968387c56b1",
         "android_client_info": {
           "package_name": "com.udp.app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "525017551306-5djjim2h959halqe1qmv2q7koe3d66t5.apps.googleusercontent.com",
+          "client_id": "1025320049188-fmghfpi1b60lkrbago937mu6ol2rck64.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.udp.app",
+            "certificate_hash": "35c70f5989d7ed356950a02a4433a6a8714616cb"
+          }
+        },
+        {
+          "client_id": "1025320049188-sv63p0qe85f3l7e8mepejl0caj636cdo.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCKlsA1sntDk1Qe2nlKlfmn-LNfFQ2YLfs"
+          "current_key": "AIzaSyBjV8M11Z8H4Z7obh9SQsMDW0B1eYLVU_g"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "525017551306-5djjim2h959halqe1qmv2q7koe3d66t5.apps.googleusercontent.com",
+              "client_id": "1025320049188-sv63p0qe85f3l7e8mepejl0caj636cdo.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
