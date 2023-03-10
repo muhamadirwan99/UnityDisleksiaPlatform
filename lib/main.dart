@@ -1,3 +1,5 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_downloader/flutter_downloader.dart';
 import 'package:provider/provider.dart';
@@ -7,6 +9,7 @@ import 'package:unity_disleksia_platform/data/api/api_service.dart';
 import 'package:unity_disleksia_platform/data/db/database_webinar_helper.dart';
 import 'package:unity_disleksia_platform/data/model/video_model.dart';
 import 'package:unity_disleksia_platform/data/model/webinar_model.dart';
+import 'package:unity_disleksia_platform/locator.dart';
 import 'package:unity_disleksia_platform/pages/latihan/angka_page.dart';
 import 'package:unity_disleksia_platform/pages/bookmarks/bookmark_page.dart';
 import 'package:unity_disleksia_platform/pages/videos/detail_video_page.dart';
@@ -38,18 +41,21 @@ import 'package:unity_disleksia_platform/provider/video_provider.dart';
 import 'package:unity_disleksia_platform/provider/video_recent_provider.dart';
 import 'package:unity_disleksia_platform/provider/webinar_provider.dart';
 import 'package:unity_disleksia_platform/provider/webinar_recent_provider.dart';
+import 'package:unity_disleksia_platform/services/analytics_service.dart';
 
 import 'data/db/database_video_helper.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await FlutterDownloader.initialize(debug: true, ignoreSsl: true);
+  await Firebase.initializeApp();
+  setupLocator();
 
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
@@ -96,6 +102,7 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Unity Disleksia Platform',
         theme: ThemeData(
           primaryColor: blue500,
@@ -107,6 +114,9 @@ class MyApp extends StatelessWidget {
         ),
         initialRoute: SplashPage.routeName,
         navigatorKey: navigatorKey,
+        navigatorObservers: [
+          locator<AnalyticsService>().getAnalyticsObserver()
+        ],
         routes: {
           SplashPage.routeName: (context) => const SplashPage(),
           MenuPage.routeName: (context) => const MenuPage(),

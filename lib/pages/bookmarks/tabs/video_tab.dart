@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:unity_disleksia_platform/common/style.dart';
+import 'package:unity_disleksia_platform/pages/video_page.dart';
 import 'package:unity_disleksia_platform/pages/videos/detail_video_page.dart';
 import 'package:unity_disleksia_platform/pages/videos/video_menu_page.dart';
 import 'package:unity_disleksia_platform/provider/database_video_provider.dart';
@@ -56,7 +57,7 @@ class _VideoTabState extends State<VideoTab> {
               ),
               TextButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, VideoMenuPage.routeName);
+                  Navigator.pushNamed(context, VideoPage.routeName);
                 },
                 child: Text(
                   "Tambahkan Video Pembelajaran?",

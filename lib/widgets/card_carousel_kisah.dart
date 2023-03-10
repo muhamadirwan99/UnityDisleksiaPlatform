@@ -11,7 +11,7 @@ class CardCarouselKisah extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const String _baseUrl = 'http://34.101.40.203:5000/';
+    const String _baseUrl = 'http://34.101.97.232:5000/';
     return Center(
       child: ClipRRect(
         borderRadius: BorderRadius.circular(8),

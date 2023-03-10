@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:unity_disleksia_platform/common/style.dart';
+import 'package:unity_disleksia_platform/pages/webinar_page.dart';
 import 'package:unity_disleksia_platform/pages/webinars/detail_webinar_page.dart';
 import 'package:unity_disleksia_platform/pages/webinars/webinar_menu_page.dart';
 import 'package:unity_disleksia_platform/provider/database_webinar_provider.dart';
@@ -66,7 +67,7 @@ class _WebinarTabState extends State<WebinarTab> {
               ),
               TextButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, WebinarMenuPage.routeName);
+                  Navigator.pushNamed(context, WebinarPage.routeName);
                 },
                 child: Text(
                   "Tambahkan Webinar?",

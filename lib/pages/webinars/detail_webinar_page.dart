@@ -36,7 +36,7 @@ class _DetailWebinarPageState extends State<DetailWebinarPage> {
 
   @override
   Widget build(BuildContext context) {
-    const String _baseUrl = 'http://34.101.40.203:5000/';
+    const String _baseUrl = 'http://34.101.97.232:5000/';
     final Uri _url = Uri.parse(widget.webinar.link);
 
     return Consumer<DatabaseWebinarProvider>(

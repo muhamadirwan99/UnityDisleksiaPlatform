@@ -7,7 +7,7 @@ import 'package:unity_disleksia_platform/data/model/video_model.dart';
 import 'package:unity_disleksia_platform/data/model/webinar_model.dart';
 
 class ApiService {
-  static const String _baseUrl = 'http://34.101.40.203:5000/api/';
+  static const String _baseUrl = 'http://34.101.97.232:5000/api/';
 
   Future<VideosResult> listVideos() async {
     final response = await http.get(Uri.parse(_baseUrl + "videos"));
@@ -114,6 +114,8 @@ class ApiService {
   Future<KisahResult> listKisah() async {
     final response =
         await http.get(Uri.parse(_baseUrl + "kisah/update/recent"));
+    print("response");
+    print(response);
     if (response.statusCode == 200) {
       return KisahResult.fromJson(json.decode(response.body));
     } else {
